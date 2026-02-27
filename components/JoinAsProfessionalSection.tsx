@@ -68,11 +68,25 @@ export default function JoinAsProfessionalSection() {
         }),
       });
 
-      const data = await res.json();
+      let data: {
+        fieldErrors?: Record<string, string>;
+        error?: string;
+      } = {};
+      const contentType = res.headers.get("content-type");
+      if (contentType?.includes("application/json")) {
+        try {
+          data = await res.json();
+        } catch {
+          data = { error: "Invalid response" };
+        }
+      } else {
+        data = { error: "Something went wrong. Please try again." };
+      }
 
       if (!res.ok) {
         if (data.fieldErrors) setFormErrors(data.fieldErrors);
         else if (data.error) setFormErrors({ _: data.error });
+        else setFormErrors({ _: "Something went wrong. Please try again." });
         setIsSubmitting(false);
         return;
       }

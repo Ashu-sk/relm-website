@@ -6,6 +6,9 @@ import GlobalAtmosphere from "@/components/GlobalAtmosphere";
 export const metadata: Metadata = {
   title: "Relm",
   description: "Premium, timeless experience.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export const viewport: Viewport = {

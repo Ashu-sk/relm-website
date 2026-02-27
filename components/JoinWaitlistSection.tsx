@@ -49,11 +49,25 @@ export default function JoinWaitlistSection() {
         }),
       });
 
-      const data = await res.json();
+      let data: { fieldErrors?: Record<string, string>; error?: string } = {};
+      const contentType = res.headers.get("content-type");
+      if (contentType?.includes("application/json")) {
+        try {
+          data = await res.json();
+        } catch {
+          data = { error: "Invalid response" };
+        }
+      } else {
+        data = { error: "Something went wrong. Please try again." };
+      }
 
       if (!res.ok) {
         if (data.fieldErrors) {
           setFormErrors(data.fieldErrors);
+        } else if (data.error) {
+          setFormErrors({ _: data.error });
+        } else {
+          setFormErrors({ _: "Something went wrong. Please try again." });
         }
         setIsSubmitting(false);
         return;
@@ -62,6 +76,7 @@ export default function JoinWaitlistSection() {
       setIsSuccess(true);
     } catch (err) {
       console.error(err);
+      setFormErrors({ _: "Something went wrong. Please try again." });
       setIsSubmitting(false);
     }
   };
@@ -264,6 +279,9 @@ export default function JoinWaitlistSection() {
                     </p>
                   )}
                 </div>
+                {formErrors._ && (
+                  <p className="mt-2 text-sm text-red-400">{formErrors._}</p>
+                )}
               </div>
 
               <div className="mt-8">
