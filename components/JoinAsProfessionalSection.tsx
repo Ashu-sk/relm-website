@@ -44,7 +44,7 @@ export default function JoinAsProfessionalSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormErrors({});
-    if (!PHONE_REGEX.test(formData.phone.replace(/\s/g, ""))) {
+    if (!PHONE_REGEX.test(formData.phone.replaceAll(/\s/g, ""))) {
       setFormErrors({ phone: "Enter a valid 10-digit phone number" });
       return;
     }
@@ -60,7 +60,7 @@ export default function JoinAsProfessionalSection() {
           profession: formData.profession,
           experience: formData.experience,
           phone_country_code: formData.countryCode,
-          phone: formData.phone.replace(/\D/g, ""),
+          phone: formData.phone.replaceAll(/\D/g, ""),
           country: formData.country || undefined,
           linkedin: formData.linkedin || undefined,
           desired_domain: formData.desiredDomain || undefined,
@@ -162,7 +162,7 @@ export default function JoinAsProfessionalSection() {
                   }
                   autoComplete="name"
                   required
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0 focus:ring-offset-transparent"
+                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0 focus:ring-offset-transparent"
                   placeholder="Your name"
                 />
               </div>
@@ -182,7 +182,7 @@ export default function JoinAsProfessionalSection() {
                   }
                   autoComplete="email"
                   required
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0 focus:ring-offset-transparent"
+                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0 focus:ring-offset-transparent"
                   placeholder="you@example.com"
                 />
               </div>
@@ -200,7 +200,7 @@ export default function JoinAsProfessionalSection() {
                     onChange={(e) =>
                       setFormData({ ...formData, countryCode: e.target.value })
                     }
-                    className="pro-input w-28 shrink-0 cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                    className="pro-input w-28 shrink-0 cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
                   >
                     {COUNTRY_CODES.map(({ code, label }) => (
                       <option key={code} value={code}>
@@ -214,14 +214,14 @@ export default function JoinAsProfessionalSection() {
                     inputMode="numeric"
                     value={formData.phone}
                     onChange={(e) => {
-                      const v = e.target.value.replace(/\D/g, "").slice(0, 10);
+                      const v = e.target.value.replaceAll(/\D/g, "").slice(0, 10);
                       setFormData({ ...formData, phone: v });
                     }}
                     autoComplete="tel-national"
                     required
                     maxLength={10}
                     placeholder="1234567890"
-                    className="pro-input flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                    className="pro-input flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
                   />
                 </div>
                 {formErrors.phone && (
@@ -242,7 +242,7 @@ export default function JoinAsProfessionalSection() {
                     setFormData({ ...formData, profession: e.target.value })
                   }
                   required
-                  className="pro-input w-full cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                  className="pro-input w-full cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
                 >
                   <option value="">Select — Counsellor, Expert, or Advisor</option>
                   <option value="counsellor">Counsellor</option>
@@ -268,7 +268,7 @@ export default function JoinAsProfessionalSection() {
                       className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ease-in-out ${
                         interest === opt
                           ? "scale-105 border-white/20 bg-white/10 ring-1 ring-white/20"
-                          : "border-white/10 bg-white/5 text-(--fg-secondary) hover:border-white/15 hover:bg-white/[0.07] hover:text-(--fg-primary)"
+                          : "border-white/10 bg-white/5 text-(--fg-secondary) hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground"
                       }`}
                     >
                       {opt}
@@ -282,7 +282,7 @@ export default function JoinAsProfessionalSection() {
                       value={othersCustom}
                       onChange={(e) => setOthersCustom(e.target.value)}
                       placeholder="Describe your interest…"
-                      className="pro-input w-full border-0 bg-transparent px-4 pb-3 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 focus:outline-none"
+                      className="pro-input w-full border-0 bg-transparent px-4 pb-3 text-foreground placeholder:text-(--fg-tertiary)/70 focus:outline-none"
                     />
                   </div>
                 )}
@@ -304,7 +304,7 @@ export default function JoinAsProfessionalSection() {
                   }
                   required
                   placeholder="e.g. 5 years"
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0"
+                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0"
                 />
               </div>
               <div className="space-y-1">
@@ -323,7 +323,7 @@ export default function JoinAsProfessionalSection() {
                   }
                   autoComplete="country-name"
                   placeholder="e.g. India, USA"
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
                 />
               </div>
               <div className="space-y-1">
@@ -341,7 +341,7 @@ export default function JoinAsProfessionalSection() {
                     setFormData({ ...formData, linkedin: e.target.value })
                   }
                   placeholder="https://linkedin.com/in/..."
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
                 />
               </div>
               <div className="space-y-1">
@@ -359,7 +359,7 @@ export default function JoinAsProfessionalSection() {
                   onChange={(e) =>
                     setFormData({ ...formData, desiredDomain: e.target.value })
                   }
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
                   placeholder="your.relm"
                 />
               </div>

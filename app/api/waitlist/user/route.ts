@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const { error } = await supabaseAdmin.from("waitlist_users").insert({
+    const { error } = await supabaseAdmin.from("waitlist_users").insert([{
       email: email.toLowerCase(),
       full_name: fullName,
       desired_domain: desiredDomain.toLowerCase(),
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
       phone_country_code: phone_country_code ?? null,
       phone: String(phone ?? "").replace(/\D/g, ""),
       status: "pending",
-    });
+    }]);
 
     if (error) {
       if (error.code === "23505") {
@@ -47,14 +47,14 @@ export async function POST(req: Request) {
           { status: 409 }
         );
       }
-      console.error("RPC error:", error);
-      return NextResponse.json(
+        console.error("Insert error:", error);
+        return NextResponse.json(
         { error: "Internal server error" },
         { status: 500 }
       );
     }
-
-    return NextResponse.json({ success: true });
+    
+  return NextResponse.json({ success: true });
   } catch (e) {
     if (e instanceof SyntaxError) {
       return NextResponse.json(

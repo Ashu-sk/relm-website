@@ -5,7 +5,7 @@ import { fireConfetti } from "@/lib/confetti";
 import { COUNTRY_CODES, PHONE_REGEX } from "@/lib/countryCodes";
 
 const waitlistInputClass =
-  "waitlist-input-premium w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3.5 text-(--fg-primary) placeholder:text-(--fg-tertiary)/70 transition-all duration-200 ease-out hover:border-white/15 focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-white/20";
+  "waitlist-input-premium w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3.5 text-foreground placeholder:text-(--fg-tertiary)/70 transition-all duration-200 ease-out hover:border-white/15 focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-white/20";
 
 export default function JoinWaitlistSection() {
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ export default function JoinWaitlistSection() {
     e.preventDefault();
 
     setFormErrors({});
-    if (!PHONE_REGEX.test(formData.phone.replace(/\s/g, ""))) {
+    if (!PHONE_REGEX.test(formData.phone.replaceAll(/\s/g, ""))) {
       setFormErrors({ phone: "Enter a valid 10-digit phone number" });
       return;
     }
@@ -45,7 +45,7 @@ export default function JoinWaitlistSection() {
           desiredDomain: formData.desiredDomain,
           country: formData.country,
           phone_country_code: formData.countryCode,
-          phone: formData.phone.replace(/\D/g, ""),
+          phone: formData.phone.replaceAll(/\D/g, ""),
         }),
       });
 
@@ -223,7 +223,7 @@ export default function JoinWaitlistSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, countryCode: e.target.value })
                       }
-                      className="join-waitlist-phone-select h-[3.125rem] w-24 shrink-0 cursor-pointer appearance-none rounded-2xl border border-white/10 bg-black/40 px-3 py-3 pr-9 text-(--fg-primary) transition-all duration-200 ease-out hover:border-white/15 focus:border-white/20 focus:outline-none focus:ring-1 focus:ring-white/20"
+                      className="join-waitlist-phone-select h-12.5 w-24 shrink-0 cursor-pointer appearance-none rounded-2xl border border-white/10 bg-black/40 px-3 py-3 pr-9 text-foreground transition-all duration-200 ease-out hover:border-white/15 focus:border-white/20 focus:outline-none focus:ring-1 focus:ring-white/20"
                     >
                       {COUNTRY_CODES.map(({ code, label }) => (
                         <option key={code} value={code}>
@@ -237,7 +237,7 @@ export default function JoinWaitlistSection() {
                       inputMode="numeric"
                       value={formData.phone}
                       onChange={(e) => {
-                        const v = e.target.value.replace(/\D/g, "").slice(0, 10);
+                        const v = e.target.value.replaceAll(/\D/g, "").slice(0, 10);
                         setFormData({ ...formData, phone: v });
                       }}
                       autoComplete="tel-national"
@@ -288,7 +288,7 @@ export default function JoinWaitlistSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group w-full rounded-full bg-white/10 py-3.5 font-medium text-(--fg-primary) shadow-sm transition-all duration-200 ease-out hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(255,255,255,0.12)] active:scale-95 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:shadow-none"
+                  className="group w-full rounded-full bg-white/10 py-3.5 font-medium text-foreground shadow-sm transition-all duration-200 ease-out hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(255,255,255,0.12)] active:scale-95 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:shadow-none"
                 >
                   {isSubmitting ? "Submitting…" : "Enter Relm"}
                   {!isSubmitting && (

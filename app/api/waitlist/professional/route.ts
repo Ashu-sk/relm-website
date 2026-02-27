@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       );
     }
 
-    if (!phone || !/^\d{8,15}$/.test(String(phone).replace(/\D/g, ""))) {
+    if (!phone || !/^\d{8,15}$/.test(String(phone).replaceAll(/\D/g, ""))) {
       return NextResponse.json(
         { fieldErrors: { phone: "Enter a valid 10-digit phone number" } },
         { status: 400 }
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
         profession,
         experience,
         phone_country_code: phone_country_code ?? null,
-        phone: String(phone).replace(/\D/g, ""),
+        phone: String(phone).replaceAll(/\D/g, ""),
         linkedin,
         desired_domain,
         country,
