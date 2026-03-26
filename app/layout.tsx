@@ -8,7 +8,12 @@ export const metadata: Metadata = {
   title: "Relm",
   description: "Premium, timeless experience.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
   },
 };
 
