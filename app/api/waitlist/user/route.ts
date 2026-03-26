@@ -3,7 +3,9 @@ import { createClient } from "@supabase/supabase-js";
 
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  // Use new Secret key (sb_secret_...) from Dashboard → API Keys if you see "Legacy API keys are disabled"
+  const key =
+    process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) {
     throw new Error("Server misconfiguration");
   }
@@ -18,27 +20,40 @@ export async function POST(req: Request) {
 
     const supabaseAdmin = getSupabase();
 
-    if (!email || !desiredDomain) {
+    const emailStr = email != null ? String(email).trim() : "";
+    const domainStr =
+      desiredDomain != null ? String(desiredDomain).trim() : "";
+
+    if (!emailStr) {
       return NextResponse.json(
-        {
-          fieldErrors: {
-            email: !email ? "Email is required" : undefined,
-            desiredDomain: !desiredDomain ? "Domain is required" : undefined,
-          },
-        },
+        { fieldErrors: { email: "Email is required" } },
         { status: 400 }
       );
     }
 
-    const { error } = await supabaseAdmin.from("waitlist_users").insert([{
-      email: email.toLowerCase(),
-      full_name: fullName,
-      desired_domain: desiredDomain.toLowerCase(),
-      country: country ?? null,
-      phone_country_code: phone_country_code ?? null,
-      phone: String(phone ?? "").replace(/\D/g, ""),
+    const phoneClean = String(phone ?? "")
+      .replaceAll(/\D/g, "")
+      .trim();
+    const row = {
+      email: emailStr.toLowerCase(),
+      full_name:
+        fullName != null && String(fullName).trim() !== ""
+          ? String(fullName).trim()
+          : null,
+      desired_domain: domainStr !== "" ? domainStr.toLowerCase() : null,
+      country:
+        country != null && String(country).trim() !== ""
+          ? String(country).trim()
+          : null,
+      phone_country_code:
+        phone_country_code != null && String(phone_country_code).trim() !== ""
+          ? String(phone_country_code).trim()
+          : null,
+      phone: phoneClean !== "" ? phoneClean : null,
       status: "pending",
-    }]);
+    };
+
+    const { error } = await supabaseAdmin.from("waitlist_users").insert(row);
 
     if (error) {
       if (error.code === "23505") {
@@ -47,14 +62,15 @@ export async function POST(req: Request) {
           { status: 409 }
         );
       }
-        console.error("Insert error:", error);
-        return NextResponse.json(
-        { error: "Internal server error" },
-        { status: 500 }
-      );
+      console.error("Waitlist insert error:", error.message, error.code, error.details);
+      const message =
+        process.env.NODE_ENV === "development"
+          ? error.message
+          : "Internal server error";
+      return NextResponse.json({ error: message }, { status: 500 });
     }
-    
-  return NextResponse.json({ success: true });
+
+    return NextResponse.json({ success: true });
   } catch (e) {
     if (e instanceof SyntaxError) {
       return NextResponse.json(
@@ -69,9 +85,10 @@ export async function POST(req: Request) {
       );
     }
     console.error("Waitlist user error:", e);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    const message =
+      process.env.NODE_ENV === "development" && e instanceof Error
+        ? e.message
+        : "Internal server error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

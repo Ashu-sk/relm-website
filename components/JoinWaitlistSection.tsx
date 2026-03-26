@@ -36,7 +36,11 @@ export default function JoinWaitlistSection() {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/waitlist/user", {
+      const apiUrl =
+        typeof globalThis.window === "undefined"
+          ? "/api/waitlist/user"
+          : `${globalThis.window.location.origin}/api/waitlist/user`;
+      const res = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

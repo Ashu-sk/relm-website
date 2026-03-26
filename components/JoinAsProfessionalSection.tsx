@@ -51,7 +51,11 @@ export default function JoinAsProfessionalSection() {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/waitlist/professional", {
+      const apiUrl =
+        typeof globalThis.window === "undefined"
+          ? "/api/waitlist/professional"
+          : `${globalThis.window.location.origin}/api/waitlist/professional`;
+      const res = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

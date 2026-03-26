@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
 // Update this table name to match your Supabase schema (e.g. waitlist_users, users, etc.)

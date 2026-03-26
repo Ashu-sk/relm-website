@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import GlobalAtmosphere from "@/components/GlobalAtmosphere";
@@ -20,9 +21,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en" className="scroll-smooth" style={{ colorScheme: "dark" }}>
       <body className="min-h-screen antialiased">
+        {gaMeasurementId ? (
+          <>
+            {/* Google Analytics 4 (GA4) - loaded from env for production safety */}
+            <Script
+              async
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', '${gaMeasurementId}');`}
+            </Script>
+          </>
+        ) : null}
+
         {/* Base: deep near-black */}
         <div
           className="fixed inset-0 -z-2"
