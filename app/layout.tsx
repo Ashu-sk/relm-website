@@ -84,15 +84,7 @@ export const metadata: Metadata = {
   },
   title: "Rarelm — The AI-Verified Social Expression Platform",
   description:
-    "Rarelm is the world's first AI-verified social expression platform — where every user is mandatorily verified by AI, ensuring only real humans can join. No bots, no fake accounts, no scams, no impersonation.",
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon.png", type: "image/png" },
-    ],
-    shortcut: "/favicon.ico",
-    apple: "/favicon.png",
-  },
+    "Rarelm is the world's first AI-verified social expression platform — where every user is mandatorily verified by AI. No bots, no fake accounts, no scams. Free to join.",
 };
 
 export const viewport: Viewport = {
