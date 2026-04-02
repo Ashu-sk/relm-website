@@ -78,8 +78,13 @@ const websiteSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Relm",
-  description: "Premium, timeless experience.",
+  metadataBase: new URL("https://www.rarelm.com"),
+  alternates: {
+    canonical: "/",
+  },
+  title: "Rarelm — The AI-Verified Social Expression Platform",
+  description:
+    "Rarelm is the world's first AI-verified social expression platform — where every user is mandatorily verified by AI, ensuring only real humans can join. No bots, no fake accounts, no scams, no impersonation.",
   icons: {
     icon: [
       { url: "/favicon.ico" },

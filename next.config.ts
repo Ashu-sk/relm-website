@@ -3,6 +3,16 @@ import path from "path";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "rarelm.com" }],
+        destination: "https://www.rarelm.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   turbopack: {
     root: path.join(__dirname),
     resolveAlias: {
