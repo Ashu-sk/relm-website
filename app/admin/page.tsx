@@ -120,7 +120,7 @@ export default async function AdminPage({
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-semibold">Admin Dashboard</h1>
             <p className="text-gray-400">
-              Manage Relm waitlist applications.
+              Manage Rarelm waitlist applications.
             </p>
           </div>
 

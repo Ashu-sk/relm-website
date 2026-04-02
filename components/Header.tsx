@@ -54,7 +54,7 @@ export default function Header() {
       <Link
         href="#"
         className="relative z-10 flex items-center gap-2 transition-smooth hover:opacity-80"
-        aria-label="Relm home"
+        aria-label="Rarelm home"
       >
         <Image
           src="/relm-logo.png"
@@ -63,7 +63,7 @@ export default function Header() {
           height={28}
           className="h-6 w-6 sm:h-7 sm:w-7"
         />
-        <span className="text-title text-foreground">Relm</span>
+        <span className="text-title text-foreground">Rarelm</span>
       </Link>
 
       <nav

@@ -29,7 +29,7 @@ const cards = [
     line: "Verified sellers. In-app payments. Native storefronts.",
   },
   {
-    heading: "REM — Relm Encrypted Money",
+    heading: "REM — Rarelm Encrypted Money",
     line: "Value moves only after trust is proven.",
   },
 ] as const;

@@ -52,7 +52,7 @@ export default function ScamsDeepfakesSection() {
             <br />
             Domain-based profiles.
             <br />
-            REM — Relm Encrypted Money
+            REM — Rarelm Encrypted Money
           </p>
         </div>
 

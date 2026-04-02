@@ -119,7 +119,7 @@ export default function OurStandSection() {
 
         <div className="our-stand-reveal-item our-stand-reveal-item-6 our-stand-block mt-10">
           <p className="text-headline font-semibold text-foreground">
-            Relm exists because the internet forgot what real looks like.
+            Rarelm exists because the internet forgot what real looks like.
           </p>
           <p className="mt-3 text-headline font-semibold text-foreground">
             So we built it back.

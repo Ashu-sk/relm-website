@@ -31,7 +31,7 @@ export default function Home() {
         <div className="relative z-10 animate-fade-enter-slow mx-auto max-w-2xl text-center">
           <Image
             src="/relm-logo.png"
-            alt="Relm"
+            alt="Rarelm"
             width={64}
             height={64}
             className="mx-auto h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
@@ -59,7 +59,7 @@ export default function Home() {
               href="#join-waitlist"
               className="hero-cta-primary group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium sm:w-auto"
             >
-              Enter Relm
+              Enter Rarelm
               <span aria-hidden className="opacity-0 transition-[opacity] duration-300 ease-out group-hover:opacity-70">
                 →
               </span>
@@ -136,7 +136,7 @@ export default function Home() {
         aria-label="Site footer"
       >
         <div className="section-container max-w-2xl mx-auto">
-          <p className="text-body font-medium text-foreground">Relm</p>
+          <p className="text-body font-medium text-foreground">Rarelm</p>
           <p className="mt-2 text-body text-(--fg-tertiary)">
             Founder — Ashutosh Kesharwani
           </p>
@@ -167,7 +167,7 @@ export default function Home() {
             </a>
           </nav>
           <p className="mt-4 text-body text-(--fg-tertiary)">
-            © Relm. All rights reserved.
+            © Rarelm. All rights reserved.
           </p>
         </div>
       </footer>

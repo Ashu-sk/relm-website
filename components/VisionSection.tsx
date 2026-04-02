@@ -41,7 +41,7 @@ export default function VisionSection() {
         </p>
 
         <p className="vision-reveal-item vision-reveal-item-3 mt-6 text-body leading-relaxed text-(--fg-secondary)">
-          Relm moves beyond flat feeds and endless scrolling.
+          Rarelm moves beyond flat feeds and endless scrolling.
           <br />
           It evolves into immersive, spatial social spaces where presence matters more than posts.
         </p>
@@ -76,7 +76,7 @@ export default function VisionSection() {
         </div>
 
         <p className="vision-reveal-item vision-reveal-item-7 mt-10 text-body leading-relaxed text-(--fg-secondary)">
-          Relm isn&apos;t building a virtual world for escape. It&apos;s building a social layer for reality.
+          Rarelm isn&apos;t building a virtual world for escape. It&apos;s building a social layer for reality.
           <br />
           A place where identity, trust, and value carry forward into immersive environments.
         </p>

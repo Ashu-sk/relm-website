@@ -111,7 +111,7 @@ export default function JoinAsProfessionalSection() {
           <p className="mt-4 text-body text-(--fg-secondary)">
             We&apos;ve received your application.
             <br />
-            We&apos;ll reach out when Relm opens for professionals.
+            We&apos;ll reach out when Rarelm opens for professionals.
           </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function JoinAsProfessionalSection() {
           <p className="join-professional-lead mt-6 text-body leading-relaxed text-(--fg-secondary)">
             If trust matters to your work,
             <br />
-            Relm is built for you.
+            Rarelm is built for you.
           </p>
           <ul className="join-professional-list mt-6 text-body leading-relaxed text-(--fg-secondary)">
             <li>Verified presence</li>

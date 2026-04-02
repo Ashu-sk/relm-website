@@ -94,7 +94,7 @@ export default function JoinWaitlistSection() {
             <p className="mt-4 text-body text-(--fg-secondary)">
               Your place is reserved.
               <br />
-              We&apos;ll reach out when Relm opens its doors.
+              We&apos;ll reach out when Rarelm opens its doors.
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function JoinWaitlistSection() {
             </ul>
           </div>
           <p className="text-headline font-semibold text-foreground">
-            Relm isn&apos;t for everyone.
+            Rarelm isn&apos;t for everyone.
             <br />
             And that&apos;s intentional.
           </p>
@@ -294,7 +294,7 @@ export default function JoinWaitlistSection() {
                   disabled={isSubmitting}
                   className="group w-full rounded-full bg-white/10 py-3.5 font-medium text-foreground shadow-sm transition-all duration-200 ease-out hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(255,255,255,0.12)] active:scale-95 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:shadow-none"
                 >
-                  {isSubmitting ? "Submitting…" : "Enter Relm"}
+                  {isSubmitting ? "Submitting…" : "Enter Rarelm"}
                   {!isSubmitting && (
                     <span
                       aria-hidden

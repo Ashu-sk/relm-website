@@ -37,11 +37,11 @@ export default function FounderSection() {
           Our Story
         </h2>
         <p className="founder-reveal-item founder-reveal-item-2 mt-6 text-headline font-semibold text-foreground">
-          Why Relm exists
+          Why Rarelm exists
         </p>
 
         <p className="founder-reveal-item founder-reveal-item-3 mt-8 text-body leading-relaxed text-(--fg-secondary)">
-          Relm didn&apos;t start as a startup idea.
+          Rarelm didn&apos;t start as a startup idea.
           <br />
           It started as a realization.
         </p>
@@ -61,7 +61,7 @@ export default function FounderSection() {
         </p>
 
         <p className="founder-reveal-item founder-reveal-item-6 mt-8 text-headline font-semibold text-foreground">
-          Relm is our response to that.
+          Rarelm is our response to that.
         </p>
 
         <p className="founder-reveal-item founder-reveal-item-7 mt-6 text-body leading-relaxed text-(--fg-secondary)">

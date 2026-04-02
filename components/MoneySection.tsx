@@ -63,7 +63,7 @@ export default function MoneySection() {
         </div>
         <div className="money-reveal-item money-reveal-item-4 mt-10 border-t border-(--fg-tertiary)/20 pt-8 text-left sm:text-center">
           <p className="text-title font-medium text-foreground">
-            REM : Relm Encrypted Money.
+            REM : Rarelm Encrypted Money.
           </p>
           <p className="mt-2 text-caption text-(--fg-secondary)">
             Built for:
