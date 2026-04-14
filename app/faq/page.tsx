@@ -3,7 +3,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Rarelm FAQ — AI-Verified Social Platform",
+  title: "Rarelm FAQ — AI-Verified Social Platform Questions",
   description:
     "Got questions about Rarelm? Find answers about AI verification, PageStock, anonymous mode, the 3 profile system, social commerce, expert advisors, and how to join.",
 };
@@ -258,88 +258,18 @@ const FAQ_SECTIONS: FaqSection[] = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is Rarelm?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Rarelm is the world's first AI-verified social expression platform — where every user is mandatorily verified by AI, ensuring only real humans can join. No bots, no fake accounts, no scams, no impersonation. Rarelm combines verified identity with anonymous interaction, social commerce, expert access, content sharing, and PageStock — a system that lets every user earn from the platform, not just observe it.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why was Rarelm built?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Rarelm was built in response to a decade of growing problems on existing social platforms — fake accounts, bots, scams, account impersonation, misinformation, and a complete lack of professional support. These represent a massive global financial and social loss. Rarelm was founded on the belief that social media needs to be rebuilt from the identity layer up — where every person is verified as real before they can participate.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does AI-verified mean on Rarelm?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "AI-verified means every single Rarelm account is confirmed by artificial intelligence to belong to a real, unique human being before they can use the platform. Verification is not optional or tiered — it is mandatory for all users. This eliminates bots, fake accounts, spam accounts, scam accounts, and impersonators entirely.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I be anonymous and verified at the same time on Rarelm?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — you can interact anonymously on Rarelm while still being AI-verified as a real human behind that anonymity. This means other users know they are interacting with a real person even if that person chooses not to reveal their identity. Verified anonymity — not unverified anonymity.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the 3 profile system on Rarelm?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Rarelm gives every user three distinct profiles inspired by Ikigai: Anonymous (Me) for private anonymous expression, Family and Friends for personal trusted connections, and Professional for career, business, and expert interactions. Each profile is separate, customisable, and operates independently.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is PageStock?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "PageStock is Rarelm's built-in creator stock market and user earnings system. It lets every user earn dividends and financial returns from the platform's growth. Creators and users can list their pages on PageStock, allowing fans, investors, and businesses to buy shares. As a page grows, shareholders benefit financially — making every Rarelm user a stakeholder, not just an observer.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is a creator stock market?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A creator stock market is a platform where fans and investors can buy and sell shares in creators or their social media pages, similar to how traditional stock markets work for companies. PageStock on Rarelm is the first creator stock market built natively inside a social platform — and the first designed to benefit every user, not just a select few.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is social commerce on Rarelm?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Rarelm's social commerce ecosystem is a fully integrated shopping experience built into the platform. It includes in-app purchases, professional shopping support from verified advisors, and a verified commerce environment where every seller and buyer is a confirmed real human — eliminating scams and fraudulent sellers that plague commerce on existing social platforms.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is Rarelm free to use?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — creating an account on Rarelm is completely free. Join the waitlist at rarelm.com to secure your free account and get early access when the platform launches.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How is Rarelm different from Instagram or Twitter/X?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Instagram and Twitter/X are platforms where fake accounts, bots, and scams are endemic, users generate enormous value but earn nothing, and professional support is absent. Rarelm mandates AI verification for all users, gives every user earning potential through PageStock, provides 24/7 professional expert access, and supports both open and anonymous verified interaction.",
-      },
-    },
-  ],
+  mainEntity: FAQ_SECTIONS.flatMap((section) =>
+    section.items
+      .filter((item) => item.question.trim() && item.answer.trim())
+      .map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      }))
+  ),
 };
 
 export default function FaqPage() {
