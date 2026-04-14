@@ -31,6 +31,26 @@ export default function JoinPage() {
             </span>
           </Link>
         </div>
+        <nav className="mt-10 flex flex-wrap gap-x-6 gap-y-2" aria-label="Explore Rarelm">
+          <Link
+            href="/pagestock"
+            className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+          >
+            Explore PageStock
+          </Link>
+          <Link
+            href="/faq"
+            className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+          >
+            Read the FAQ
+          </Link>
+          <Link
+            href="/vision"
+            className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+          >
+            Our mission
+          </Link>
+        </nav>
       </div>
     </main>
   );

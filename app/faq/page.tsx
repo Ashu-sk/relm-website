@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -383,15 +384,49 @@ export default function FaqPage() {
           ))}
 
           <p className="mt-14 text-body italic leading-relaxed text-(--fg-secondary)">
-            Still have a question? Reach out at{" "}
-            <a
+            Still have a question?{" "}
+            <Link
+              href="/join"
+              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+            >
+              Join the waitlist
+            </Link>
+            , explore{" "}
+            <Link
+              href="/pagestock"
+              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+            >
+              PageStock
+            </Link>
+            , or reach out at{" "}
+            <Link
               href="/contact-us"
               className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
             >
               rarelm.com/contact
-            </a>{" "}
+            </Link>{" "}
             — we&apos;d love to hear from you.
           </p>
+          <nav className="mt-8 flex flex-wrap gap-x-6 gap-y-2" aria-label="Explore Rarelm">
+            <Link
+              href="/pagestock"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Explore PageStock
+            </Link>
+            <Link
+              href="/join"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Join the waitlist
+            </Link>
+            <Link
+              href="/vision"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Our mission
+            </Link>
+          </nav>
         </article>
       </main>
     </>

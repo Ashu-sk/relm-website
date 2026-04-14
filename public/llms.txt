@@ -1,0 +1,29 @@
+# Rarelm
+> Rarelm is the world's first mandatory AI-verified 
+social expression platform where every user is 
+face-authenticated before joining using facial 
+recognition similar to Apple Face ID. No bots, 
+no fake accounts, no scams.
+
+## Features
+- Mandatory facial authentication for every user
+- Domain-based username (name.rarelm.com)
+- 3 profile system: Anonymous, Family & Friends, Professional
+- Anonymous and verified mode simultaneously
+- PageStock: invest in creators and earn dividends
+- Verified social commerce ecosystem
+- 24/7 professional expert advisors
+- Free to join
+
+## Pages
+- https://www.rarelm.com — Homepage
+- https://www.rarelm.com/vision — Vision and mission
+- https://www.rarelm.com/founder — Founder story
+- https://www.rarelm.com/join — Join waitlist
+- https://www.rarelm.com/faq — FAQ
+- https://www.rarelm.com/pagestock — PageStock feature
+- https://www.rarelm.com/blog — Blog
+
+## Company
+Rarelm is a product of Mavrist Pvt Ltd, incorporated 
+in India. Currently raising pre-seed funding.

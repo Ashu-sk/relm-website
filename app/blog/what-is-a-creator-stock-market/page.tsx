@@ -293,7 +293,7 @@ export default function BlogPostPage() {
                       Creator + fan
                     </td>
                   </tr>
-                  <tr className="bg-white/[0.03]">
+                  <tr className="bg-white/3">
                     <td className="px-5 py-4 text-body font-semibold text-foreground">
                       PageStock
                     </td>
@@ -441,6 +441,29 @@ export default function BlogPostPage() {
         </section>
 
         <footer className="mt-14">
+          <div className="mb-10 rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl">
+            <p className="text-body font-medium text-foreground">Explore next</p>
+            <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+              <Link
+                href="/pagestock"
+                className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+              >
+                PageStock
+              </Link>
+              <Link
+                href="/faq"
+                className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+              >
+                FAQ
+              </Link>
+              <Link
+                href="/join"
+                className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+              >
+                Join waitlist
+              </Link>
+            </div>
+          </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl">
             <p className="text-headline font-semibold text-foreground">
               Ready to be early?
@@ -454,11 +477,8 @@ export default function BlogPostPage() {
                 href="/#join-waitlist"
                 className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
               >
-                Join Waitlist
-                <span
-                  aria-hidden
-                  className="opacity-0 transition-[opacity] duration-300 ease-out group-hover:opacity-70"
-                >
+                Join Waitlist{" "}
+                <span aria-hidden className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70">
                   →
                 </span>
               </Link>

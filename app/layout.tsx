@@ -7,15 +7,16 @@ import GlobalAtmosphere from "@/components/GlobalAtmosphere";
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": "https://www.rarelm.com/#softwareapplication",
   name: "Rarelm",
   url: "https://www.rarelm.com",
   description:
     "Rarelm is the world's first AI-verified social expression platform where every user is mandatorily verified by AI — ensuring only real humans, no bots, no scams, no fake accounts. Features include the 3 profile system, anonymous and open modes, PageStock creator investing, social commerce, and 24/7 professional expert support.",
   applicationCategory: "SocialNetworkingApplication",
-  operatingSystem: "Web, iOS, Android",
+  operatingSystem: ["Web", "iOS", "Android"],
   offers: {
     "@type": "Offer",
-    price: "0",
+    price: 0,
     priceCurrency: "USD",
     description: "Free to create an account",
   },
@@ -37,6 +38,11 @@ const softwareApplicationSchema = {
       "Creators, businesses, investors, and everyday social media users",
   },
   creator: {
+    "@type": "Organization",
+    name: "Relm",
+    url: "https://www.rarelm.com",
+  },
+  publisher: {
     "@type": "Organization",
     name: "Relm",
     url: "https://www.rarelm.com",
@@ -69,10 +75,7 @@ const websiteSchema = {
   description: "The world's first AI-verified social expression platform",
   potentialAction: {
     "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://www.rarelm.com/search?q={search_term_string}",
-    },
+    target: "https://www.rarelm.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };

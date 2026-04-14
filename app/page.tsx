@@ -54,13 +54,33 @@ export default function Home() {
           <p className="mx-auto mt-(--space-hero) max-w-lg hero-proof">
             An AI-verified social platform where identity is real and engagement can&apos;t be faked.
           </p>
+          <p className="mx-auto mt-4 max-w-lg text-body leading-relaxed text-(--fg-secondary)">
+            New here? Start with{" "}
+            <Link
+              href="/pagestock"
+              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+            >
+              PageStock
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/faq"
+              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+            >
+              the FAQ
+            </Link>
+            .
+          </p>
           <div className="mt-(--space-hero) flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="#join-waitlist"
               className="hero-cta-primary group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium sm:w-auto"
             >
-              Enter Rarelm
-              <span aria-hidden className="opacity-0 transition-[opacity] duration-300 ease-out group-hover:opacity-70">
+              Enter Rarelm{" "}
+              <span
+                aria-hidden
+                className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
+              >
                 →
               </span>
             </Link>
@@ -68,9 +88,10 @@ export default function Home() {
               href="#motion-manifesto"
               className="inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-(--fg-tertiary)/30 px-6 py-3 text-body text-foreground transition-smooth hover:border-(--fg-secondary)/50 hover:bg-white/5 sm:w-auto"
             >
-              See how it works
-              {" "}
-              <span aria-hidden>→</span>
+              See how it works{" "}
+              <span aria-hidden className="ml-1">
+                →
+              </span>
             </Link>
           </div>
         </div>
@@ -140,6 +161,26 @@ export default function Home() {
           <p className="mt-2 text-body text-(--fg-tertiary)">
             Founder — Ashutosh Kesharwani
           </p>
+          <nav className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2" aria-label="Explore Rarelm">
+            <Link
+              href="/pagestock"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Explore PageStock
+            </Link>
+            <Link
+              href="/faq"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Read the FAQ
+            </Link>
+            <Link
+              href="/join"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Join the waitlist
+            </Link>
+          </nav>
           <nav className="footer-icons mt-4 flex justify-center gap-6" aria-label="Social links">
             <a
               href="https://x.com/relm978149"

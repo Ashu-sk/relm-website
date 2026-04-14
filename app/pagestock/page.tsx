@@ -7,8 +7,6 @@ export const metadata: Metadata = {
     "PageStock is the world's first creator stock market. Invest in creators and public pages, earn dividends, and turn your social influence into a tradeable financial asset. Free on Rarelm.",
 };
 
-const JOIN_URL = "https://www.rarelm.com/join";
-
 export default function PageStockPage() {
   return (
     <main className="section-block section-padding-standard px-4 sm:px-6 md:px-8">
@@ -46,7 +44,7 @@ export default function PageStockPage() {
           </p>
           <div className="pt-2">
             <Link
-              href={JOIN_URL}
+              href="/join"
               className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
             >
               <span>Join the Waitlist — It&apos;s Free</span>
@@ -56,6 +54,14 @@ export default function PageStockPage() {
               >
                 →
               </span>
+            </Link>
+          </div>
+          <div className="pt-4">
+            <Link
+              href="/faq"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Read the PageStock FAQ
             </Link>
           </div>
         </section>
@@ -467,7 +473,7 @@ export default function PageStockPage() {
           </p>
           <div className="pt-2">
             <Link
-              href={JOIN_URL}
+              href="/join"
               className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
             >
               <span>Join the Waitlist</span>
@@ -479,6 +485,23 @@ export default function PageStockPage() {
               </span>
             </Link>
           </div>
+          <p className="text-body leading-relaxed text-(--fg-secondary)">
+            Want the full story of Rarelm? Read{" "}
+            <Link
+              href="/vision"
+              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+            >
+              our vision
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="/faq"
+              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+            >
+              browse the FAQ
+            </Link>
+            .
+          </p>
         </section>
 
         <footer className="mt-14 border-t border-white/10 pt-10">
