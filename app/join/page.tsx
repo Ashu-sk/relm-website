@@ -17,6 +17,12 @@ export default function JoinPage() {
         <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
           Join the waitlist to get early access.
         </p>
+        <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+          When you join the waitlist, you&apos;re reserving early access to Rarelm&apos;s
+          private beta. We&apos;ll email you when onboarding opens, what&apos;s included in
+          the first release (AI verification, profiles, PageStock access), and the next
+          steps to claim your account and domain-based username.
+        </p>
         <div className="mt-8">
           <Link
             href="/#join-waitlist"

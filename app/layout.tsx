@@ -9,10 +9,10 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "@id": "https://www.rarelm.com/#softwareapplication",
   name: "Rarelm",
-  url: "https://www.rarelm.com",
+  url: "https://www.rarelm.com/",
   description:
     "Rarelm is the world's first AI-verified social expression platform where every user is mandatorily verified by AI — ensuring only real humans, no bots, no scams, no fake accounts. Features include the 3 profile system, anonymous and open modes, PageStock creator investing, social commerce, and 24/7 professional expert support.",
-  applicationCategory: "SocialNetworkingApplication",
+  applicationCategory: "https://schema.org/SocialNetworkingApplication",
   operatingSystem: ["Web", "iOS", "Android"],
   offers: {
     "@type": "Offer",
@@ -45,25 +45,23 @@ const softwareApplicationSchema = {
   publisher: {
     "@type": "Organization",
     name: "Relm",
-    url: "https://www.rarelm.com",
+    url: "https://www.rarelm.com/",
   },
-  sameAs: ["https://www.rarelm.com"],
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Relm",
-  url: "https://www.rarelm.com",
+  url: "https://www.rarelm.com/",
   logo: "https://www.rarelm.com/relm-logo.png",
   description:
     "Relm is building the world's first AI-verified social platform — Rarelm — where every user is mandatorily verified by AI, ensuring only real humans, no bots, no scams, no fake accounts.",
   foundingDate: "2024",
-  sameAs: ["https://www.rarelm.com"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
-    url: "https://www.rarelm.com/contact",
+    url: "https://www.rarelm.com/contact-us/",
   },
 };
 
@@ -71,7 +69,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Rarelm",
-  url: "https://www.rarelm.com",
+  url: "https://www.rarelm.com/",
   description: "The world's first AI-verified social expression platform",
   potentialAction: {
     "@type": "SearchAction",
@@ -81,9 +79,9 @@ const websiteSchema = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.rarelm.com'),
+  metadataBase: new URL("https://www.rarelm.com/"),
   alternates: {
-    canonical: '/',
+    canonical: "https://www.rarelm.com/",
   },
   title: 'Rarelm — The AI-Verified Social Expression Platform',
   description:

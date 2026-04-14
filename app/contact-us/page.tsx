@@ -38,6 +38,12 @@ export default function ContactUsPage() {
           </Link>{" "}
           and we&apos;ll keep you updated.
         </p>
+        <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+          Contact us for press and partnerships, PageStock and creator questions, investor
+          conversations, or anything safety-related (impersonation, scams, or reporting).
+          If you&apos;re not sure where to start, send a short note with your goal and we&apos;ll
+          route it to the right person.
+        </p>
       </div>
     </main>
   );
