@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         destination: "https://www.rarelm.com/:path*",
         permanent: true,
       },
+      {
+        source: "/contact",
+        destination: "/contact-us",
+        permanent: true,
+      },
     ];
   },
   turbopack: {
