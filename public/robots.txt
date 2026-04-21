@@ -1,0 +1,25 @@
+# Allow citation-capable AI crawlers (these generate real-time answers that cite sources)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Standard directives
+User-agent: *
+Allow: /
+
+Sitemap: https://www.rarelm.com/sitemap.xml
+

@@ -5,11 +5,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "Our Stand", href: "#our-stand" },
-  { label: "Vision", href: "#vision" },
-  { label: "Founder", href: "#founder" },
-  { label: "Join", href: "#join-waitlist" },
-  { label: "Contact Us", href: "#contact-us" },
+  { label: "PageStock", href: "/pagestock" },
+  { label: "Original Tag", href: "/original-tag" },
+  { label: "QAC", href: "/qac" },
+  { label: "Our Stand", href: "/#our-stand" },
+  { label: "Vision", href: "/vision" },
+  { label: "Founder", href: "/founder" },
+  { label: "Join", href: "/join" },
+  { label: "Contact Us", href: "/contact-us" },
 ] as const;
 
 export default function Header() {
@@ -52,7 +55,7 @@ export default function Header() {
       />
 
       <Link
-        href="#"
+        href="/"
         className="relative z-10 flex items-center gap-2 transition-smooth hover:opacity-80"
         aria-label="Rarelm home"
       >
@@ -107,7 +110,7 @@ export default function Header() {
           />
         </button>
         <Link
-          href="#join-waitlist"
+          href="/join"
           className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1.5 text-caption font-medium text-background transition-smooth hover:opacity-90 sm:px-4 sm:py-2"
           onClick={closeMenu}
         >

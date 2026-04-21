@@ -169,6 +169,18 @@ export default function Home() {
               Explore PageStock
             </Link>
             <Link
+              href="/original-tag"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Original Tag
+            </Link>
+            <Link
+              href="/qac"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              QAC
+            </Link>
+            <Link
               href="/faq"
               className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
             >

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 export default function OurStandSection() {
@@ -115,6 +116,14 @@ export default function OurStandSection() {
             <br />
             If it&apos;s untouched, it&apos;s marked original. If it&apos;s verified, you know who it&apos;s from.
           </p>
+          <div className="mt-5">
+            <Link
+              href="/original-tag"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Learn about the Original Tag →
+            </Link>
+          </div>
         </div>
 
         <div className="our-stand-reveal-item our-stand-reveal-item-6 our-stand-block mt-10">

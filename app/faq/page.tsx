@@ -116,6 +116,21 @@ const FAQ_SECTIONS: FaqSection[] = [
     title: "Features",
     items: [
       {
+        question: "What is PageStock?",
+        answer:
+          "PageStock is the world's first creator stock market, built into Rarelm. It lets fans and investors buy shares in AI-verified creators and public pages, earning real financial returns as those pages grow. Learn more about PageStock → https://www.rarelm.com/pagestock",
+      },
+      {
+        question: "What is the Original Tag?",
+        answer:
+          "The Original Tag is Rarelm's AI-assigned verification badge for authentic content — applied to photos, videos, audio, and posts confirmed as created by a real verified human without AI alteration. Learn more about Original Tag → https://www.rarelm.com/original-tag",
+      },
+      {
+        question: "What is QAC?",
+        answer:
+          "QAC (Quick Anonymous Confession) is Rarelm's anonymous expression room where verified users can share confessions and truths anonymously and receive responses from verified real humans — never bots. Learn more about QAC → https://www.rarelm.com/qac",
+      },
+      {
         question: "What can I do on Rarelm?",
         answer:
           "On Rarelm you can share thoughts, pictures, videos, and GIFs in both open and anonymous modes, join and build communities, chat with verified users, access professional expert advisors directly, shop within the platform's social commerce ecosystem, invest in creators through PageStock, and earn dividends from the platform's growth — all within a fully AI-verified, bot-free environment.",

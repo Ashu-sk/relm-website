@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 export default function ExpressionSection() {
@@ -50,6 +51,14 @@ export default function ExpressionSection() {
             <br />
             Human responses — not algorithms
           </p>
+          <div className="expression-reveal-item expression-reveal-item-4 mt-6">
+            <Link
+              href="/qac"
+              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+            >
+              Learn about QAC →
+            </Link>
+          </div>
         </div>
 
         <div className="expression-toggle-visual mt-12 sm:mt-14" aria-hidden>
