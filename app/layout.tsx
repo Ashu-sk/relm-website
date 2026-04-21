@@ -7,45 +7,22 @@ import GlobalAtmosphere from "@/components/GlobalAtmosphere";
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://www.rarelm.com/#softwareapplication",
   name: "Rarelm",
-  url: "https://www.rarelm.com/",
+  url: "https://www.rarelm.com",
   description:
-    "Rarelm is the world's first AI-verified social expression platform where every user is mandatorily verified by AI — ensuring only real humans, no bots, no scams, no fake accounts. Features include the 3 profile system, anonymous and open modes, PageStock creator investing, social commerce, and 24/7 professional expert support.",
-  applicationCategory: "https://schema.org/SocialNetworkingApplication",
-  operatingSystem: ["Web", "iOS", "Android"],
+    "Rarelm is the world's first mandatory AI-verified social expression platform where every user is face-authenticated before joining. No bots, no fake accounts, no scams.",
+  applicationCategory: "SocialNetworkingApplication",
+  operatingSystem: "Web, iOS, Android",
   offers: {
     "@type": "Offer",
-    price: 0,
+    price: "0",
     priceCurrency: "USD",
     description: "Free to create an account",
   },
-  featureList: [
-    "Mandatory AI identity verification for all users",
-    "Anonymous and open interaction modes",
-    "3 profile system — Anonymous, Family & Friends, Professional",
-    "Domain-based username (name.rarelm.com)",
-    "PageStock — creator stock market and user earnings",
-    "Social commerce ecosystem with in-app purchases",
-    "24/7 professional expert advisor support",
-    "Quick Q&A with verified experts",
-    "Content sharing — thoughts, pictures, videos, GIFs",
-    "Community building and chat",
-  ],
-  audience: {
-    "@type": "Audience",
-    audienceType:
-      "Creators, businesses, investors, and everyday social media users",
-  },
   creator: {
     "@type": "Organization",
-    name: "Relm",
+    name: "Mavrist Pvt Ltd",
     url: "https://www.rarelm.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Relm",
-    url: "https://www.rarelm.com/",
   },
 };
 
@@ -81,7 +58,7 @@ const websiteSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rarelm.com/"),
   alternates: {
-    canonical: "https://www.rarelm.com/",
+    canonical: "/",
   },
   title: 'Rarelm — The AI-Verified Social Expression Platform',
   description:

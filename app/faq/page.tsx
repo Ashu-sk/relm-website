@@ -3,7 +3,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Rarelm FAQ — AI-Verified Social Platform Questions",
+  title: "Rarelm FAQ — AI-Verified Social Platform",
   description:
     "Got questions about Rarelm? Find answers about AI verification, PageStock, anonymous mode, the 3 profile system, social commerce, expert advisors, and how to join.",
 };

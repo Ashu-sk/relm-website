@@ -37,6 +37,18 @@ export default function JoinPage() {
             </span>
           </Link>
         </div>
+        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          Join thousands of people waiting for the world&apos;s first mandatory
+          face-authenticated social platform. As a waitlist member you will get early
+          access to Rarelm before public launch, founding member status, and exclusive
+          access to PageStock — the world&apos;s first creator stock market where every
+          user earns dividends. Rarelm is built by Mavrist Pvt Ltd and is currently
+          raising pre-seed funding. Free to join, free to use.
+        </p>
+        <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+          Read our <a href="/faq">FAQ</a> or learn about <a href="/pagestock">PageStock</a>{" "}
+          before joining.
+        </p>
         <nav className="mt-10 flex flex-wrap gap-x-6 gap-y-2" aria-label="Explore Rarelm">
           <Link
             href="/pagestock"

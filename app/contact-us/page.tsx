@@ -44,6 +44,19 @@ export default function ContactUsPage() {
           If you&apos;re not sure where to start, send a short note with your goal and we&apos;ll
           route it to the right person.
         </p>
+        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          Have a question about Rarelm, PageStock, or partnerships? We would love to hear
+          from you. Whether you are a creator looking to list on PageStock, an investor
+          interested in Rarelm&apos;s pre-seed round, a business wanting to build a verified
+          community, or a journalist covering AI social media — reach out and our team
+          will respond within 24 hours. Rarelm is a product of Mavrist Pvt Ltd, Noida,
+          India.
+        </p>
+        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          Learn more about <a href="/pagestock">PageStock</a>, explore our{" "}
+          <a href="/faq">frequently asked questions</a>, or{" "}
+          <a href="/join">join the Rarelm waitlist</a> today.
+        </p>
       </div>
     </main>
   );

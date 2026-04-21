@@ -1,48 +1,55 @@
-import type { MetadataRoute } from "next";
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.rarelm.com";
   return [
     {
-      url: `${baseUrl}/`,
-      changeFrequency: "weekly",
+      url: 'https://www.rarelm.com/',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/vision/`,
-      changeFrequency: "monthly",
+      url: 'https://www.rarelm.com/vision/',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/founder/`,
-      changeFrequency: "monthly",
+      url: 'https://www.rarelm.com/founder/',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/join/`,
-      changeFrequency: "weekly",
+      url: 'https://www.rarelm.com/join/',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/contact-us/`,
-      changeFrequency: "monthly",
+      url: 'https://www.rarelm.com/contact-us/',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/faq/`,
-      changeFrequency: "monthly",
+      url: 'https://www.rarelm.com/faq/',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/pagestock/`,
-      changeFrequency: "weekly",
+      url: 'https://www.rarelm.com/pagestock/',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/`,
-      changeFrequency: "weekly",
+      url: 'https://www.rarelm.com/blog/',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.7,
     },
-  ];
+  ]
 }
 

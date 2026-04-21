@@ -38,6 +38,17 @@ export default function VisionPage() {
           </Link>
           .
         </p>
+        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          Rarelm exists because the internet forgot what real looks like. A decade of
+          fake accounts, bots, scams, and impersonation has caused billions in global
+          financial losses and destroyed trust in social media. We built Rarelm to fix
+          this at the identity layer — using facial authentication similar to Apple Face
+          ID to verify every single user as a real, unique human before they can join.
+          Our vision is a world where your social identity is verified, your expression
+          is free, your commerce is safe, and your participation in the platform earns
+          you real financial returns through PageStock. Real Is Rare. Rarelm is built
+          for those who are.
+        </p>
       </div>
     </main>
   );
