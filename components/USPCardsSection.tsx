@@ -140,7 +140,7 @@ export default function USPCardsSection() {
         >
           WHAT MAKES RELM DIFFERENT
         </p>
-        <h2 className="usp-cards-title text-display font-semibold text-foreground">
+        <h2 className="usp-cards-title text-display font-medium text-foreground">
           Built for trust. Designed for humans.
         </h2>
         <div className="usp-cards-grid" style={{ perspective: "1000px" }}>

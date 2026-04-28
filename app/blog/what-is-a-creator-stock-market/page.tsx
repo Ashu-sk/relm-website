@@ -34,13 +34,13 @@ export default function BlogPostPage() {
   const readingTime = getReadingTimeMinutes(CONTENT_TEXT_FOR_READING_TIME);
 
   return (
-    <main className="section-block section-padding-standard px-4 sm:px-6 md:px-8">
+    <main className="section-block section-padding-standard px-[clamp(1.5rem,5vw,8rem)]">
       <article className="mx-auto w-full max-w-3xl">
         <header className="mb-10">
           <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
             Blog · {readingTime} min read
           </p>
-          <h1 className="mt-4 text-display font-semibold leading-[1.1] text-foreground">
+          <h1 className="mt-4 text-display font-medium text-foreground">
             What is a Creator Stock Market? The Rise of PageStock
           </h1>
           <p className="mt-5 text-body leading-relaxed text-(--fg-secondary)">
@@ -58,10 +58,10 @@ export default function BlogPostPage() {
           </p>
         </header>
 
-        <hr className="my-10 border-white/10" />
+        <hr className="my-24 border-0" />
 
         <section className="space-y-6">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="text-headline font-medium text-foreground">
             The Creator Economy Has a Fundamental Problem
           </h2>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -91,7 +91,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="text-headline font-medium text-foreground">
             What is PageStock?
           </h2>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -105,7 +105,7 @@ export default function BlogPostPage() {
           </p>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-            <p className="text-body font-medium text-foreground">
+            <p className="text-body font-normal text-foreground">
               Here&apos;s how it works:
             </p>
             <ul className="mt-4 list-disc space-y-2 pl-6 text-body leading-relaxed text-(--fg-secondary)">
@@ -143,7 +143,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="text-headline font-medium text-foreground">
             Why a Creator Stock Market Makes Sense in 2026
           </h2>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -151,7 +151,7 @@ export default function BlogPostPage() {
             there&apos;s a deep economic logic behind it.
           </p>
 
-          <h3 className="text-title font-semibold text-foreground">
+          <h3 className="text-title font-medium text-foreground">
             Creators are businesses
           </h3>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -166,7 +166,7 @@ export default function BlogPostPage() {
             assets.
           </p>
 
-          <h3 className="text-title font-semibold text-foreground">
+          <h3 className="text-title font-medium text-foreground">
             Fans already invest — they just don&apos;t get paid
           </h3>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -176,7 +176,7 @@ export default function BlogPostPage() {
             relationship and adds a financial dimension to it.
           </p>
 
-          <h3 className="text-title font-semibold text-foreground">
+          <h3 className="text-title font-medium text-foreground">
             The creator economy needs new financial infrastructure
           </h3>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -189,7 +189,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="text-headline font-medium text-foreground">
             Who is PageStock For?
           </h2>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -224,7 +224,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="text-headline font-medium text-foreground">
             How is PageStock Different from Existing Creator Monetisation?
           </h2>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -237,13 +237,13 @@ export default function BlogPostPage() {
               <table className="w-full min-w-[640px] text-left">
                 <thead className="border-b border-white/10">
                   <tr>
-                    <th className="px-5 py-4 text-caption font-semibold uppercase tracking-wide text-(--fg-secondary)">
+                    <th className="px-5 py-4 text-caption font-medium uppercase tracking-wide text-(--fg-secondary)">
                       Method
                     </th>
-                    <th className="px-5 py-4 text-caption font-semibold uppercase tracking-wide text-(--fg-secondary)">
+                    <th className="px-5 py-4 text-caption font-medium uppercase tracking-wide text-(--fg-secondary)">
                       How it works
                     </th>
-                    <th className="px-5 py-4 text-caption font-semibold uppercase tracking-wide text-(--fg-secondary)">
+                    <th className="px-5 py-4 text-caption font-medium uppercase tracking-wide text-(--fg-secondary)">
                       Who benefits
                     </th>
                   </tr>
@@ -294,13 +294,13 @@ export default function BlogPostPage() {
                     </td>
                   </tr>
                   <tr className="bg-white/3">
-                    <td className="px-5 py-4 text-body font-semibold text-foreground">
+                    <td className="px-5 py-4 text-body font-medium text-foreground">
                       PageStock
                     </td>
-                    <td className="px-5 py-4 text-body font-medium text-foreground">
+                    <td className="px-5 py-4 text-body font-normal text-foreground">
                       Fans buy shares in creator&apos;s page
                     </td>
-                    <td className="px-5 py-4 text-body font-medium text-foreground">
+                    <td className="px-5 py-4 text-body font-normal text-foreground">
                       Creator + fan + investor
                     </td>
                   </tr>
@@ -317,7 +317,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="text-headline font-medium text-foreground">
             The Bigger Picture: Social Pages as Financial Assets
           </h2>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -344,7 +344,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="text-headline font-medium text-foreground">
             PageStock is Coming to Rarelm
           </h2>
           <p className="text-body leading-relaxed text-(--fg-secondary)">
@@ -366,13 +366,13 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-12 space-y-4">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="text-headline font-medium text-foreground">
             Frequently Asked Questions
           </h2>
 
           <div className="space-y-3">
             <details className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-              <summary className="cursor-pointer text-body font-semibold text-foreground">
+              <summary className="cursor-pointer text-body font-medium text-foreground">
                 What is a creator stock market?
               </summary>
               <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
@@ -383,7 +383,7 @@ export default function BlogPostPage() {
             </details>
 
             <details className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-              <summary className="cursor-pointer text-body font-semibold text-foreground">
+              <summary className="cursor-pointer text-body font-medium text-foreground">
                 What is PageStock?
               </summary>
               <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
@@ -394,7 +394,7 @@ export default function BlogPostPage() {
             </details>
 
             <details className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-              <summary className="cursor-pointer text-body font-semibold text-foreground">
+              <summary className="cursor-pointer text-body font-medium text-foreground">
                 Can I really invest in a creator&apos;s social media page?
               </summary>
               <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
@@ -405,7 +405,7 @@ export default function BlogPostPage() {
             </details>
 
             <details className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-              <summary className="cursor-pointer text-body font-semibold text-foreground">
+              <summary className="cursor-pointer text-body font-medium text-foreground">
                 Who can use PageStock?
               </summary>
               <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
@@ -416,7 +416,7 @@ export default function BlogPostPage() {
             </details>
 
             <details className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-              <summary className="cursor-pointer text-body font-semibold text-foreground">
+              <summary className="cursor-pointer text-body font-medium text-foreground">
                 How is PageStock different from Patreon or subscriptions?
               </summary>
               <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
@@ -428,7 +428,7 @@ export default function BlogPostPage() {
             </details>
 
             <details className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-              <summary className="cursor-pointer text-body font-semibold text-foreground">
+              <summary className="cursor-pointer text-body font-medium text-foreground">
                 When does PageStock launch?
               </summary>
               <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
@@ -442,30 +442,30 @@ export default function BlogPostPage() {
 
         <footer className="mt-14">
           <div className="mb-10 rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl">
-            <p className="text-body font-medium text-foreground">Explore next</p>
+            <p className="text-body font-normal text-foreground">Explore next</p>
             <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
               <Link
                 href="/pagestock"
-                className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+                className="link-accent text-body underline underline-offset-4 transition-smooth hover:text-foreground"
               >
                 PageStock
               </Link>
               <Link
                 href="/faq"
-                className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+                className="link-accent text-body underline underline-offset-4 transition-smooth hover:text-foreground"
               >
                 FAQ
               </Link>
               <Link
                 href="/join"
-                className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+                className="link-accent text-body underline underline-offset-4 transition-smooth hover:text-foreground"
               >
                 Join waitlist
               </Link>
             </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-            <p className="text-headline font-semibold text-foreground">
+            <p className="text-headline font-medium text-foreground">
               Ready to be early?
             </p>
             <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
@@ -475,7 +475,7 @@ export default function BlogPostPage() {
             <div className="mt-7 flex justify-center">
               <Link
                 href="/#join-waitlist"
-                className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
+                className="hero-cta-primary group inline-flex items-center justify-center gap-2 text-body font-medium"
               >
                 Join Waitlist{" "}
                 <span aria-hidden className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70">

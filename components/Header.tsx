@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed left-0 right-0 top-0 z-50 grid h-14 grid-cols-3 items-center px-4 sm:px-6 md:px-8"
+      className="fixed left-0 right-0 top-0 z-50 grid h-14 grid-cols-3 items-center px-[clamp(1.5rem,5vw,8rem)]"
       aria-label="Site header"
     >
       <div
@@ -77,7 +77,7 @@ export default function Header() {
           <Link
             key={href}
             href={href}
-            className="text-caption text-(--fg-secondary) transition-smooth hover:text-foreground"
+            className="nav-link text-caption text-(--fg-secondary) hover:text-foreground"
           >
             {label}
           </Link>
@@ -111,7 +111,7 @@ export default function Header() {
         </button>
         <Link
           href="/join"
-          className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1.5 text-caption font-medium text-background transition-smooth hover:opacity-90 sm:px-4 sm:py-2"
+          className="hero-cta-primary inline-flex items-center gap-1.5 text-body font-medium"
           onClick={closeMenu}
         >
           Join Waitlist
@@ -133,7 +133,7 @@ export default function Header() {
               key={href}
               href={href}
               onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-body font-medium text-foreground transition-smooth hover:bg-white/5"
+              className="nav-link rounded-md px-4 py-4 text-[1.1rem] font-normal text-foreground hover:bg-white/5"
             >
               {label}
             </Link>

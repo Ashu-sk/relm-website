@@ -107,7 +107,7 @@ export default function JoinAsProfessionalSection() {
     return (
       <section className="section-block section-padding-standard">
         <div className="mx-auto max-w-xl py-24 text-center">
-          <h2 className="text-display font-semibold">You&apos;re in.</h2>
+          <h2 className="text-display font-medium">You&apos;re in.</h2>
           <p className="mt-4 text-body text-(--fg-secondary)">
             We&apos;ve received your application.
             <br />
@@ -128,7 +128,7 @@ export default function JoinAsProfessionalSection() {
         <div className="mx-auto w-full max-w-2xl text-center">
           <h2
             id="join-professional-heading"
-            className="text-display font-semibold"
+            className="text-display font-medium"
           >
             Professionals Only
           </h2>
@@ -149,11 +149,11 @@ export default function JoinAsProfessionalSection() {
             noValidate
           >
             {/* Form container: glassmorphism */}
-            <div className="mx-auto max-w-md space-y-5 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-200 ease-in-out">
+            <div className="mx-auto max-w-md space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-200 ease-in-out">
               <div className="space-y-1">
                 <label
                   htmlFor="pro-name"
-                  className="block text-left text-sm font-medium text-(--fg-secondary)"
+                  className="block text-left text-sm font-normal text-(--fg-secondary)"
                 >
                   Name
                 </label>
@@ -166,14 +166,14 @@ export default function JoinAsProfessionalSection() {
                   }
                   autoComplete="name"
                   required
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0 focus:ring-offset-transparent"
+                  className="form-input"
                   placeholder="Your name"
                 />
               </div>
               <div className="space-y-1">
                 <label
                   htmlFor="pro-email"
-                  className="block text-left text-sm font-medium text-(--fg-secondary)"
+                  className="block text-left text-sm font-normal text-(--fg-secondary)"
                 >
                   Email
                 </label>
@@ -186,14 +186,14 @@ export default function JoinAsProfessionalSection() {
                   }
                   autoComplete="email"
                   required
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0 focus:ring-offset-transparent"
+                  className="form-input"
                   placeholder="you@example.com"
                 />
               </div>
               <div className="space-y-1">
                 <label
                   htmlFor="pro-phone"
-                  className="block text-left text-sm font-medium text-(--fg-secondary)"
+                  className="block text-left text-sm font-normal text-(--fg-secondary)"
                 >
                   Phone
                 </label>
@@ -204,7 +204,7 @@ export default function JoinAsProfessionalSection() {
                     onChange={(e) =>
                       setFormData({ ...formData, countryCode: e.target.value })
                     }
-                    className="pro-input w-28 shrink-0 cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                    className="form-input form-select w-28 shrink-0"
                   >
                     {COUNTRY_CODES.map(({ code, label }) => (
                       <option key={code} value={code}>
@@ -225,7 +225,7 @@ export default function JoinAsProfessionalSection() {
                     required
                     maxLength={10}
                     placeholder="1234567890"
-                    className="pro-input flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                    className="form-input flex-1"
                   />
                 </div>
                 {formErrors.phone && (
@@ -235,7 +235,7 @@ export default function JoinAsProfessionalSection() {
               <div className="space-y-1">
                 <label
                   htmlFor="pro-profession"
-                  className="block text-left text-sm font-medium text-(--fg-secondary)"
+                  className="block text-left text-sm font-normal text-(--fg-secondary)"
                 >
                   Profession
                 </label>
@@ -246,7 +246,7 @@ export default function JoinAsProfessionalSection() {
                     setFormData({ ...formData, profession: e.target.value })
                   }
                   required
-                  className="pro-input w-full cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                  className="form-input form-select"
                 >
                   <option value="">Select — Counsellor, Expert, or Advisor</option>
                   <option value="counsellor">Counsellor</option>
@@ -257,7 +257,7 @@ export default function JoinAsProfessionalSection() {
 
               {/* Interest — pill selector */}
               <div className="space-y-2">
-                <span className="block text-left text-sm font-medium text-(--fg-secondary)">
+                <span className="block text-left text-sm font-normal text-(--fg-secondary)">
                   Interest <span className="text-(--fg-tertiary)">(optional)</span>
                 </span>
                 <div className="flex flex-wrap gap-2">
@@ -269,7 +269,7 @@ export default function JoinAsProfessionalSection() {
                         setInterest(interest === opt ? "" : opt);
                         if (interest === opt) setOthersCustom("");
                       }}
-                      className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ease-in-out ${
+                      className={`rounded-full border px-4 py-2 text-sm font-normal transition-all duration-200 ease-in-out ${
                         interest === opt
                           ? "scale-105 border-white/20 bg-white/10 ring-1 ring-white/20"
                           : "border-white/10 bg-white/5 text-(--fg-secondary) hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground"
@@ -286,7 +286,7 @@ export default function JoinAsProfessionalSection() {
                       value={othersCustom}
                       onChange={(e) => setOthersCustom(e.target.value)}
                       placeholder="Describe your interest…"
-                      className="pro-input w-full border-0 bg-transparent px-4 pb-3 text-foreground placeholder:text-(--fg-tertiary)/70 focus:outline-none"
+                      className="form-input w-full border-0 bg-transparent px-4 pb-3 focus:outline-none"
                     />
                   </div>
                 )}
@@ -295,7 +295,7 @@ export default function JoinAsProfessionalSection() {
               <div className="space-y-1">
                 <label
                   htmlFor="pro-experience"
-                  className="block text-left text-sm font-medium text-(--fg-secondary)"
+                  className="block text-left text-sm font-normal text-(--fg-secondary)"
                 >
                   Experience
                 </label>
@@ -308,13 +308,13 @@ export default function JoinAsProfessionalSection() {
                   }
                   required
                   placeholder="e.g. 5 years"
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20 focus:ring-offset-0"
+                  className="form-input"
                 />
               </div>
               <div className="space-y-1">
                 <label
                   htmlFor="pro-country"
-                  className="block text-left text-sm font-medium text-(--fg-secondary)"
+                  className="block text-left text-sm font-normal text-(--fg-secondary)"
                 >
                   Country <span className="text-(--fg-tertiary)">(optional)</span>
                 </label>
@@ -327,13 +327,13 @@ export default function JoinAsProfessionalSection() {
                   }
                   autoComplete="country-name"
                   placeholder="e.g. India, USA"
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                  className="form-input"
                 />
               </div>
               <div className="space-y-1">
                 <label
                   htmlFor="pro-linkedin"
-                  className="block text-left text-sm font-medium text-(--fg-secondary)"
+                  className="block text-left text-sm font-normal text-(--fg-secondary)"
                 >
                   LinkedIn <span className="text-(--fg-tertiary)">(optional)</span>
                 </label>
@@ -345,13 +345,13 @@ export default function JoinAsProfessionalSection() {
                     setFormData({ ...formData, linkedin: e.target.value })
                   }
                   placeholder="https://linkedin.com/in/..."
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                  className="form-input"
                 />
               </div>
               <div className="space-y-1">
                 <label
                   htmlFor="pro-domain"
-                  className="block text-left text-sm font-medium text-(--fg-secondary)"
+                  className="block text-left text-sm font-normal text-(--fg-secondary)"
                 >
                   Desired Domain{" "}
                   <span className="text-(--fg-tertiary)">(optional)</span>
@@ -363,7 +363,7 @@ export default function JoinAsProfessionalSection() {
                   onChange={(e) =>
                     setFormData({ ...formData, desiredDomain: e.target.value })
                   }
-                  className="pro-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-(--fg-tertiary)/70 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/15 hover:bg-white/[0.07] focus:border-white/25 focus:outline-none focus:ring-1 focus:ring-white/20"
+                  className="form-input"
                   placeholder="your.relm"
                 />
               </div>
@@ -377,7 +377,7 @@ export default function JoinAsProfessionalSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="hero-cta-primary group w-full max-w-md rounded-full py-3 font-medium transition-all duration-200 ease-in-out disabled:cursor-not-allowed disabled:opacity-60"
+                className="hero-cta-primary group w-full max-w-md text-body font-medium disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {isSubmitting ? "Submitting…" : "Apply"}
                 {!isSubmitting && (

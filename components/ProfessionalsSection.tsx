@@ -32,7 +32,7 @@ export default function ProfessionalsSection() {
       >
         <h2
           id="professionals-heading"
-          className="professionals-reveal-item professionals-reveal-item-1 text-display font-semibold"
+          className="professionals-reveal-item professionals-reveal-item-1 text-display font-medium"
         >
           Real advice is hard to reach.
         </h2>
@@ -44,7 +44,7 @@ export default function ProfessionalsSection() {
           <br />
           High demand. Limited professional support.
         </p>
-        <p className="professionals-reveal-item professionals-reveal-item-3 mt-8 text-headline font-semibold text-foreground">
+        <p className="professionals-reveal-item professionals-reveal-item-3 mt-8 text-headline font-medium text-foreground">
           Certified Counsellors.
           <br />
           Verified Experts.
@@ -55,7 +55,7 @@ export default function ProfessionalsSection() {
           <br />
           Support in Open &amp; Anonymous modes.
         </p>
-        <p className="professionals-reveal-item professionals-reveal-item-4 mt-8 text-headline font-semibold text-foreground">
+        <p className="professionals-reveal-item professionals-reveal-item-4 mt-8 text-headline font-medium text-foreground">
           24/7 Help, without friction.
         </p>
       </div>

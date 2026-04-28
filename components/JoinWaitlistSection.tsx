@@ -5,7 +5,7 @@ import { fireConfetti } from "@/lib/confetti";
 import { COUNTRY_CODES, PHONE_REGEX } from "@/lib/countryCodes";
 
 const waitlistInputClass =
-  "waitlist-input-premium w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3.5 text-foreground placeholder:text-(--fg-tertiary)/70 transition-all duration-200 ease-out hover:border-white/15 focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-white/20";
+  "form-input";
 
 export default function JoinWaitlistSection() {
   const [formData, setFormData] = useState({
@@ -90,7 +90,7 @@ export default function JoinWaitlistSection() {
       <section className="section-block section-padding-standard">
         <div className="mx-auto max-w-xl py-24 text-center">
           <div className="waitlist-success-animate">
-            <h2 className="text-display font-semibold">You&apos;re in.</h2>
+            <h2 className="text-display font-medium">You&apos;re in.</h2>
             <p className="mt-4 text-body text-(--fg-secondary)">
               Your place is reserved.
               <br />
@@ -112,7 +112,7 @@ export default function JoinWaitlistSection() {
         <div className="relative mx-auto w-full max-w-xl text-center">
           <h2
             id="join-waitlist-heading"
-            className="text-display font-semibold"
+            className="text-display font-medium"
           >
             Be early. Be real.
           </h2>
@@ -126,7 +126,7 @@ export default function JoinWaitlistSection() {
               <li>real people getting buried</li>
             </ul>
           </div>
-          <p className="text-headline font-semibold text-foreground">
+          <p className="text-headline font-medium text-foreground">
             Rarelm isn&apos;t for everyone.
             <br />
             And that&apos;s intentional.
@@ -153,11 +153,11 @@ export default function JoinWaitlistSection() {
           >
             {/* Glassmorphism card */}
             <div className="relative mx-auto max-w-md rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-200">
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <div className="space-y-1.5">
                   <label
                     htmlFor="join-name"
-                    className="block text-left text-sm font-medium text-(--fg-secondary)"
+                    className="block text-left text-sm font-normal text-(--fg-secondary)"
                   >
                     Name
                   </label>
@@ -177,7 +177,7 @@ export default function JoinWaitlistSection() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="join-email"
-                    className="block text-left text-sm font-medium text-(--fg-secondary)"
+                    className="block text-left text-sm font-normal text-(--fg-secondary)"
                   >
                     Email
                   </label>
@@ -197,7 +197,7 @@ export default function JoinWaitlistSection() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="join-country"
-                    className="block text-left text-sm font-medium text-(--fg-secondary)"
+                    className="block text-left text-sm font-normal text-(--fg-secondary)"
                   >
                     Country
                   </label>
@@ -216,7 +216,7 @@ export default function JoinWaitlistSection() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="join-phone"
-                    className="block text-left text-sm font-medium text-(--fg-secondary)"
+                    className="block text-left text-sm font-normal text-(--fg-secondary)"
                   >
                     Phone
                   </label>
@@ -227,7 +227,7 @@ export default function JoinWaitlistSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, countryCode: e.target.value })
                       }
-                      className="join-waitlist-phone-select h-12.5 w-24 shrink-0 cursor-pointer appearance-none rounded-2xl border border-white/10 bg-black/40 px-3 py-3 pr-9 text-foreground transition-all duration-200 ease-out hover:border-white/15 focus:border-white/20 focus:outline-none focus:ring-1 focus:ring-white/20"
+                      className="join-waitlist-phone-select form-input form-select w-24 shrink-0 pr-9"
                     >
                       {COUNTRY_CODES.map(({ code, label }) => (
                         <option key={code} value={code}>
@@ -260,7 +260,7 @@ export default function JoinWaitlistSection() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="join-domain"
-                    className="block text-left text-sm font-medium text-(--fg-secondary)"
+                    className="block text-left text-sm font-normal text-(--fg-secondary)"
                   >
                     Desired Domain
                   </label>
@@ -292,7 +292,7 @@ export default function JoinWaitlistSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group w-full rounded-full bg-white/10 py-3.5 font-medium text-foreground shadow-sm transition-all duration-200 ease-out hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(255,255,255,0.12)] active:scale-95 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:shadow-none"
+                  className="hero-cta-primary group w-full text-body font-medium disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {isSubmitting ? "Submitting…" : "Enter Rarelm"}
                   {!isSubmitting && (

@@ -31,7 +31,7 @@ export default function IdentitySection() {
       >
         <h2
           id="identity-heading"
-          className="identity-reveal-item identity-reveal-item-1 text-display font-semibold"
+          className="identity-reveal-item identity-reveal-item-1 text-display font-medium"
         >
           Fake identities broke the internet.
         </h2>
@@ -40,7 +40,7 @@ export default function IdentitySection() {
           <br />
           Bots. Fake IDs. Impersonation.
         </p>
-        <p className="identity-reveal-item identity-reveal-item-3 mt-8 text-headline font-semibold text-foreground">
+        <p className="identity-reveal-item identity-reveal-item-3 mt-8 text-headline font-medium text-foreground">
           One Human. One Account.
         </p>
         <p className="identity-reveal-item identity-reveal-item-4 mt-5 text-body leading-relaxed text-(--fg-secondary)">

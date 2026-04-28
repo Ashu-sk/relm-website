@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <section
         id="hero"
-        className="relative grid min-h-screen place-items-center px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24 mb-6 sm:mb-8"
+        className="relative grid min-h-screen place-items-center px-[clamp(1.5rem,5vw,8rem)] py-16 sm:py-20 md:py-24"
         aria-labelledby="hero-heading"
       >
         <HeroBackground />
@@ -58,14 +58,14 @@ export default function Home() {
             New here? Start with{" "}
             <Link
               href="/pagestock"
-              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+              className="link-accent underline underline-offset-2 transition-smooth hover:opacity-90"
             >
               PageStock
             </Link>{" "}
             and{" "}
             <Link
               href="/faq"
-              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+              className="link-accent underline underline-offset-2 transition-smooth hover:opacity-90"
             >
               the FAQ
             </Link>
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="mt-(--space-hero) flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="#join-waitlist"
-              className="hero-cta-primary group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium sm:w-auto"
+              className="hero-cta-primary group inline-flex w-full items-center justify-center gap-2 text-body font-medium sm:w-auto"
             >
               Enter Rarelm{" "}
               <span
@@ -86,7 +86,7 @@ export default function Home() {
             </Link>
             <Link
               href="#motion-manifesto"
-              className="inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-(--fg-tertiary)/30 px-6 py-3 text-body text-foreground transition-smooth hover:border-(--fg-secondary)/50 hover:bg-white/5 sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-1.5 rounded-md border border-(--fg-tertiary)/30 px-6 py-3 text-body text-foreground transition-smooth hover:border-(--fg-secondary)/50 hover:bg-white/5 sm:w-auto"
             >
               See how it works{" "}
               <span aria-hidden className="ml-1">
@@ -99,7 +99,7 @@ export default function Home() {
 
       <section
         id="motion-manifesto"
-        className="marquee-section overflow-x-hidden py-6 sm:py-8 mb-6 sm:mb-8"
+        className="marquee-section overflow-x-hidden py-6 sm:py-8"
         aria-label="Motion Manifesto"
       >
         <div className="marquee-track">
@@ -157,7 +157,7 @@ export default function Home() {
         aria-label="Site footer"
       >
         <div className="section-container max-w-2xl mx-auto">
-          <p className="text-body font-medium text-foreground">Rarelm</p>
+          <p className="text-body font-normal text-foreground">Rarelm</p>
           <p className="mt-2 text-body text-(--fg-tertiary)">
             Founder — Ashutosh Kesharwani
           </p>
