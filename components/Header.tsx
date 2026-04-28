@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed left-0 right-0 top-0 z-50 grid h-14 grid-cols-3 items-center px-[clamp(1.5rem,5vw,8rem)]"
+      className="fixed left-0 right-0 top-0 z-50 grid h-16 grid-cols-3 items-center px-[clamp(1.5rem,5vw,8rem)] sm:h-14"
       aria-label="Site header"
     >
       <div
@@ -111,7 +111,7 @@ export default function Header() {
         </button>
         <Link
           href="/join"
-          className="hero-cta-primary inline-flex items-center gap-1.5 text-body font-medium"
+          className="hero-cta-primary inline-flex h-10 items-center gap-1.5 px-4 py-0 text-body font-medium sm:h-auto sm:px-8 sm:py-3"
           onClick={closeMenu}
         >
           Join Waitlist
@@ -122,7 +122,7 @@ export default function Header() {
 
       <div
         id="mobile-menu"
-        className={`fixed inset-0 top-14 z-40 flex flex-col overflow-y-auto bg-(--bg-base)/95 backdrop-blur-lg transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 top-16 z-40 flex flex-col overflow-y-auto bg-(--bg-base)/95 backdrop-blur-lg transition-opacity duration-300 sm:top-14 lg:hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!menuOpen}

@@ -253,6 +253,16 @@ b {
   background-color: color-mix(in srgb, var(--brand-orange) 10%, transparent);
 }
 
+@media (max-width: 768px) {
+  .hero-cta-mobile {
+    max-width: 280px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
 /* Form controls (Waitlist + Professional) */
 .form-field-stack {
   display: flex;
@@ -1128,6 +1138,7 @@ b {
   display: flex;
   width: max-content;
   animation: marquee-scroll 120s linear infinite;
+  -webkit-animation: marquee-scroll 120s linear infinite;
   will-change: transform;
 }
 
@@ -1158,11 +1169,7 @@ b {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
+/* Do not disable ticker animation on mobile/touch. */
 
 /* Global 3D atmosphere — slow breathing, scroll parallax; felt not noticed */
 .global-atmosphere {

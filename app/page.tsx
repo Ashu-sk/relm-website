@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <section
         id="hero"
-        className="relative grid min-h-screen place-items-center px-[clamp(1.5rem,5vw,8rem)] py-16 sm:py-20 md:py-24"
+        className="relative grid min-h-screen place-items-center px-[clamp(1.5rem,5vw,8rem)] pb-16 pt-28 sm:py-20 md:py-24"
         aria-labelledby="hero-heading"
       >
         <HeroBackground />
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="mt-(--space-hero) flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="#join-waitlist"
-              className="hero-cta-primary group inline-flex w-full items-center justify-center gap-2 text-body font-medium sm:w-auto"
+              className="hero-cta-primary hero-cta-mobile group inline-flex w-full items-center justify-center gap-2 text-body font-medium sm:w-auto"
             >
               Enter Rarelm{" "}
               <span
@@ -86,7 +86,7 @@ export default function Home() {
             </Link>
             <Link
               href="#motion-manifesto"
-              className="inline-flex w-full items-center justify-center gap-1.5 rounded-md border border-(--fg-tertiary)/30 px-6 py-3 text-body text-foreground transition-smooth hover:border-(--fg-secondary)/50 hover:bg-white/5 sm:w-auto"
+              className="hero-cta-mobile inline-flex w-full items-center justify-center gap-1.5 rounded-md border border-(--fg-tertiary)/30 px-6 py-3 text-body text-foreground transition-smooth hover:border-(--fg-secondary)/50 hover:bg-white/5 sm:w-auto"
             >
               See how it works{" "}
               <span aria-hidden className="ml-1">
