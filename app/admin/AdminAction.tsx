@@ -1,19 +1,43 @@
 "use client";
 
+import { supabase } from "@/lib/supabaseClient";
+
 type Props = {
   id: string;
   table: "waitlist_users" | "waitlist_professionals";
 };
 
-export default function AdminActions({ id, table }: Props) {
+function tableToTarget(table: Props["table"]): "user" | "professional" {
+  return table === "waitlist_users" ? "user" : "professional";
+}
+
+function getCsrfHeader(): Record<string, string> {
+  if (typeof document === "undefined") return {};
+  const re = /(?:^|; )csrf-token=([^;]*)/;
+  const match = re.exec(document.cookie);
+  const token = match?.[1] ? decodeURIComponent(match[1]) : null;
+  return token ? { "x-csrf-token": token } : {};
+}
+
+export default function AdminActions({ id, table }: Readonly<Props>) {
 	const updateStatus = async (status: string) => {
+		const {
+		  data: { session },
+		} = await supabase.auth.getSession();
+		if (!session?.access_token) {
+		  alert("Not signed in");
+		  return;
+		}
+
 		const res = await fetch("/admin/update-status", {
 		  method: "POST",
 		  headers: {
 		    "Content-Type": "application/json",
+		    Authorization: `Bearer ${session.access_token}`,
+		    ...getCsrfHeader(),
 		  },
 		  body: JSON.stringify({
-		    table,
+		    target: tableToTarget(table),
 		    id,
 		    status,
 		  }),
@@ -32,13 +56,30 @@ export default function AdminActions({ id, table }: Props) {
 	      };	      
 
   const deleteRow = async () => {
-    await fetch("/admin/delete", {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    if (!session?.access_token) {
+      alert("Not signed in");
+      return;
+    }
+
+    const res = await fetch("/admin/delete", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.access_token}`,
+      },
       body: JSON.stringify({
-        table,
+        target: tableToTarget(table),
         id,
       }),
     });
+
+    if (!res.ok) {
+      alert("Something went wrong");
+      return;
+    }
 
     location.reload();
   };
