@@ -220,18 +220,18 @@ export default function JoinWaitlistSection() {
                   >
                     Phone
                   </label>
-                  <div className="flex gap-2">
+                  <div className="flex w-full gap-2">
                     <select
                       id="join-country-code"
                       value={formData.countryCode}
                       onChange={(e) =>
                         setFormData({ ...formData, countryCode: e.target.value })
                       }
-                      className="join-waitlist-phone-select form-input form-select w-24 shrink-0 pr-9"
+                      className="h-11 w-[120px] shrink-0 rounded-[8px] border border-[#444] bg-[#222] px-3 text-[14px] text-white"
                     >
                       {COUNTRY_CODES.map(({ code, label }) => (
                         <option key={code} value={code}>
-                          {label}
+                          {code}
                         </option>
                       ))}
                     </select>
@@ -247,8 +247,8 @@ export default function JoinWaitlistSection() {
                       autoComplete="tel-national"
                       required
                       maxLength={10}
-                      className={`${waitlistInputClass} min-w-0 flex-1`}
-                      placeholder="1234567890"
+                      className="h-11 min-w-0 flex-1 rounded-[8px] border border-[#444] bg-[#222] px-3 text-[14px] text-white"
+                      placeholder="Phone number"
                     />
                   </div>
                   {formErrors.phone && (

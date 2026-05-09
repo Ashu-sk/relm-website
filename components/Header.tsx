@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed left-0 right-0 top-0 z-50 grid h-16 grid-cols-3 items-center px-[clamp(1.5rem,5vw,8rem)] sm:h-14"
+      className="fixed left-0 right-0 top-0 z-50 flex h-[52px] items-center justify-between px-4 sm:h-14 sm:px-[clamp(1.5rem,5vw,8rem)]"
       aria-label="Site header"
     >
       <div
@@ -54,20 +54,36 @@ export default function Header() {
         aria-hidden
       />
 
-      <Link
-        href="/"
-        className="relative z-10 flex items-center gap-2 transition-smooth hover:opacity-80"
-        aria-label="Rarelm home"
-      >
-        <Image
-          src="/relm-logo.png"
-          alt=""
-          width={28}
-          height={28}
-          className="h-6 w-6 sm:h-7 sm:w-7"
-        />
-        <span className="text-title text-foreground">Rarelm</span>
-      </Link>
+      <div className="relative z-10 flex items-center gap-2">
+        <button
+          type="button"
+          onClick={() => setMenuOpen((o) => !o)}
+          className="text-[20px] leading-none text-(--fg-secondary) transition-smooth hover:text-foreground lg:hidden"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+        >
+          <span aria-hidden>{menuOpen ? "✕" : "☰"}</span>
+        </button>
+
+        <Link
+          href="/"
+          className="flex items-center gap-2 transition-smooth hover:opacity-80"
+          aria-label="Rarelm home"
+          onClick={closeMenu}
+        >
+          <Image
+            src="/relm-logo.png"
+            alt=""
+            width={24}
+            height={24}
+            className="h-6 w-6"
+          />
+          <span className="text-[16px] font-medium leading-none text-foreground">
+            Rarelm
+          </span>
+        </Link>
+      </div>
 
       <nav
         className="relative z-10 hidden justify-center gap-6 lg:flex xl:gap-8"
@@ -84,38 +100,13 @@ export default function Header() {
         ))}
       </nav>
 
-      <div className="relative z-10 flex flex-1 items-center justify-end gap-3">
-        <button
-          type="button"
-          onClick={() => setMenuOpen((o) => !o)}
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-lg text-(--fg-secondary) transition-smooth hover:bg-white/5 hover:text-foreground lg:hidden"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-        >
-          <span
-            className={`h-0.5 w-5 bg-current transition-transform ${
-              menuOpen ? "translate-y-2 rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`h-0.5 w-5 bg-current transition-opacity ${
-              menuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`h-0.5 w-5 bg-current transition-transform ${
-              menuOpen ? "-translate-y-2 -rotate-45" : ""
-            }`}
-          />
-        </button>
+      <div className="relative z-10 flex items-center justify-end">
         <Link
           href="/join"
-          className="hero-cta-primary inline-flex h-10 items-center gap-1.5 px-4 py-0 text-body font-medium sm:h-auto sm:px-8 sm:py-3"
+          className="flex items-center gap-1.5 whitespace-nowrap rounded-[8px] border-[1.5px] border-[#FF6B35] px-[14px] py-[7px] text-[13px] leading-none text-foreground transition-smooth hover:bg-white/5"
           onClick={closeMenu}
         >
-          Join Waitlist
-          {" "}
+          <span>Join Waitlist</span>
           <span aria-hidden>→</span>
         </Link>
       </div>

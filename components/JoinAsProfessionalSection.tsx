@@ -197,18 +197,18 @@ export default function JoinAsProfessionalSection() {
                 >
                   Phone
                 </label>
-                <div className="flex gap-2">
+                <div className="flex w-full gap-2">
                   <select
                     id="pro-country-code"
                     value={formData.countryCode}
                     onChange={(e) =>
                       setFormData({ ...formData, countryCode: e.target.value })
                     }
-                    className="form-input form-select w-28 shrink-0"
+                    className="h-11 w-[120px] shrink-0 rounded-[8px] border border-[#444] bg-[#222] px-3 text-[14px] text-white"
                   >
                     {COUNTRY_CODES.map(({ code, label }) => (
                       <option key={code} value={code}>
-                        {label}
+                        {code}
                       </option>
                     ))}
                   </select>
@@ -224,8 +224,8 @@ export default function JoinAsProfessionalSection() {
                     autoComplete="tel-national"
                     required
                     maxLength={10}
-                    placeholder="1234567890"
-                    className="form-input flex-1"
+                    placeholder="Phone number"
+                    className="h-11 min-w-0 flex-1 rounded-[8px] border border-[#444] bg-[#222] px-3 text-[14px] text-white"
                   />
                 </div>
                 {formErrors.phone && (
