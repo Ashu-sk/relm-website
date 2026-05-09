@@ -1,16 +1,5 @@
 import AdminAction from "./AdminAction";
-import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
-
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
-
-// Update this table name to match your Supabase schema (e.g. waitlist_users, users, etc.)
-const WAITLIST_TABLE = "waitlist_users";
-const PROFESSIONALS_TABLE = "waitlist_professionals";
-
 
 type WaitlistRow = {
   id: string;
@@ -39,46 +28,14 @@ type ProfessionalRow = {
 };
 
 export default async function AdminPage({
-  searchParams,
 }: {
-  searchParams: Promise<{ key?: string }>;
 }) {
-  const { key } = await searchParams;
-  const adminSecret = process.env.ADMIN_SECRET;
-  
-  if (!adminSecret || key !== adminSecret) {
-    return (
-      <main className="min-h-screen px-4 py-16 sm:px-6 md:px-8">
-        <div className="mx-auto max-w-md rounded-2xl bg-(--bg-elevated) p-8 text-center">
-          <h1 className="text-(--text-title) font-semibold text-(--fg-primary)">
-            Admin
-          </h1>
-          <p className="mt-4 text-(--text-body) text-(--fg-secondary)">
-            Unauthorized. Use the correct link or set ADMIN_SECRET in .env.local.
-          </p>
-          <Link
-            href="/"
-            className="mt-6 inline-block text-(--text-caption) text-(--fg-secondary) underline hover:text-(--fg-primary)"
-          >
-            ← Back to home
-          </Link>
-        </div>
-      </main>
-    );
-  }
+  const res = await fetch("/api/admin/waitlist", {
+    method: "GET",
+    cache: "no-store",
+  });
 
-  const { data: rows, error } = await supabaseAdmin
-    .from(WAITLIST_TABLE)
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  const { data: professionalRows } = await supabaseAdmin
-    .from(PROFESSIONALS_TABLE)
-    .select("*")
-    .order("created_at", { ascending: false });
-    
-
-  if (error) {
+  if (!res.ok) {
     return (
       <main className="min-h-screen px-4 py-16 sm:px-6 md:px-8">
         <div className="mx-auto max-w-2xl">
@@ -88,11 +45,10 @@ export default async function AdminPage({
           <div className="mt-6 rounded-xl bg-red-500/10 p-4 text-(--fg-primary)">
             <p className="font-medium">Error loading waitlist</p>
             <p className="mt-1 text-(--text-caption) text-(--fg-secondary)">
-              {error.message}
+              Failed to load admin data.
             </p>
             <p className="mt-2 text-(--text-caption) text-(--fg-tertiary)">
-              Ensure the table &quot;{WAITLIST_TABLE}&quot; exists in Supabase, or
-              update WAITLIST_TABLE in app/admin/page.tsx.
+              Ensure the server is configured correctly for admin access.
             </p>
           </div>
           <Link
@@ -106,8 +62,13 @@ export default async function AdminPage({
     );
   }
 
-  const users = (rows ?? []) as WaitlistRow[];
-  const professionals = (professionalRows ?? []) as ProfessionalRow[];
+  const payload = (await res.json()) as {
+    users: WaitlistRow[];
+    professionals: ProfessionalRow[];
+  };
+
+  const users = payload.users ?? [];
+  const professionals = payload.professionals ?? [];
   const capitalize = (text?: string | null) =>
     text ? text.charAt(0).toUpperCase() + text.slice(1) : "-";
   

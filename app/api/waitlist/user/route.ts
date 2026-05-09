@@ -1,24 +1,23 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
-
-function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
-  // Use new Secret key (sb_secret_...) from Dashboard → API Keys if you see "Legacy API keys are disabled"
-  const key =
-    process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !key) {
-    throw new Error("Server misconfiguration");
-  }
-  return createClient(url, key);
-}
+import { supabaseAdmin } from "@/lib/supabase-admin";
+import { headers } from "next/headers";
+import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: Request) {
   try {
+    const h = await headers();
+    const ipRaw = h.get("x-forwarded-for") ?? h.get("x-real-ip") ?? "127.0.0.1";
+    const ip = ipRaw.split(",")[0]?.trim() || "127.0.0.1";
+    if (!rateLimit(`waitlist:user:${ip}`, 5)) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
     const { fullName, email, desiredDomain, country, phone_country_code, phone } =
       body;
-
-    const supabaseAdmin = getSupabase();
 
     const emailStr = email != null ? String(email).trim() : "";
     const domainStr =
@@ -57,10 +56,8 @@ export async function POST(req: Request) {
 
     if (error) {
       if (error.code === "23505") {
-        return NextResponse.json(
-          { fieldErrors: { desiredDomain: "Domain already taken" } },
-          { status: 409 }
-        );
+        // Avoid domain enumeration; treat as idempotent success.
+        return NextResponse.json({ success: true });
       }
       console.error("Waitlist insert error:", error.message, error.code, error.details);
       const message =

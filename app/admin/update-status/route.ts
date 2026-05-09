@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { cookies, headers } from "next/headers";
+import { rateLimit } from "@/lib/rate-limit";
 
 const ALLOWED_TABLES = {
   user: "waitlist_users",
@@ -65,6 +66,13 @@ async function enforceCsrf() {
 }
 
 export async function POST(req: Request) {
+  const h0 = await headers();
+  const ipRaw = h0.get("x-forwarded-for") ?? h0.get("x-real-ip") ?? "127.0.0.1";
+  const ip = ipRaw.split(",")[0]?.trim() || "127.0.0.1";
+  if (!rateLimit(`admin:update-status:${ip}`, 60)) {
+    return Response.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const okCsrf = await enforceCsrf();
   if (!okCsrf) {
     return Response.json({ error: "CSRF validation failed" }, { status: 403 });

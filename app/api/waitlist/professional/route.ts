@@ -1,18 +1,20 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
-
-function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
-  const key =
-    process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !key) {
-    throw new Error("Server misconfiguration");
-  }
-  return createClient(url, key);
-}
+import { supabaseAdmin } from "@/lib/supabase-admin";
+import { headers } from "next/headers";
+import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: Request) {
   try {
+    const h = await headers();
+    const ipRaw = h.get("x-forwarded-for") ?? h.get("x-real-ip") ?? "127.0.0.1";
+    const ip = ipRaw.split(",")[0]?.trim() || "127.0.0.1";
+    if (!rateLimit(`waitlist:professional:${ip}`, 5)) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
     const {
       full_name,
@@ -41,8 +43,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const supabase = getSupabase();
-    const { error } = await supabase.from("waitlist_professionals").insert([
+    const { error } = await supabaseAdmin.from("waitlist_professionals").insert([
       {
         full_name,
         email,
