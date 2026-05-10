@@ -10,7 +10,7 @@ function getSupabaseUrl(): string {
 
 function getServiceRoleKey(): string {
   const key =
-    process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_SECRET_KEY;
+    process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!key) throw new Error("Server misconfiguration");
   return key;
 }
