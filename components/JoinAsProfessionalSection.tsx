@@ -105,9 +105,9 @@ export default function JoinAsProfessionalSection() {
 
   if (isSuccess) {
     return (
-      <section className="section-block section-padding-standard">
+      <section className="rl-sec">
         <div className="mx-auto max-w-xl py-24 text-center">
-          <h2 className="text-display font-medium">You&apos;re in.</h2>
+          <h2 className="rl-sh">You&apos;re in.</h2>
           <p className="mt-4 text-body text-(--fg-secondary)">
             We&apos;ve received your application.
             <br />
@@ -121,23 +121,23 @@ export default function JoinAsProfessionalSection() {
   return (
     <section
       id="join-as-professional"
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="join-professional-heading"
     >
       <div className="section-container">
         <div className="mx-auto w-full max-w-2xl text-center">
           <h2
             id="join-professional-heading"
-            className="text-display font-medium"
+            className="rl-sh"
           >
             Professionals Only
           </h2>
-          <p className="join-professional-lead mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="join-professional-lead mt-6 rl-ss">
             If trust matters to your work,
             <br />
             Rarelm is built for you.
           </p>
-          <ul className="join-professional-list mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          <ul className="join-professional-list mt-6 rl-ss">
             <li>Verified presence</li>
             <li>Real people, real intent</li>
             <li>Direct value for your experience</li>

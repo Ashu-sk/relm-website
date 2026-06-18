@@ -23,7 +23,7 @@ export default function DiscoverySection() {
     <section
       id="discovery"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="discovery-heading"
     >
       <div className="section-container">
@@ -35,10 +35,10 @@ export default function DiscoverySection() {
           >
             Search people, not usernames.
           </h2>
-          <p className="discovery-reveal-item discovery-reveal-item-2 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="discovery-reveal-item discovery-reveal-item-2 mt-6 rl-ss">
             Find real humans through trusted, Domain based searchable identities.
           </p>
-          <p className="discovery-reveal-item discovery-reveal-item-3 mt-6 text-headline font-semibold text-foreground">
+          <p className="discovery-reveal-item discovery-reveal-item-3 mt-6 rl-sh">
             Presence over profiles.
           </p>
         </div>

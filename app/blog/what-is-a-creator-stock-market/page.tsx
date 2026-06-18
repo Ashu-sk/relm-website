@@ -34,16 +34,16 @@ export default function BlogPostPage() {
   const readingTime = getReadingTimeMinutes(CONTENT_TEXT_FOR_READING_TIME);
 
   return (
-    <main className="section-block section-padding-standard px-[clamp(1.5rem,5vw,8rem)]">
+    <main className="rl-sec px-[clamp(1.5rem,5vw,8rem)]">
       <article className="mx-auto w-full max-w-3xl">
         <header className="mb-10">
-          <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+          <p className="rl-ey ey-w">
             Blog · {readingTime} min read
           </p>
-          <h1 className="mt-4 text-display font-medium text-foreground">
+          <h1 className="mt-4 rl-sh text-foreground">
             What is a Creator Stock Market? The Rise of PageStock
           </h1>
-          <p className="mt-5 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="mt-5 rl-ss">
             <strong className="text-foreground">
               A creator stock market is a platform where fans, investors, and
               businesses can buy and sell shares in creators or their social
@@ -51,7 +51,7 @@ export default function BlogPostPage() {
               influence.
             </strong>
           </p>
-          <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="mt-4 rl-ss">
             If that sounds like the future, that&apos;s because it is. And
             it&apos;s already being built inside Rarelm through a feature called{" "}
             <strong className="text-foreground">PageStock</strong>.
@@ -64,28 +64,28 @@ export default function BlogPostPage() {
           <h2 className="text-headline font-medium text-foreground">
             The Creator Economy Has a Fundamental Problem
           </h2>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             The creator economy is worth over $100 billion today and is
             projected to surpass $1 trillion by 2034. Millions of people build
             audiences, grow communities, and generate cultural influence — yet
             the financial system around them is broken.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             Here&apos;s the problem: creators create enormous value but have
             almost no way to share that value with the people who helped them
             get there.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             Think about it. If you discovered a creator when they had 500
             followers, supported them for years, shared their content, and
             helped them grow to 5 million followers — you get nothing. No
             financial upside. No stake in what you helped build.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             Meanwhile, traditional investors who come in late with a cheque get
             all the return.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             PageStock on Rarelm is built to fix this.
           </p>
         </section>
@@ -94,12 +94,12 @@ export default function BlogPostPage() {
           <h2 className="text-headline font-medium text-foreground">
             What is PageStock?
           </h2>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             PageStock is Rarelm&apos;s creator stock market — a system that lets
             anyone invest in creators and social media pages, and lets creators
             raise investment directly from their own audience.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             Think of it like a stock exchange, but instead of companies,
             you&apos;re trading shares in creators and their pages.
           </p>
@@ -108,7 +108,7 @@ export default function BlogPostPage() {
             <p className="text-body font-normal text-foreground">
               Here&apos;s how it works:
             </p>
-            <ul className="mt-4 list-disc space-y-2 pl-6 text-body leading-relaxed text-(--fg-secondary)">
+            <ul className="mt-4 list-disc space-y-2 pl-6 rl-ss">
               <li>
                 <strong className="text-foreground">
                   Creators list their page on PageStock
@@ -136,7 +136,7 @@ export default function BlogPostPage() {
             </ul>
           </div>
 
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             It turns passive fans into active stakeholders. It turns influence
             into a tradeable financial asset.
           </p>
@@ -146,7 +146,7 @@ export default function BlogPostPage() {
           <h2 className="text-headline font-medium text-foreground">
             Why a Creator Stock Market Makes Sense in 2026
           </h2>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             The concept of investing in creators isn&apos;t just a gimmick —
             there&apos;s a deep economic logic behind it.
           </p>
@@ -154,14 +154,14 @@ export default function BlogPostPage() {
           <h3 className="text-title font-medium text-foreground">
             Creators are businesses
           </h3>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             The most successful creators today operate exactly like small
             businesses. They have revenue streams, audiences, brand
             partnerships, and growth trajectories. Yet unlike businesses, they
             have no mechanism for outside investment beyond sponsorships and
             brand deals.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             PageStock changes that by treating creator pages as investable
             assets.
           </p>
@@ -169,7 +169,7 @@ export default function BlogPostPage() {
           <h3 className="text-title font-medium text-foreground">
             Fans already invest — they just don&apos;t get paid
           </h3>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             Every fan who shares a creator&apos;s content, comments, recommends
             them to friends, or buys their merch is already investing time and
             energy into that creator&apos;s growth. PageStock formalises this
@@ -179,7 +179,7 @@ export default function BlogPostPage() {
           <h3 className="text-title font-medium text-foreground">
             The creator economy needs new financial infrastructure
           </h3>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             Platforms like Patreon and Substack let creators monetise through
             subscriptions. But subscriptions are transactional — you pay, you
             get content. PageStock is fundamentally different because it creates
@@ -192,29 +192,29 @@ export default function BlogPostPage() {
           <h2 className="text-headline font-medium text-foreground">
             Who is PageStock For?
           </h2>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             PageStock sits at the intersection of three groups:
           </p>
           <div className="space-y-4">
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               <strong className="text-foreground">Creators and influencers</strong>{" "}
               — who want to raise investment from their own community, reward
               their most loyal fans, and unlock new revenue beyond ads and
               sponsorships.
             </p>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               <strong className="text-foreground">Fans and general users</strong>{" "}
               — who want to go beyond just watching and actually own a stake in
               the creators they love. If your favourite creator blows up, you
               should share in that success.
             </p>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               <strong className="text-foreground">Investors and traders</strong>{" "}
               — who see the creator economy as an asset class and want a
               structured, transparent way to invest in it. PageStock brings the
               logic of financial markets to creator influence.
             </p>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               <strong className="text-foreground">Businesses and brands</strong>{" "}
               — who want deeper relationships with creators beyond one-off
               sponsorship deals. Owning shares in a creator is a fundamentally
@@ -227,7 +227,7 @@ export default function BlogPostPage() {
           <h2 className="text-headline font-medium text-foreground">
             How is PageStock Different from Existing Creator Monetisation?
           </h2>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             There are already plenty of ways for creators to make money. So what
             makes PageStock different?
           </p>
@@ -309,7 +309,7 @@ export default function BlogPostPage() {
             </div>
           </div>
 
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             The key difference is upside sharing. With PageStock, if a creator
             grows from 10,000 to 1,000,000 followers, everyone who held shares
             during that journey benefits financially — not just the creator.
@@ -320,16 +320,16 @@ export default function BlogPostPage() {
           <h2 className="text-headline font-medium text-foreground">
             The Bigger Picture: Social Pages as Financial Assets
           </h2>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             PageStock represents a new way of thinking about social media pages.
             Instead of just a place to post content, a social media page becomes
             a financial asset — something with measurable value that can be
             owned, traded, and invested in.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             This is a profound shift. It means:
           </p>
-          <ul className="list-disc space-y-2 pl-6 text-body leading-relaxed text-(--fg-secondary)">
+          <ul className="list-disc space-y-2 pl-6 rl-ss">
             <li>A creator&apos;s page has a market cap, not just a follower count</li>
             <li>
               Early supporters can have real financial stakes in creators they
@@ -347,19 +347,19 @@ export default function BlogPostPage() {
           <h2 className="text-headline font-medium text-foreground">
             PageStock is Coming to Rarelm
           </h2>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             PageStock is a core feature of Rarelm — the AI-verified social
             expression platform being built for creators, investors, businesses,
             and everyday users who believe social media should be more than
             passive scrolling.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             Rarelm combines AI-verified identity (no bots, no fake accounts),
             community tools, content sharing, and now PageStock — a creator
             stock market that lets anyone invest in the pages and people they
             believe in.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             <strong className="text-foreground">Join the Rarelm waitlist</strong>{" "}
             to be among the first to access PageStock when it launches.
           </p>
@@ -375,7 +375,7 @@ export default function BlogPostPage() {
               <summary className="cursor-pointer text-body font-medium text-foreground">
                 What is a creator stock market?
               </summary>
-              <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+              <p className="mt-3 rl-ss">
                 A creator stock market is a platform where fans and investors
                 can buy and sell shares in creators or their social media pages,
                 similar to how stocks work for companies.
@@ -386,7 +386,7 @@ export default function BlogPostPage() {
               <summary className="cursor-pointer text-body font-medium text-foreground">
                 What is PageStock?
               </summary>
-              <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+              <p className="mt-3 rl-ss">
                 PageStock is Rarelm&apos;s creator stock market feature. It lets
                 creators list shares in their pages and lets fans, investors,
                 and businesses invest in those creators directly.
@@ -397,7 +397,7 @@ export default function BlogPostPage() {
               <summary className="cursor-pointer text-body font-medium text-foreground">
                 Can I really invest in a creator&apos;s social media page?
               </summary>
-              <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+              <p className="mt-3 rl-ss">
                 Yes — through PageStock on Rarelm, you can buy shares in creator
                 pages. As the page grows in followers, engagement and influence,
                 the value of those shares can increase.
@@ -408,7 +408,7 @@ export default function BlogPostPage() {
               <summary className="cursor-pointer text-body font-medium text-foreground">
                 Who can use PageStock?
               </summary>
-              <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+              <p className="mt-3 rl-ss">
                 PageStock is designed for creators who want to raise investment,
                 fans who want a financial stake in creators they support, and
                 investors who want exposure to the creator economy.
@@ -419,7 +419,7 @@ export default function BlogPostPage() {
               <summary className="cursor-pointer text-body font-medium text-foreground">
                 How is PageStock different from Patreon or subscriptions?
               </summary>
-              <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+              <p className="mt-3 rl-ss">
                 Subscriptions give you access to content in exchange for a
                 recurring payment. PageStock gives you equity-like ownership in
                 a creator&apos;s page — meaning you benefit from their growth,
@@ -431,7 +431,7 @@ export default function BlogPostPage() {
               <summary className="cursor-pointer text-body font-medium text-foreground">
                 When does PageStock launch?
               </summary>
-              <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+              <p className="mt-3 rl-ss">
                 PageStock is launching as part of Rarelm. Join the waitlist at{" "}
                 <span className="text-foreground">rarelm.com</span> to get early
                 access.
@@ -468,7 +468,7 @@ export default function BlogPostPage() {
             <p className="text-headline font-medium text-foreground">
               Ready to be early?
             </p>
-            <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+            <p className="mt-3 rl-ss">
               Join the Rarelm waitlist to be among the first to access PageStock
               when it launches.
             </p>
@@ -494,4 +494,3 @@ export default function BlogPostPage() {
     </main>
   );
 }
-

@@ -23,7 +23,7 @@ export default function IdentitySection() {
     <section
       id="identity"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="identity-heading"
     >
       <div
@@ -31,11 +31,11 @@ export default function IdentitySection() {
       >
         <h2
           id="identity-heading"
-          className="identity-reveal-item identity-reveal-item-1 text-display font-medium"
+          className="identity-reveal-item identity-reveal-item-1 rl-sh"
         >
           Fake identities broke the internet.
         </h2>
-        <p className="identity-reveal-item identity-reveal-item-2 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="identity-reveal-item identity-reveal-item-2 mt-6 rl-ss">
           Over 50% of internet traffic is non-human.
           <br />
           Bots. Fake IDs. Impersonation.
@@ -43,7 +43,7 @@ export default function IdentitySection() {
         <p className="identity-reveal-item identity-reveal-item-3 mt-8 text-headline font-medium text-foreground">
           One Human. One Account.
         </p>
-        <p className="identity-reveal-item identity-reveal-item-4 mt-5 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="identity-reveal-item identity-reveal-item-4 mt-5 rl-ss">
           AI-verified using facial authentication.
           <br />
           If you&apos;re not real, you&apos;re not here.

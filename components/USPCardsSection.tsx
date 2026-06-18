@@ -130,7 +130,7 @@ export default function USPCardsSection() {
   return (
     <section
       id="usp-cards"
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="usp-cards-heading"
     >
       <div className="usp-cards-inner">
@@ -140,7 +140,7 @@ export default function USPCardsSection() {
         >
           WHAT MAKES RELM DIFFERENT
         </p>
-        <h2 className="usp-cards-title text-display font-medium text-foreground">
+        <h2 className="usp-cards-title rl-sh text-foreground">
           Built for trust. Designed for humans.
         </h2>
         <div className="usp-cards-grid" style={{ perspective: "1000px" }}>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -9,12 +10,13 @@ export const metadata: Metadata = {
 
 export default function VisionPage() {
   return (
-    <main className="section-block section-padding-standard px-4 sm:px-6 md:px-8">
+    <>
+    <main className="rl-sec px-4 sm:px-6 md:px-8">
       <div className="mx-auto w-full max-w-3xl">
-        <h1 className="text-display font-semibold leading-[1.1] text-foreground">
+        <h1 className="rl-h1">
           Our Mission: Rebuild Social Media for Real People
         </h1>
-        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="mt-6 rl-ss">
           If you&apos;re new here, start with{" "}
           <Link
             href="/faq"
@@ -38,7 +40,7 @@ export default function VisionPage() {
           </Link>
           .
         </p>
-        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="mt-6 rl-ss">
           Rarelm exists because the internet forgot what real looks like. A decade of
           fake accounts, bots, scams, and impersonation has caused billions in global
           financial losses and destroyed trust in social media. We built Rarelm to fix
@@ -51,6 +53,7 @@ export default function VisionPage() {
         </p>
       </div>
     </main>
+      <SiteFooter />
+    </>
   );
 }
-

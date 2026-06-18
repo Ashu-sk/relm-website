@@ -23,7 +23,7 @@ export default function ProfessionalsSection() {
     <section
       id="professionals"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="professionals-heading"
     >
       <div className="section-container">
@@ -32,11 +32,11 @@ export default function ProfessionalsSection() {
       >
         <h2
           id="professionals-heading"
-          className="professionals-reveal-item professionals-reveal-item-1 text-display font-medium"
+          className="professionals-reveal-item professionals-reveal-item-1 rl-sh"
         >
           Real advice is hard to reach.
         </h2>
-        <p className="professionals-reveal-item professionals-reveal-item-2 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="professionals-reveal-item professionals-reveal-item-2 mt-6 rl-ss">
           Experts are buried.
           <br />
           Help is locked behind paywalls.

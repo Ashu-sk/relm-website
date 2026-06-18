@@ -24,7 +24,7 @@ export default function ExpressionSection() {
     <section
       id="expression"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="expression-heading"
     >
       <div className="section-container">
@@ -39,12 +39,12 @@ export default function ExpressionSection() {
           >
             Expression without fear.
           </h2>
-          <p className="expression-reveal-item expression-reveal-item-3 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="expression-reveal-item expression-reveal-item-3 mt-6 rl-ss">
             Verified when it matters. Anonymous when it&apos;s needed.
             <br />
             Choose how you show up — without losing trust.
           </p>
-          <p className="expression-reveal-item expression-reveal-item-4 mt-6 text-headline font-semibold text-foreground">
+          <p className="expression-reveal-item expression-reveal-item-4 mt-6 rl-sh">
             Confession rooms.
             <br />
             Private expression.

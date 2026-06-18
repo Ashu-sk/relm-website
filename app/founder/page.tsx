@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -9,12 +10,13 @@ export const metadata: Metadata = {
 
 export default function FounderPage() {
   return (
-    <main className="section-block section-padding-standard px-4 sm:px-6 md:px-8">
+    <>
+    <main className="rl-sec px-4 sm:px-6 md:px-8">
       <div className="mx-auto w-full max-w-3xl">
-        <h1 className="text-display font-semibold leading-[1.1] text-foreground">
+        <h1 className="rl-h1">
           The Story Behind Rarelm
         </h1>
-        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="mt-6 rl-ss">
           Want to understand the mission? Read{" "}
           <Link
             href="/vision"
@@ -39,16 +41,16 @@ export default function FounderPage() {
           .
         </p>
         <section className="mt-10 space-y-5">
-          <h2 className="text-headline font-semibold text-foreground">
+          <h2 className="rl-sh">
             Why this needed to exist
           </h2>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             Rarelm started from a simple observation: social media broke at the identity
             layer. When anyone can create infinite fake accounts, every downstream
             problem becomes inevitable — bots farming engagement, scams in DMs, fake
             professionals selling advice, and real people losing trust in every signal.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             The founder story is the decision to rebuild from first principles: verify
             every user as a real human before they can participate, while still
             protecting expression through verified anonymity. That combination is the
@@ -56,7 +58,7 @@ export default function FounderPage() {
             safe, commerce that can be trusted, and PageStock that only works when the
             underlying growth data is real.
           </p>
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             If you want early access to the private beta and updates as the MVP rolls
             out,{" "}
             <Link
@@ -70,6 +72,7 @@ export default function FounderPage() {
         </section>
       </div>
     </main>
+      <SiteFooter />
+    </>
   );
 }
-

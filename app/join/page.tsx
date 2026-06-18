@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function JoinPage() {
   return (
-    <main className="section-block section-padding-standard px-4 sm:px-6 md:px-8">
+    <main className="rl-sec px-4 sm:px-6 md:px-8">
       <div className="mx-auto w-full max-w-3xl">
-        <h1 className="text-display font-semibold leading-[1.1] text-foreground">
+        <h1 className="rl-h1">
           Get Early Access to Rarelm
         </h1>
-        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="mt-6 rl-ss">
           Join the waitlist to get early access.
         </p>
-        <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="mt-4 rl-ss">
           When you join the waitlist, you&apos;re reserving early access to Rarelm&apos;s
           private beta. We&apos;ll email you when onboarding opens, what&apos;s included in
           the first release (AI verification, profiles, PageStock access), and the next
@@ -37,7 +37,7 @@ export default function JoinPage() {
             </span>
           </Link>
         </div>
-        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="mt-6 rl-ss">
           Join thousands of people waiting for the world&apos;s first mandatory
           face-authenticated social platform. As a waitlist member you will get early
           access to Rarelm before public launch, founding member status, and exclusive
@@ -45,7 +45,7 @@ export default function JoinPage() {
           user earns dividends. Rarelm is built by Mavrist Pvt Ltd and is currently
           raising pre-seed funding. Free to join, free to use.
         </p>
-        <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="mt-4 rl-ss">
           Read our <a href="/faq">FAQ</a> or learn about <a href="/pagestock">PageStock</a>{" "}
           before joining.
         </p>

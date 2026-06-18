@@ -104,7 +104,7 @@ export default function SolutionCardsSection() {
   return (
     <section
       id="solution-cards"
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="solution-cards-heading"
     >
       <div className="section-container">

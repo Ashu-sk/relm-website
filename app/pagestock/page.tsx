@@ -135,23 +135,23 @@ export default function PageStockPage() {
           __html: JSON.stringify(pagestockSchema),
         }}
       />
-      <main className="section-block section-padding-standard px-4 sm:px-6 md:px-8">
+      <main className="rl-sec px-4 sm:px-6 md:px-8">
         <article className="mx-auto w-full max-w-3xl">
           <header className="mb-12">
-            <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+            <p className="rl-ey ey-w">
               PAGESTOCK · RARELM.COM/PAGESTOCK
             </p>
-            <h1 className="mt-4 text-display font-semibold leading-[1.1] text-foreground">
+            <h1 className="mt-4 rl-h1">
               The World&apos;s First Creator Stock Market
             </h1>
-            <p className="hero-definition mt-6 text-body leading-relaxed text-(--fg-secondary)">
+            <p className="hero-definition mt-6 rl-ss">
               PageStock is Rarelm&apos;s built-in creator stock market — the first system
               that lets fans and investors buy shares in social media creators and public
               pages, earning financial returns as those pages grow in verified followers,
               engagement, and influence. It is free for every verified user and built
               directly into the Rarelm platform.
             </p>
-            <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+            <p className="mt-4 rl-ss">
               Social media made billions of people famous. PageStock makes them investable.
               For the first time, you can own a stake in the creators you helped build —
               and earn real returns as they grow.
@@ -180,21 +180,21 @@ export default function PageStockPage() {
 
           <section className="mt-14 space-y-6" aria-labelledby="pagestock-problem">
             <header className="space-y-2">
-              <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+              <p className="rl-ey ey-w">
                 THE PROBLEM
               </p>
-              <h2 id="pagestock-problem" className="text-headline font-semibold text-foreground">
+              <h2 id="pagestock-problem" className="rl-sh">
                 Everyone builds value on social media. Almost nobody gets paid for it.
               </h2>
             </header>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               A creator builds an audience of 5 million people over 5 years. Their fans share
               content, comment, promote, and drive every metric that makes the creator
               valuable. Brands pay the creator millions. The platform earns billions from the
               attention those fans generate. The creator economy is projected to reach $1
               trillion — built almost entirely on unpaid fan contribution.
             </p>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               The fans? They get nothing. Not a single cent. No stake. No share. No upside.
               Just the privilege of watching someone else profit from the value they helped
               create.
@@ -208,19 +208,19 @@ export default function PageStockPage() {
 
           <section className="mt-14 space-y-6" aria-labelledby="pagestock-definition">
             <header className="space-y-2">
-              <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+              <p className="rl-ey ey-w">
                 WHAT IS PAGESTOCK
               </p>
-              <h2 id="pagestock-definition" className="text-headline font-semibold text-foreground">
+              <h2 id="pagestock-definition" className="rl-sh">
                 A stock market — but for creators and public pages instead of companies.
               </h2>
             </header>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               Just like the stock market lets you invest in companies you believe in — PageStock
               lets you invest in creators, public figures, and social pages you believe in, and
               earn as they grow.
             </p>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               Every creator and public page on Rarelm can list on PageStock. Every verified user
               can buy shares. As the page grows in followers, engagement, and influence — the
               value of those shares grows with it.
@@ -235,10 +235,10 @@ export default function PageStockPage() {
 
           <section className="mt-14 space-y-10" aria-labelledby="pagestock-how">
             <header className="space-y-2">
-              <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+              <p className="rl-ey ey-w">
                 HOW IT WORKS
               </p>
-              <h2 id="pagestock-how" className="text-headline font-semibold text-foreground">
+              <h2 id="pagestock-how" className="rl-sh">
                 How PageStock works
               </h2>
             </header>
@@ -248,7 +248,7 @@ export default function PageStockPage() {
                 <h3 id="pagestock-creators" className="text-title font-semibold text-foreground">
                   For Creators &amp; Public Pages
                 </h3>
-                <ol className="list-decimal space-y-3 pl-5 text-body leading-relaxed text-(--fg-secondary)">
+                <ol className="list-decimal space-y-3 pl-5 rl-ss">
                   <li>
                     Get AI-verified on Rarelm. Every creator and public page is mandatorily
                     verified by AI — confirming a real human or real entity is behind every
@@ -275,7 +275,7 @@ export default function PageStockPage() {
                 <h3 id="pagestock-fans" className="text-title font-semibold text-foreground">
                   For Fans, Investors &amp; Businesses
                 </h3>
-                <ol className="list-decimal space-y-3 pl-5 text-body leading-relaxed text-(--fg-secondary)">
+                <ol className="list-decimal space-y-3 pl-5 rl-ss">
                   <li>
                     Join Rarelm for free. Create your AI-verified account. Every user is
                     confirmed as a real human — so every investment decision is made in a
@@ -303,10 +303,10 @@ export default function PageStockPage() {
 
           <section className="mt-14 space-y-8" aria-labelledby="pagestock-who">
             <header className="space-y-2">
-              <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+              <p className="rl-ey ey-w">
                 WHO IS PAGESTOCK FOR
               </p>
-              <h2 id="pagestock-who" className="text-headline font-semibold text-foreground">
+              <h2 id="pagestock-who" className="rl-sh">
                 Built for everyone in the creator economy
               </h2>
             </header>
@@ -314,7 +314,7 @@ export default function PageStockPage() {
             <div className="grid gap-6 sm:grid-cols-2">
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Creators &amp; Public Pages</h3>
-                <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+                <p className="mt-3 rl-ss">
                   You have built something real. Your audience is your most valuable asset.
                   PageStock lets you unlock the financial value of that asset — raising
                   investment from the people who believe in you most and rewarding your
@@ -323,7 +323,7 @@ export default function PageStockPage() {
               </section>
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Fans &amp; General Users</h3>
-                <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+                <p className="mt-3 rl-ss">
                   You have always known which creators were going to blow up before anyone
                   else did. Now you can put money behind that instinct. Buy shares in creators
                   early, watch them grow, and earn real financial returns — turning years of
@@ -332,7 +332,7 @@ export default function PageStockPage() {
               </section>
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Investors &amp; Traders</h3>
-                <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+                <p className="mt-3 rl-ss">
                   The creator economy is projected to reach $1 trillion. Until now there has
                   been no structured, transparent way to invest in it. PageStock brings the
                   logic of financial markets to creator influence — with verified identities,
@@ -341,7 +341,7 @@ export default function PageStockPage() {
               </section>
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Businesses &amp; Brands</h3>
-                <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+                <p className="mt-3 rl-ss">
                   Sponsorship deals are transactional. PageStock creates something deeper —
                   a genuine financial stake in a creator&apos;s future. Instead of paying for
                   one campaign, invest in a creator&apos;s long-term growth and build a
@@ -353,10 +353,10 @@ export default function PageStockPage() {
 
           <section className="mt-14 space-y-6" aria-labelledby="pagestock-table">
             <header className="space-y-2">
-              <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+              <p className="rl-ey ey-w">
                 WHY PAGESTOCK IS DIFFERENT
               </p>
-              <h2 id="pagestock-table" className="text-headline font-semibold text-foreground">
+              <h2 id="pagestock-table" className="rl-sh">
                 What no other platform offers
               </h2>
             </header>
@@ -428,19 +428,19 @@ export default function PageStockPage() {
 
           <section className="mt-14 space-y-6" aria-labelledby="pagestock-rarelm">
             <header className="space-y-2">
-              <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+              <p className="rl-ey ey-w">
                 THE RARELM DIFFERENCE
               </p>
-              <h2 id="pagestock-rarelm" className="text-headline font-semibold text-foreground">
+              <h2 id="pagestock-rarelm" className="rl-sh">
                 PageStock is only possible because Rarelm is built differently.
               </h2>
             </header>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               On every other social platform, follower counts are inflated by bots, engagement
               is gamed by fake accounts, and there is no way to trust the data behind a
               creator&apos;s growth. This makes creator investing genuinely risky.
             </p>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               On Rarelm, every follower is a verified real human. Every engagement signal is
               authentic. Every creator is confirmed as a real person or real entity. This makes
               PageStock something that has never existed before — a trustworthy, bot-free
@@ -456,10 +456,10 @@ export default function PageStockPage() {
 
           <section className="mt-14 space-y-6" aria-labelledby="pagestock-profiles">
             <header className="space-y-2">
-              <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+              <p className="rl-ey ey-w">
                 PAGESTOCK ACROSS YOUR 3 PROFILES
               </p>
-              <h2 id="pagestock-profiles" className="text-headline font-semibold text-foreground">
+              <h2 id="pagestock-profiles" className="rl-sh">
                 PageStock works across all three Rarelm profiles
               </h2>
             </header>
@@ -467,21 +467,21 @@ export default function PageStockPage() {
             <div className="grid gap-6 sm:grid-cols-3">
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Anonymous (Me)</h3>
-                <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+                <p className="mt-3 rl-ss">
                   Invest in creators privately. Your portfolio is yours alone. Participate
                   financially without revealing your identity.
                 </p>
               </section>
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Family &amp; Friends</h3>
-                <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+                <p className="mt-3 rl-ss">
                   Share investment ideas with the people you trust. Discover creators together.
                   Build a shared portfolio with people close to you.
                 </p>
               </section>
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Professional</h3>
-                <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+                <p className="mt-3 rl-ss">
                   For serious investors, traders, and businesses. Manage positions, access
                   deeper analytics, and build verified creator partnerships through your
                   professional identity.
@@ -492,10 +492,10 @@ export default function PageStockPage() {
 
           <section id="pagestock-faq" className="mt-14 space-y-8" aria-labelledby="pagestock-faq-heading">
             <header className="space-y-2">
-              <p className="text-caption uppercase tracking-wide text-(--fg-secondary)">
+              <p className="rl-ey ey-w">
                 FREQUENTLY ASKED QUESTIONS
               </p>
-              <h2 id="pagestock-faq-heading" className="text-headline font-semibold text-foreground">
+              <h2 id="pagestock-faq-heading" className="rl-sh">
                 PageStock FAQ
               </h2>
             </header>
@@ -504,17 +504,17 @@ export default function PageStockPage() {
               {pagestockFaq.map((item) => (
                 <div key={item.question} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                   <dt className="text-title font-semibold text-foreground">{item.question}</dt>
-                  <dd className="mt-3 text-body leading-relaxed text-(--fg-secondary)">{item.answer}</dd>
+                  <dd className="mt-3 rl-ss">{item.answer}</dd>
                 </div>
               ))}
             </dl>
           </section>
 
           <section className="mt-14 space-y-6" aria-labelledby="pagestock-close">
-            <h2 id="pagestock-close" className="text-headline font-semibold text-foreground">
+            <h2 id="pagestock-close" className="rl-sh">
               The creator economy is worth billions. You have been funding it for free.
             </h2>
-            <p className="text-body leading-relaxed text-(--fg-secondary)">
+            <p className="rl-ss">
               PageStock changes that. Be among the first to invest in creators, earn from the
               platform, and own a stake in the future of social media. Join the Rarelm waitlist —
               free, takes 30 seconds.

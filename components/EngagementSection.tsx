@@ -23,7 +23,7 @@ export default function EngagementSection() {
     <section
       id="engagement"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="engagement-heading"
     >
       <div className="section-container">
@@ -37,12 +37,12 @@ export default function EngagementSection() {
           >
             Engagement is broken.
           </h2>
-          <p className="engagement-reveal-item engagement-reveal-item-2 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="engagement-reveal-item engagement-reveal-item-2 mt-6 rl-ss">
             Multiple fake identities farm attention.
             <br />
             Algorithms reward noise over meaning.
           </p>
-          <p className="engagement-reveal-item engagement-reveal-item-3 mt-8 text-headline font-semibold text-foreground">
+          <p className="engagement-reveal-item engagement-reveal-item-3 mt-8 rl-sh">
             Engagement can&apos;t be multiplied.
             <br />
             What rises is real interest.

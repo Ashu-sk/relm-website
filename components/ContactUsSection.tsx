@@ -4,7 +4,7 @@ export default function ContactUsSection() {
   return (
     <section
       id="contact-us"
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="contact-us-heading"
     >
       <div className="section-container">
@@ -15,7 +15,7 @@ export default function ContactUsSection() {
         >
           Contact Us
         </h2>
-        <p className="mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="mt-6 rl-ss">
           <span className="contact-us-prompts flex flex-wrap justify-center gap-x-6 gap-y-1">
             <span>Questions?</span>
             <span>Ideas?</span>

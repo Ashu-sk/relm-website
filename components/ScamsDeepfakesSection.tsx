@@ -23,7 +23,7 @@ export default function ScamsDeepfakesSection() {
     <section
       id="scams-deepfakes"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="scams-deepfakes-heading"
     >
       <div className="section-container">
@@ -38,13 +38,13 @@ export default function ScamsDeepfakesSection() {
           >
             Trust before transaction.
           </h2>
-          <p className="trust-reveal-item trust-reveal-item-3 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="trust-reveal-item trust-reveal-item-3 mt-6 rl-ss">
             Billions lost yearly to social scams. Deepfakes blur reality. Fake sellers build fake trust fast.
             <br />
             <br />
             Value moves after identity is proven, not before.
           </p>
-          <p className="trust-reveal-item trust-reveal-item-4 mt-6 text-headline font-semibold text-foreground">
+          <p className="trust-reveal-item trust-reveal-item-4 mt-6 rl-sh">
             Unverified Noise → Verified Signal → Value Flow
             <br />
             <br />

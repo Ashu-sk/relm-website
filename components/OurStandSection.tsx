@@ -24,7 +24,7 @@ export default function OurStandSection() {
     <section
       id="our-stand"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="our-stand-heading"
     >
       <div className="section-container">
@@ -37,7 +37,7 @@ export default function OurStandSection() {
         >
           Our Stand
         </h2>
-        <p className="our-stand-reveal-item our-stand-reveal-item-2 mt-4 text-headline font-semibold text-foreground">
+        <p className="our-stand-reveal-item our-stand-reveal-item-2 mt-4 rl-sh">
           Three Profile System.
         </p>
         <p className="our-stand-reveal-item our-stand-reveal-item-2 our-stand-dots mt-2 text-body text-(--fg-secondary)">
@@ -53,23 +53,23 @@ export default function OurStandSection() {
         </p>
 
         <div className="our-stand-reveal-item our-stand-reveal-item-3 our-stand-block mt-10">
-          <p className="text-headline font-semibold text-foreground">
+          <p className="rl-sh">
             Support that&apos;s real. And reachable.
           </p>
-          <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="mt-3 rl-ss">
             Certified Counsellors. Verified Experts. Experienced Advisors.
             <br />
             Not algorithms pretending to care.
           </p>
-          <p className="mt-5 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="mt-5 rl-ss">
             Quick questions. Private expression. Real conversations. Direct value exchange.
             <br />
             You pay for clarity. Not noise.
           </p>
-          <p className="mt-6 text-headline font-semibold text-foreground">
+          <p className="mt-6 rl-sh">
             Social commerce, but verified.
           </p>
-          <p className="mt-2 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="mt-2 rl-ss">
             <span className="our-stand-dots inline-block">
               Buy
               {" "}
@@ -91,10 +91,10 @@ export default function OurStandSection() {
         </div>
 
         <div className="our-stand-reveal-item our-stand-reveal-item-4 our-stand-block mt-10">
-          <p className="text-headline font-semibold text-foreground">
+          <p className="rl-sh">
             We don&apos;t do fake people.
           </p>
-          <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="mt-4 rl-ss">
             No fake followers. No manufactured trust.
             <br />
             No engagement farming.
@@ -108,10 +108,10 @@ export default function OurStandSection() {
         </div>
 
         <div className="our-stand-reveal-item our-stand-reveal-item-5 our-stand-block mt-10">
-          <p className="text-headline font-semibold text-foreground">
+          <p className="rl-sh">
             Original content matters.
           </p>
-          <p className="mt-4 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="mt-4 rl-ss">
             Real photos. Real videos. Real voices.
             <br />
             If it&apos;s untouched, it&apos;s marked original. If it&apos;s verified, you know who it&apos;s from.
@@ -127,16 +127,16 @@ export default function OurStandSection() {
         </div>
 
         <div className="our-stand-reveal-item our-stand-reveal-item-6 our-stand-block mt-10">
-          <p className="text-headline font-semibold text-foreground">
+          <p className="rl-sh">
             Rarelm exists because the internet forgot what real looks like.
           </p>
-          <p className="mt-3 text-headline font-semibold text-foreground">
+          <p className="mt-3 rl-sh">
             So we built it back.
           </p>
         </div>
 
         <div className="our-stand-reveal-item our-stand-reveal-item-7 our-stand-block mt-10">
-          <p className="text-body leading-relaxed text-(--fg-secondary)">
+          <p className="rl-ss">
             AI-verified identities. Face authentication. One real human. One domain profile.
             <br />
             If you&apos;re not real, you&apos;re not here.

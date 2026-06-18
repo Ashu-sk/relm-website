@@ -23,7 +23,7 @@ export default function MoneySection() {
     <section
       id="money"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="money-heading"
     >
       <div className="section-container">
@@ -36,12 +36,12 @@ export default function MoneySection() {
         >
           Value should compound, not disappear.
         </h2>
-        <p className="money-reveal-item money-reveal-item-2 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="money-reveal-item money-reveal-item-2 mt-6 rl-ss">
           Pages build signal.
           <br />
           Signal builds value.
         </p>
-        <div className="money-reveal-item money-reveal-item-3 mt-8 text-headline font-semibold text-foreground">
+        <div className="money-reveal-item money-reveal-item-3 mt-8 rl-sh">
           <p>Pages and Contents Stocks like System.</p>
           <p className="mt-5">Free storefronts by default.</p>
           <p className="mt-5">Professionals 24/7.</p>
@@ -68,7 +68,7 @@ export default function MoneySection() {
           <p className="mt-2 text-caption text-(--fg-secondary)">
             Built for:
           </p>
-          <p className="mt-1 text-body leading-relaxed text-(--fg-secondary)">
+          <p className="mt-1 rl-ss">
             Micro-payments. Professional support. Page &amp; Content stock. Fair value exchange.
             <br />
             Simple. Secure. Native.

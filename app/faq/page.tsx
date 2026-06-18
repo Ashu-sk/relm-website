@@ -298,20 +298,20 @@ export default function FaqPage() {
           __html: JSON.stringify(faqSchema),
         }}
       />
-      <main className="section-block section-padding-standard px-4 sm:px-6 md:px-8">
+      <main className="rl-sec px-4 sm:px-6 md:px-8">
         <article className="mx-auto w-full max-w-3xl">
           <header className="mb-10">
-            <h1 className="text-display font-semibold leading-[1.1] text-foreground">
+            <h1 className="rl-h1">
               Frequently Asked Questions
             </h1>
-            <p className="mt-4 text-caption uppercase tracking-wide text-(--fg-secondary)">
+            <p className="mt-4 rl-ey ey-w">
               Rarelm FAQ
             </p>
           </header>
 
           {FAQ_SECTIONS.map((section) => (
             <section key={section.title} className="mt-12 first:mt-0">
-              <h2 className="text-headline font-semibold text-foreground">
+              <h2 className="rl-sh">
                 {section.title}
               </h2>
               {section.items.map((item) => (
@@ -319,7 +319,7 @@ export default function FaqPage() {
                   <h3 className="text-title font-semibold text-foreground">
                     {item.question}
                   </h3>
-                  <p className="text-body leading-relaxed text-(--fg-secondary)">
+                  <p className="rl-ss">
                     {item.answer}
                   </p>
                 </div>

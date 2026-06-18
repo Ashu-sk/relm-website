@@ -23,7 +23,7 @@ export default function FounderSection() {
     <section
       id="founder"
       ref={ref}
-      className="section-block section-padding-standard"
+      className="rl-sec"
       aria-labelledby="founder-heading"
     >
       <div className="section-container">
@@ -36,23 +36,23 @@ export default function FounderSection() {
         >
           Our Story
         </h2>
-        <p className="founder-reveal-item founder-reveal-item-2 mt-6 text-headline font-semibold text-foreground">
+        <p className="founder-reveal-item founder-reveal-item-2 mt-6 rl-sh">
           Why Rarelm exists
         </p>
 
-        <p className="founder-reveal-item founder-reveal-item-3 mt-8 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="founder-reveal-item founder-reveal-item-3 mt-8 rl-ss">
           Rarelm didn&apos;t start as a startup idea.
           <br />
           It started as a realization.
         </p>
 
-        <p className="founder-reveal-item founder-reveal-item-4 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="founder-reveal-item founder-reveal-item-4 mt-6 rl-ss">
           The internet gave us reach, speed, and scale —
           <br />
           but quietly took away trust, emotional safety, and authenticity.
         </p>
 
-        <p className="founder-reveal-item founder-reveal-item-5 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="founder-reveal-item founder-reveal-item-5 mt-6 rl-ss">
           People became afraid to express themselves.
           <br />
           Professionals struggled to be heard above noise.
@@ -60,11 +60,11 @@ export default function FounderSection() {
           Real humans competed with bots, deepfakes, and fake identities.
         </p>
 
-        <p className="founder-reveal-item founder-reveal-item-6 mt-8 text-headline font-semibold text-foreground">
+        <p className="founder-reveal-item founder-reveal-item-6 mt-8 rl-sh">
           Rarelm is our response to that.
         </p>
 
-        <p className="founder-reveal-item founder-reveal-item-7 mt-6 text-body leading-relaxed text-(--fg-secondary)">
+        <p className="founder-reveal-item founder-reveal-item-7 mt-6 rl-ss">
           Not to build another social platform —
           <br />
           but to rebuild trust as the foundation.
