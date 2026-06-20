@@ -3,12 +3,14 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import GlobalAtmosphere from "@/components/GlobalAtmosphere";
+import { orgJsonLd } from "@/lib/jsonLd";
+import { SITE_URL } from "@/lib/faqData";
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Rarelm",
-  url: "https://www.rarelm.com",
+  url: SITE_URL,
   description:
     "Rarelm is the world's first mandatory AI-verified social expression platform where every user is face-authenticated before joining. No bots, no fake accounts, no scams.",
   applicationCategory: "SocialNetworkingApplication",
@@ -21,42 +23,13 @@ const softwareApplicationSchema = {
   },
   creator: {
     "@type": "Organization",
-    name: "Mavrist Pvt Ltd",
-    url: "https://www.rarelm.com",
-  },
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Relm",
-  url: "https://www.rarelm.com/",
-  logo: "https://www.rarelm.com/relm-logo.png",
-  description:
-    "Relm is building the world's first AI-verified social platform — Rarelm — where every user is mandatorily verified by AI, ensuring only real humans, no bots, no scams, no fake accounts.",
-  foundingDate: "2024",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer support",
-    url: "https://www.rarelm.com/contact-us/",
-  },
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Rarelm",
-  url: "https://www.rarelm.com/",
-  description: "The world's first AI-verified social expression platform",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://www.rarelm.com/search?q={search_term_string}",
-    "query-input": "required name=search_term_string",
+    name: "MAVRIST TECH PVT LTD",
+    url: SITE_URL,
   },
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.rarelm.com/"),
+  metadataBase: new URL(`${SITE_URL}/`),
   alternates: {
     canonical: "/",
   },
@@ -88,13 +61,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
+            __html: JSON.stringify(orgJsonLd),
           }}
         />
       </head>
