@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "QAC (Quick Anonymous Confession) is Rarelm's anonymous expression room. Say what you've never said. Verified underneath. Anonymous on the surface. Real human responses only.",
   alternates: {
-    canonical: "https://www.rarelm.com/qac",
+    canonical: "/qac",
   },
   openGraph: {
     title: "QAC — Say What You've Never Been Able to Say.",

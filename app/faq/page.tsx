@@ -3,7 +3,6 @@ import Link from "next/link";
 import { faqs, SITE_URL } from "@/lib/faqData";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${SITE_URL}/`),
   alternates: {
     canonical: "/faq",
   },

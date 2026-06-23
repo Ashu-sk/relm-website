@@ -74,7 +74,7 @@ export default function Header() {
         >
           <Image
             src="/relm-logo.png"
-            alt=""
+            alt="Rarelm"
             width={24}
             height={24}
             className="h-6 w-6"

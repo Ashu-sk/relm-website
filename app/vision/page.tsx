@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Rarelm Vision — Building the Future of AI Social Expression",
   description:
     "Rarelm is on a mission to rebuild social media from the ground up — AI-verified, bot-free, and built for genuine human expression. Discover the vision behind Rarelm.",
+  alternates: {
+    canonical: "/vision",
+  },
 };
 
 export default function VisionPage() {

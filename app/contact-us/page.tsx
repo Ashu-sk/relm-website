@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Contact Rarelm — Get in Touch With Our Team",
   description:
     "Have a question about Rarelm, PageStock, or partnerships? Reach out to our team. We'd love to hear from creators, investors, and businesses building with us.",
+  alternates: {
+    canonical: "/contact-us",
+  },
 };
 
 export default function ContactUsPage() {

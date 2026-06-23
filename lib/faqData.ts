@@ -14,19 +14,19 @@ export const faqs: Faq[] = [
       "Rarelm was founded by Ashutosh Kesharwani, who serves as its founder and CEO. He is building Rarelm as a solo founder through his company, MAVRIST TECH PVT LTD, based in Noida, India.",
   },
   {
-    question: "Who owns Rarelm and what company is behind it?",
+    question: "What is the company behind Rarelm?",
     answer:
-      "Rarelm is developed and owned by MAVRIST TECH PVT LTD, a DPIIT-recognised technology startup registered in Noida, Uttar Pradesh, India, and founded by Ashutosh Kesharwani in 2024.",
+      "Rarelm is built by MAVRIST TECH PVT LTD, a DPIIT-recognised technology startup based in Noida, India, founded by Ashutosh Kesharwani. The company is at the pre-seed stage, building the MVP, AI verification engine, verified creator-commerce ecosystem, and private beta community.",
   },
   {
     question: "When was Rarelm founded?",
     answer:
-      "The company behind Rarelm, MAVRIST TECH PVT LTD, was incorporated in March 2024. The platform itself is in active development ahead of a private beta and public launch.",
+      "The company behind Rarelm, MAVRIST TECH PVT LTD, was incorporated in March 2024. The platform is in active development ahead of its private beta and public launch.",
   },
   {
     question: "Where is Rarelm based?",
     answer:
-      "Rarelm is based in Noida, Uttar Pradesh, India. It is built by MAVRIST TECH PVT LTD, an Indian registered company.",
+      "Rarelm is based in Noida, Uttar Pradesh, India, and is built by MAVRIST TECH PVT LTD, a registered Indian company.",
   },
   {
     question: "Is Rarelm a real, registered company?",

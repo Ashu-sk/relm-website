@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "What is a Creator Stock Market? The Rise of PageStock | Rarelm",
   description:
     "A creator stock market lets fans and investors buy and sell shares in creators or their social pages. Learn how PageStock on Rarelm works.",
+  alternates: {
+    canonical: "/blog/what-is-a-creator-stock-market",
+  },
 };
 
 const WORDS_PER_MINUTE = 220;

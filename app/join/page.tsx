@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Join Rarelm — Get Early Access to the AI Social Platform",
   description:
     "Join the Rarelm waitlist and get early access to the AI-verified social expression platform. No bots, no fake accounts — just real people, real communities, real value.",
+  alternates: {
+    canonical: "/join",
+  },
 };
 
 export default function JoinPage() {

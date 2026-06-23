@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HeroBackground from "@/components/HeroBackground";
@@ -18,6 +19,12 @@ import JoinWaitlistSection from "@/components/JoinWaitlistSection";
 import JoinAsProfessionalSection from "@/components/JoinAsProfessionalSection";
 import FounderSection from "@/components/FounderSection";
 import ContactUsSection from "@/components/ContactUsSection";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (

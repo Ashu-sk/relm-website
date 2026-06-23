@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Buy shares in creators and public pages. Earn real returns as they grow. PageStock is the world's first AI-verified creator stock market — free for every verified user.",
   alternates: {
-    canonical: "https://www.rarelm.com/pagestock",
+    canonical: "/pagestock",
   },
   openGraph: {
     title: "PageStock — Invest in Creators. Earn as They Grow.",

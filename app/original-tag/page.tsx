@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "The Original Tag is Rarelm's AI-verified trust mark for unaltered content. Photos, videos, audio, and posts confirmed real — created by a verified human, untouched by AI.",
   alternates: {
-    canonical: "https://www.rarelm.com/original-tag",
+    canonical: "/original-tag",
   },
   openGraph: {
     title: "Original Tag — If It's Real, It's Marked.",

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Meet the Founder of Rarelm — The Story Behind the Platform",
   description:
     "Meet the founder of Rarelm and learn why they set out to build an AI-verified, bot-free social platform for real human expression. The story starts here.",
+  alternates: {
+    canonical: "/founder",
+  },
 };
 
 export default function FounderPage() {
