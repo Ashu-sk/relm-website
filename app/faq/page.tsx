@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { faqs, SITE_URL } from "@/lib/faqData";
+import { SITE_URL } from "@/lib/faqData";
+import { displayFaqs } from "./complianceFaqs";
 
 export const metadata: Metadata = {
   alternates: {
@@ -15,7 +16,7 @@ const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": `${SITE_URL}/faq#faq`,
-  mainEntity: faqs.map((f) => ({
+  mainEntity: displayFaqs.map((f) => ({
     "@type": "Question",
     name: f.question,
     acceptedAnswer: { "@type": "Answer", text: f.answer },
@@ -41,7 +42,7 @@ export default function FaqPage() {
           </header>
 
           <div>
-            {faqs.map((item) => (
+            {displayFaqs.map((item) => (
               <section key={item.question} className="mt-8 first:mt-0">
                 <h2 className="text-title font-semibold text-foreground">
                   {item.question}
@@ -49,6 +50,27 @@ export default function FaqPage() {
                 <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
                   {item.answer}
                 </p>
+                {item.question === "Who is the founder of Rarelm?" ? (
+                  <p className="mt-3 text-body leading-relaxed text-(--fg-secondary)">
+                    <a
+                      href="https://www.linkedin.com/in/ashutoshkesharwani/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+                    >
+                      LinkedIn
+                    </a>
+                    {" · "}
+                    <a
+                      href="https://www.instagram.com/amk.ashu/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+                    >
+                      Instagram
+                    </a>
+                  </p>
+                ) : null}
               </section>
             ))}
           </div>

@@ -1,10 +1,32 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { JetBrains_Mono, Nunito_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import GlobalAtmosphere from "@/components/GlobalAtmosphere";
 import { orgJsonLd } from "@/lib/jsonLd";
 import { SITE_URL } from "@/lib/faqData";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["500"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
@@ -47,7 +69,11 @@ export default function RootLayout({
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   return (
-    <html lang="en" className="scroll-smooth" style={{ colorScheme: "dark" }}>
+    <html
+      lang="en"
+      className={`scroll-smooth ${poppins.variable} ${nunitoSans.variable} ${jetbrainsMono.variable}`}
+      style={{ colorScheme: "dark" }}
+    >
       <head>
         <script
           type="application/ld+json"

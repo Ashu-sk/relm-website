@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { fireConfetti } from "@/lib/confetti";
 import { COUNTRY_CODES, PHONE_REGEX } from "@/lib/countryCodes";
 
-const waitlistInputClass =
-  "form-input";
+const waitlistInputClass = "cc-form-input form-input";
+const waitlistSelectClass = "cc-form-select-inline form-input form-select";
 
 export default function JoinWaitlistSection() {
   const [formData, setFormData] = useState({
@@ -87,11 +87,11 @@ export default function JoinWaitlistSection() {
 
   if (isSuccess) {
     return (
-      <section className="section-block section-padding-standard">
-        <div className="mx-auto max-w-xl py-24 text-center">
+      <section className="cc-section cc-waitlist">
+        <div className="cc-waitlist-inner mx-auto max-w-xl py-16 text-center">
           <div className="waitlist-success-animate">
-            <h2 className="text-display font-medium">You&apos;re in.</h2>
-            <p className="mt-4 text-body text-(--fg-secondary)">
+            <h2 className="cc-section-h2 cc-section-h2-center">You&apos;re in.</h2>
+            <p className="cc-expression-sub">
               Your place is reserved.
               <br />
               We&apos;ll reach out when Rarelm opens its doors.
@@ -105,212 +105,169 @@ export default function JoinWaitlistSection() {
   return (
     <section
       id="join-waitlist"
-      className="section-block section-padding-standard"
+      className="cc-section cc-waitlist"
       aria-labelledby="join-waitlist-heading"
     >
-      <div className="section-container">
-        <div className="relative mx-auto w-full max-w-xl text-center">
-          <h2
-            id="join-waitlist-heading"
-            className="text-display font-medium"
-          >
-            Be early. Be real.
-          </h2>
-          <div className="join-waitlist-tired-of">
-            <p className="text-body text-(--fg-secondary)">
-              Tired of:
-            </p>
-            <ul className="join-waitlist-list text-body leading-relaxed text-(--fg-secondary)">
-              <li>bots winning</li>
-              <li>fake reach</li>
-              <li>real people getting buried</li>
-            </ul>
-          </div>
-          <p className="text-headline font-medium text-foreground">
-            Rarelm isn&apos;t for everyone.
-            <br />
-            And that&apos;s intentional.
-          </p>
-
-          {/* Background glow — low opacity animated pulse */}
-          <div
-            className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center"
-            aria-hidden
-          >
-            <div
-              className="waitlist-glow-bg h-96 w-96 rounded-full blur-3xl"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)",
-              }}
-            />
-          </div>
-
-          <form
-            className="join-waitlist-form mt-10"
-            onSubmit={handleSubmit}
-            noValidate
-          >
-            {/* Glassmorphism card */}
-            <div className="relative mx-auto max-w-md rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-200">
-              <div className="space-y-4">
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="join-name"
-                    className="block text-left text-sm font-normal text-(--fg-secondary)"
-                  >
-                    Name
-                  </label>
-                  <input
-                    id="join-name"
-                    type="text"
-                    value={formData.fullName}
-                    onChange={(e) =>
-                      setFormData({ ...formData, fullName: e.target.value })
-                    }
-                    autoComplete="name"
-                    required
-                    className={waitlistInputClass}
-                    placeholder="Your name"
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="join-email"
-                    className="block text-left text-sm font-normal text-(--fg-secondary)"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="join-email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    autoComplete="email"
-                    required
-                    className={waitlistInputClass}
-                    placeholder="you@example.com"
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="join-country"
-                    className="block text-left text-sm font-normal text-(--fg-secondary)"
-                  >
-                    Country
-                  </label>
-                  <input
-                    id="join-country"
-                    type="text"
-                    value={formData.country}
-                    onChange={(e) =>
-                      setFormData({ ...formData, country: e.target.value })
-                    }
-                    autoComplete="country-name"
-                    className={waitlistInputClass}
-                    placeholder="e.g. India, USA"
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="join-phone"
-                    className="block text-left text-sm font-normal text-(--fg-secondary)"
-                  >
-                    Phone
-                  </label>
-                  <div className="flex w-full gap-2">
-                    <select
-                      id="join-country-code"
-                      value={formData.countryCode}
-                      onChange={(e) =>
-                        setFormData({ ...formData, countryCode: e.target.value })
-                      }
-                      className="h-11 w-[120px] shrink-0 rounded-[8px] border border-[#444] bg-[#222] px-3 text-[14px] text-white"
-                    >
-                      {COUNTRY_CODES.map(({ code, label }) => (
-                        <option key={code} value={code}>
-                          {code}
-                        </option>
-                      ))}
-                    </select>
-                    <input
-                      id="join-phone"
-                      type="tel"
-                      inputMode="numeric"
-                      value={formData.phone}
-                      onChange={(e) => {
-                        const v = e.target.value.replaceAll(/\D/g, "").slice(0, 10);
-                        setFormData({ ...formData, phone: v });
-                      }}
-                      autoComplete="tel-national"
-                      required
-                      maxLength={10}
-                      className="h-11 min-w-0 flex-1 rounded-[8px] border border-[#444] bg-[#222] px-3 text-[14px] text-white"
-                      placeholder="Phone number"
-                    />
-                  </div>
-                  {formErrors.phone && (
-                    <p className="mt-2 text-sm text-red-400">
-                      {formErrors.phone}
-                    </p>
-                  )}
-                </div>
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="join-domain"
-                    className="block text-left text-sm font-normal text-(--fg-secondary)"
-                  >
-                    Desired Domain
-                  </label>
-                  <p className="join-waitlist-helper">
-                    Optional — claim when ready
-                  </p>
-                  <input
-                    id="join-domain"
-                    type="text"
-                    value={formData.desiredDomain}
-                    onChange={(e) =>
-                      setFormData({ ...formData, desiredDomain: e.target.value })
-                    }
-                    className={waitlistInputClass}
-                    placeholder="your.relm"
-                  />
-                  {formErrors.desiredDomain && (
-                    <p className="mt-2 text-sm text-red-400">
-                      {formErrors.desiredDomain}
-                    </p>
-                  )}
-                </div>
-                {formErrors._ && (
-                  <p className="mt-2 text-sm text-red-400">{formErrors._}</p>
-                )}
-              </div>
-
-              <div className="mt-8">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="hero-cta-primary group w-full text-body font-medium disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  {isSubmitting ? "Submitting…" : "Enter Rarelm"}
-                  {!isSubmitting && (
-                    <span
-                      aria-hidden
-                      className="ml-1.5 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
-                    >
-                      →
-                    </span>
-                  )}
-                </button>
-                <p className="join-waitlist-reassurance">
-                  We&apos;re opening slowly. On purpose.
-                </p>
-              </div>
-            </div>
-          </form>
+      <div className="cc-waitlist-glow-orange" aria-hidden />
+      <div className="cc-waitlist-glow-blue" aria-hidden />
+      <div className="cc-waitlist-inner">
+        <p className="cc-section-eyebrow cc-section-eyebrow-center">
+          <span className="cc-hero-dot" aria-hidden />
+          Early access
+        </p>
+        <h2 id="join-waitlist-heading" className="cc-section-h2 cc-section-h2-center">
+          Be early. Be real.
+        </h2>
+        <div className="join-waitlist-tired-of">
+          <p className="cc-expression-sub">Tired of:</p>
+          <ul className="join-waitlist-list cc-expression-sub">
+            <li>bots winning</li>
+            <li>fake reach</li>
+            <li>real people getting buried</li>
+          </ul>
         </div>
+        <p className="cc-vision-row-title">
+          Rarelm isn&apos;t for everyone.
+          <br />
+          And that&apos;s intentional.
+        </p>
+
+        <form className="join-waitlist-form" onSubmit={handleSubmit} noValidate>
+          <div className="cc-form-card">
+            <div className="cc-form-field">
+              <label htmlFor="join-name" className="cc-form-label">
+                Name
+              </label>
+              <input
+                id="join-name"
+                type="text"
+                value={formData.fullName}
+                onChange={(e) =>
+                  setFormData({ ...formData, fullName: e.target.value })
+                }
+                autoComplete="name"
+                required
+                className={waitlistInputClass}
+                placeholder="Your name"
+              />
+              <p className="cc-form-hint">One human. One account.</p>
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="join-email" className="cc-form-label">
+                Email
+              </label>
+              <input
+                id="join-email"
+                type="email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                autoComplete="email"
+                required
+                className={waitlistInputClass}
+                placeholder="you@example.com"
+              />
+              <p className="cc-form-hint">Early access updates only.</p>
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="join-country" className="cc-form-label">
+                Country
+              </label>
+              <input
+                id="join-country"
+                type="text"
+                value={formData.country}
+                onChange={(e) =>
+                  setFormData({ ...formData, country: e.target.value })
+                }
+                autoComplete="country-name"
+                className={waitlistInputClass}
+                placeholder="e.g. India, USA"
+              />
+              <p className="cc-form-hint">Where you&apos;re joining from.</p>
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="join-phone" className="cc-form-label">
+                Phone
+              </label>
+              <div className="cc-form-phone-row">
+                <select
+                  id="join-country-code"
+                  value={formData.countryCode}
+                  onChange={(e) =>
+                    setFormData({ ...formData, countryCode: e.target.value })
+                  }
+                  className={waitlistSelectClass}
+                >
+                  {COUNTRY_CODES.map(({ code, label }) => (
+                    <option key={code} value={code}>
+                      {code}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  id="join-phone"
+                  type="tel"
+                  inputMode="numeric"
+                  value={formData.phone}
+                  onChange={(e) => {
+                    const v = e.target.value.replaceAll(/\D/g, "").slice(0, 10);
+                    setFormData({ ...formData, phone: v });
+                  }}
+                  autoComplete="tel-national"
+                  required
+                  maxLength={10}
+                  className={waitlistInputClass}
+                  placeholder="Phone number"
+                />
+              </div>
+              <p className="cc-form-hint">10-digit mobile number.</p>
+              {formErrors.phone && (
+                <p className="cc-form-error">{formErrors.phone}</p>
+              )}
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="join-domain" className="cc-form-label">
+                Desired Domain
+              </label>
+              <input
+                id="join-domain"
+                type="text"
+                value={formData.desiredDomain}
+                onChange={(e) =>
+                  setFormData({ ...formData, desiredDomain: e.target.value })
+                }
+                className={waitlistInputClass}
+                placeholder="your.rarelm"
+              />
+              <p className="cc-form-hint">Optional — claim when ready.</p>
+              {formErrors.desiredDomain && (
+                <p className="cc-form-error">{formErrors.desiredDomain}</p>
+              )}
+            </div>
+            {formErrors._ && <p className="cc-form-error">{formErrors._}</p>}
+
+            <div className="cc-form-submit">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="cc-btn-primary group disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {isSubmitting ? "Submitting…" : "Enter Rarelm"}
+                {!isSubmitting && (
+                  <span
+                    aria-hidden
+                    className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
+                  >
+                    →
+                  </span>
+                )}
+              </button>
+              <p className="cc-form-subline">The bots are furious.</p>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   );

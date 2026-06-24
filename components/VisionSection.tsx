@@ -23,68 +23,42 @@ export default function VisionSection() {
     <section
       id="vision"
       ref={ref}
-      className="section-block section-padding-large"
+      className="cc-vision"
       aria-labelledby="vision-heading"
     >
-      <div className="section-container">
-      <div
-        className={`vision-reveal mx-auto max-w-2xl text-center ${revealed ? "revealed" : ""}`}
-      >
-        <h2
-          id="vision-heading"
-          className="vision-reveal-item vision-reveal-item-1 text-display font-semibold"
-        >
-          Vision
-        </h2>
-        <p className="vision-reveal-item vision-reveal-item-2 mt-4 rl-sh">
-          Built for what&apos;s next
-        </p>
-
-        <p className="vision-reveal-item vision-reveal-item-3 mt-6 rl-ss">
-          Rarelm moves beyond flat feeds and endless scrolling.
-          <br />
-          It evolves into immersive, spatial social spaces where presence matters more than posts.
-        </p>
-
-        <div className="vision-reveal-item vision-reveal-item-4 vision-block mt-10">
-          <p className="rl-sh">
-            Human-resembled avatars.
-          </p>
-          <p className="mt-2 rl-ss">
-            Not characters. Not filters. Digital bodies that reflect real people.
-          </p>
-        </div>
-
-        <div className="vision-reveal-item vision-reveal-item-5 vision-block mt-8">
-          <p className="rl-sh">
-            Spatial presence.
-          </p>
-          <p className="mt-2 rl-ss">
-            You don&apos;t scroll through conversations. You enter them.
-            <br />
-            You meet. You explore. You share space.
-          </p>
-        </div>
-
-        <div className="vision-reveal-item vision-reveal-item-6 vision-block mt-8">
-          <p className="rl-sh">
-            Less scrolling. More being there.
-          </p>
-          <p className="mt-2 rl-ss">
-            Interaction becomes natural. Attention becomes intentional. Time feels spent — not wasted.
-          </p>
-        </div>
-
-        <p className="vision-reveal-item vision-reveal-item-7 mt-10 rl-ss">
-          Rarelm isn&apos;t building a virtual world for escape. It&apos;s building a social layer for reality.
-          <br />
-          A place where identity, trust, and value carry forward into immersive environments.
-        </p>
-
-        <p className="vision-reveal-item vision-reveal-item-8 mt-8 rl-sh">
-          What starts as verified social interaction evolves into spatial computing for real humans.
-        </p>
+      <div className="cc-vision-glow" aria-hidden>
+        <div className="cc-vision-glow-blue" />
       </div>
+      <div
+        className={`cc-vision-inner vision-reveal ${revealed ? "revealed" : ""}`}
+      >
+        <p className="cc-section-eyebrow cc-section-eyebrow-center vision-reveal-item vision-reveal-item-1">
+          <span className="cc-hero-dot" aria-hidden />
+          Vision
+        </p>
+        <h2 id="vision-heading" className="cc-vision-h2 vision-reveal-item vision-reveal-item-1">
+          This isn&apos;t the final form.
+        </h2>
+        <p className="cc-vision-intro vision-reveal-item vision-reveal-item-2">
+          Rarelm moves beyond flat feeds and endless scrolling. It evolves into
+          immersive, spatial social spaces where presence matters more than posts.
+        </p>
+
+        <div className="cc-vision-rows vision-reveal-item vision-reveal-item-3">
+          <div className="cc-vision-row">
+            <p className="cc-vision-row-title">Human-resembled avatars.</p>
+            <p className="cc-vision-row-body">
+              Not characters. Not filters. Digital bodies that reflect real people.
+            </p>
+          </div>
+          <div className="cc-vision-row">
+            <p className="cc-vision-row-title">Spatial presence.</p>
+            <p className="cc-vision-row-body">
+              You don&apos;t scroll through conversations. You enter them. You meet.
+              You explore. You share space.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

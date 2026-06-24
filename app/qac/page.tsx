@@ -114,44 +114,48 @@ export default function QacPage() {
           __html: JSON.stringify(qacSchema),
         }}
       />
-      <main className="rl-sec px-4 sm:px-6 md:px-8">
-        <article className="mx-auto w-full max-w-3xl">
-          <header className="mb-12">
-            <p className="rl-ey ey-w">
-              QAC — QUICK ANONYMOUS CONFESSION
-            </p>
-            <h1 className="mt-4 rl-h1">
-              Say What You&apos;ve Never Been Able to Say.
-            </h1>
-            <p className="hero-definition mt-6 rl-ss">
-              QAC (Quick Anonymous Confession) is Rarelm&apos;s anonymous expression room — a feature
-              that lets any AI-verified Rarelm user share a confession, fear, or truth completely
-              anonymously and receive real human responses from verified counsellors, experts, or
-              peers. You are verified underneath as a real human. You are anonymous on the
-              surface. What you say is real. Who you are stays private.
-            </p>
-            <p className="mt-4 rl-ss">
-              Most people have something they need to say but cannot. Fear of judgment. Fear of
-              consequence. Fear of being seen. QAC removes the barrier — while keeping the
-              humanity on the other side.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/join"
-                className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
-              >
-                <span>Join the Waitlist →</span>
-                <span
-                  aria-hidden
-                  className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
+      <main className="cc-subpage">
+        <header className="cc-subpage-section cc-subpage-hero">
+          <div className="cc-section-inner">
+            <div className="cc-subpage-hero-stack">
+              <p className="rl-ey ey-w">
+                QAC — QUICK ANONYMOUS CONFESSION
+              </p>
+              <h1 className="mt-4 rl-h1">
+                Say What You&apos;ve Never Been Able to Say.
+              </h1>
+              <p className="hero-definition mt-6 rl-ss">
+                QAC (Quick Anonymous Confession) is Rarelm&apos;s anonymous expression room — a feature
+                that lets any AI-verified Rarelm user share a confession, fear, or truth completely
+                anonymously and receive real human responses from verified counsellors, experts, or
+                peers. You are verified underneath as a real human. You are anonymous on the
+                surface. What you say is real. Who you are stays private.
+              </p>
+              <p className="mt-4 rl-ss">
+                Most people have something they need to say but cannot. Fear of judgment. Fear of
+                consequence. Fear of being seen. QAC removes the barrier — while keeping the
+                humanity on the other side.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/join"
+                  className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
                 >
-                  →
-                </span>
-              </Link>
+                  <span>Join the Waitlist →</span>
+                  <span
+                    aria-hidden
+                    className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
+                  >
+                    →
+                  </span>
+                </Link>
+              </div>
             </div>
-          </header>
+          </div>
+        </header>
 
-          <section className="mt-14 space-y-6" aria-labelledby="qac-problem">
+        <section className="cc-subpage-section" aria-labelledby="qac-problem">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 THE PROBLEM
@@ -171,9 +175,11 @@ export default function QacPage() {
                 Verified underneath. Anonymous on the surface. This is what makes it safe.
               </p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="qac-what">
+        <section className="cc-subpage-section" aria-labelledby="qac-what">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 WHAT IS QAC
@@ -195,9 +201,11 @@ export default function QacPage() {
               The response comes from real humans — verified counsellors, experts, and peers. Never
               bots. Never algorithms.
             </p>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="qac-how">
+        <section className="cc-subpage-section" aria-labelledby="qac-how">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 HOW QAC WORKS
@@ -219,9 +227,11 @@ export default function QacPage() {
               </li>
               <li>Receive a real human response — not an algorithmic suggestion, not a bot reply</li>
             </ol>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="qac-use">
+        <section className="cc-subpage-section" aria-labelledby="qac-use">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 WHAT YOU CAN USE QAC FOR
@@ -242,21 +252,25 @@ export default function QacPage() {
               <li>A past experience that needs to be witnessed — even once</li>
               <li>An emotion that has no safe place to go</li>
             </ul>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-8" aria-labelledby="qac-who">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                WHO RESPONDS TO QAC
+        <section className="cc-subpage-section" aria-labelledby="qac-who">
+          <div className="cc-section-inner">
+            <div className="cc-subpage-prose space-y-6">
+              <header className="space-y-2">
+                <p className="rl-ey ey-w">
+                  WHO RESPONDS TO QAC
+                </p>
+                <h2 id="qac-who" className="rl-sh">
+                  Real humans. Verified. Every time.
+                </h2>
+              </header>
+              <p className="rl-ss">
+                QAC confessions are never read or responded to by bots or algorithms.
               </p>
-              <h2 id="qac-who" className="rl-sh">
-                Real humans. Verified. Every time.
-              </h2>
-            </header>
-            <p className="rl-ss">
-              QAC confessions are never read or responded to by bots or algorithms.
-            </p>
-            <div className="grid gap-6 sm:grid-cols-2">
+            </div>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Certified Counsellors</h3>
                 <p className="mt-3 rl-ss">
@@ -282,9 +296,11 @@ export default function QacPage() {
                 </p>
               </section>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="qac-important">
+        <section className="cc-subpage-section" aria-labelledby="qac-important">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">IMPORTANT</p>
               <h2 id="qac-important" className="rl-sh">
@@ -299,9 +315,11 @@ export default function QacPage() {
                 If you are in immediate danger or experiencing a mental health crisis, please contact your local emergency services or a certified crisis helpline immediately.
               </p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="qac-rarelm">
+        <section className="cc-subpage-section" aria-labelledby="qac-rarelm">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 THE RARELM DIFFERENCE
@@ -321,10 +339,12 @@ export default function QacPage() {
                 Anonymous on the surface. Accountable underneath. That is what makes QAC different from every other confession or anonymous platform that exists today.
               </p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="qac-profiles">
-            <header className="space-y-2">
+        <section className="cc-subpage-section" aria-labelledby="qac-profiles">
+          <div className="cc-section-inner">
+            <header className="space-y-2 cc-subpage-prose">
               <p className="rl-ey ey-w">
                 QAC ACROSS YOUR 3 PROFILES
               </p>
@@ -332,7 +352,7 @@ export default function QacPage() {
                 QAC across all three Rarelm profiles
               </h2>
             </header>
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="mt-8 grid gap-6 sm:grid-cols-3">
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Anonymous (Me)</h3>
                 <p className="mt-3 rl-ss">
@@ -352,9 +372,11 @@ export default function QacPage() {
                 </p>
               </section>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-8" aria-labelledby="qac-faq">
+        <section className="cc-subpage-section" aria-labelledby="qac-faq">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 FREQUENTLY ASKED QUESTIONS
@@ -374,9 +396,11 @@ export default function QacPage() {
                 </div>
               ))}
             </dl>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="qac-close">
+        <section className="cc-subpage-section" aria-labelledby="qac-close">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <h2 id="qac-close" className="rl-sh">
               Whatever you have been carrying — this is where you can put it down.
             </h2>
@@ -388,8 +412,8 @@ export default function QacPage() {
                 <span>Join the Waitlist →</span>
               </Link>
             </div>
-          </section>
-        </article>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </>

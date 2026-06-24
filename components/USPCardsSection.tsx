@@ -29,8 +29,9 @@ const cards = [
     line: "Verified sellers. In-app payments. Native storefronts.",
   },
   {
-    heading: "REM — Rarelm Encrypted Money",
+    heading: "RARELM Encrypted Money",
     line: "Value moves only after trust is proven.",
+    isRem: true,
   },
 ] as const;
 
@@ -130,29 +131,27 @@ export default function USPCardsSection() {
   return (
     <section
       id="usp-cards"
-      className="rl-sec"
+      className="cc-section cc-section-calm"
       aria-labelledby="usp-cards-heading"
     >
-      <div className="usp-cards-inner">
-        <p
-          id="usp-cards-heading"
-          className="usp-cards-label text-caption uppercase tracking-wide text-(--fg-tertiary)"
-        >
-          WHAT MAKES RELM DIFFERENT
+      <div className="cc-section-inner">
+        <p className="cc-section-eyebrow">
+          <span className="cc-hero-dot" aria-hidden />
+          What Makes Rarelm Different
         </p>
-        <h2 className="usp-cards-title rl-sh text-foreground">
-          Built for trust. Designed for humans.
+        <h2 id="usp-cards-heading" className="cc-section-h2">
+          Built for trust. Designed for actual humans.
         </h2>
-        <div className="usp-cards-grid" style={{ perspective: "1000px" }}>
+        <div className="cc-usp-grid" style={{ perspective: "1000px" }}>
           {cards.map((card, index) => (
             <article
               key={card.heading}
               ref={(el) => {
                 cardRefs.current[index] = el;
               }}
-              className={`usp-card ${
-                hovered === index || pressed === index ? "usp-card-interacting" : ""
-              }`}
+              className={`cc-usp-card usp-card ${
+                "isRem" in card && card.isRem ? "cc-usp-card-rem" : ""
+              } ${hovered === index || pressed === index ? "usp-card-interacting" : ""}`}
               aria-label={card.heading}
               onMouseEnter={() => handleEnter(index)}
               onMouseLeave={() => handleLeave(index)}
@@ -174,8 +173,8 @@ export default function USPCardsSection() {
                 })(),
               }}
             >
-              <h3 className="usp-card-heading">{card.heading}</h3>
-              <p className="usp-card-line">{card.line}</p>
+              <h3 className="cc-usp-card-heading">{card.heading}</h3>
+              <p className="cc-usp-card-line">{card.line}</p>
             </article>
           ))}
         </div>

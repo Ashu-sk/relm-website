@@ -4,19 +4,19 @@ export default function ContactUsSection() {
   return (
     <section
       id="contact-us"
-      className="rl-sec"
+      className="cc-section cc-contact"
       aria-labelledby="contact-us-heading"
     >
-      <div className="section-container">
-      <div className="mx-auto w-full max-w-2xl text-center">
-        <h2
-          id="contact-us-heading"
-          className="text-display font-semibold uppercase tracking-wide"
-        >
-          Contact Us
+      <div className="cc-section-inner">
+        <p className="cc-section-eyebrow cc-section-eyebrow-center">
+          <span className="cc-hero-dot" aria-hidden />
+          Contact
+        </p>
+        <h2 id="contact-us-heading" className="cc-section-h2 cc-section-h2-center">
+          Questions? Ideas? Skepticism?
         </h2>
-        <p className="mt-6 rl-ss">
-          <span className="contact-us-prompts flex flex-wrap justify-center gap-x-6 gap-y-1">
+        <p className="cc-contact-line">
+          <span className="cc-contact-prompts">
             <span>Questions?</span>
             <span>Ideas?</span>
             <span>Skepticism?</span>
@@ -25,17 +25,15 @@ export default function ContactUsSection() {
           We like all three.
         </p>
 
-        <div className="contact-us-tabs mx-auto mt-10 flex justify-center">
+        <div className="cc-contact-actions">
           <a
-            href="mailto:ashutosh@mavrist.com"
-            className="contact-us-tab inline-flex items-center gap-1.5 rounded-full border border-(--fg-tertiary)/30 px-5 py-2.5 text-body font-medium text-foreground transition-colors hover:border-(--fg-secondary)/50 hover:bg-white/5"
+            href="mailto:ashutosh@rarelm.com"
+            className="cc-contact-email"
             aria-label="Email us"
           >
-            Email
-            <span aria-hidden>→</span>
+            Email →
           </a>
         </div>
-      </div>
       </div>
     </section>
   );

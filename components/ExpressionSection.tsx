@@ -24,53 +24,50 @@ export default function ExpressionSection() {
     <section
       id="expression"
       ref={ref}
-      className="rl-sec"
+      className="cc-section cc-section-calm cc-expression-soft"
       aria-labelledby="expression-heading"
     >
-      <div className="section-container">
-        <div className="mx-auto max-w-2xl text-center">
+      <div className="cc-section-inner">
         <div className={`expression-reveal ${revealed ? "revealed" : ""}`}>
-          <p className="expression-reveal-item expression-reveal-item-1 text-caption uppercase tracking-wide text-(--fg-tertiary)">
-            Fear of judgement
+          <p className="cc-section-eyebrow cc-section-eyebrow-center expression-reveal-item expression-reveal-item-1">
+            <span className="cc-hero-dot" aria-hidden />
+            QAC
           </p>
           <h2
             id="expression-heading"
-            className="expression-reveal-item expression-reveal-item-2 mt-2 text-display font-semibold"
+            className="cc-section-h2 cc-section-h2-center expression-reveal-item expression-reveal-item-2"
           >
-            Expression without fear.
+            Say it. For real — or anonymously.
           </h2>
-          <p className="expression-reveal-item expression-reveal-item-3 mt-6 rl-ss">
+          <p className="cc-expression-sub expression-reveal-item expression-reveal-item-3">
             Verified when it matters. Anonymous when it&apos;s needed.
             <br />
             Choose how you show up — without losing trust.
           </p>
-          <p className="expression-reveal-item expression-reveal-item-4 mt-6 rl-sh">
-            Confession rooms.
-            <br />
-            Private expression.
-            <br />
-            Human responses — not algorithms
-          </p>
-          <div className="expression-reveal-item expression-reveal-item-4 mt-6">
-            <Link
-              href="/qac"
-              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
-            >
+
+          <div className="cc-expression-panels expression-reveal-item expression-reveal-item-4">
+            <div className="cc-expression-panel cc-expression-panel-verified">
+              <span className="cc-expression-panel-label">Verified</span>
+              <div className="cc-expression-avatar" aria-hidden />
+              <p className="cc-expression-panel-copy">
+                Speak openly. Your identity is proven.
+              </p>
+            </div>
+            <div className="cc-expression-panel cc-expression-panel-anon">
+              <span className="cc-expression-panel-label">Anonymous</span>
+              <div className="cc-expression-avatar cc-expression-avatar-blur" aria-hidden />
+              <p className="cc-expression-panel-copy">
+                Say what you need to. Still backed by verification underneath.
+              </p>
+            </div>
+          </div>
+
+          <div className="cc-expression-link-wrap expression-reveal-item expression-reveal-item-4">
+            <Link href="/qac" className="cc-btn-ghost">
               Learn about QAC →
             </Link>
           </div>
         </div>
-
-        <div className="expression-toggle-visual mt-12 sm:mt-14" aria-hidden>
-          <div className="expression-toggle">
-            <span className="expression-toggle-label">Verified</span>
-            <div className="expression-toggle-track">
-              <div className="expression-toggle-thumb" />
-            </div>
-            <span className="expression-toggle-label">Anonymous</span>
-          </div>
-        </div>
-      </div>
       </div>
     </section>
   );

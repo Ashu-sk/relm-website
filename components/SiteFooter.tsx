@@ -51,7 +51,7 @@ export default function SiteFooter() {
           aria-label="Social links"
         >
           <a
-            href="https://x.com/relm978149"
+            href="https://x.com/rarelmHQ"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-icon text-(--fg-tertiary) transition-colors hover:text-(--fg-secondary)"

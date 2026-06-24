@@ -104,18 +104,21 @@ export default function SolutionCardsSection() {
   return (
     <section
       id="solution-cards"
-      className="rl-sec"
+      className="cc-section cc-section-calm"
       aria-labelledby="solution-cards-heading"
     >
-      <div className="section-container">
-        <p
-          id="solution-cards-heading"
-          className="solution-cards-label text-center text-caption uppercase tracking-wide text-(--fg-tertiary)"
-        >
-          Solutions
-        </p>
+      <div className="cc-section-inner">
+        <div className="cc-section-eyebrow-center">
+          <p className="cc-section-eyebrow">
+            <span className="cc-hero-dot" aria-hidden />
+            Solutions
+          </p>
+        </div>
+        <h2 id="solution-cards-heading" className="cc-section-h2 cc-section-h2-center">
+          So we built the opposite.
+        </h2>
         <div
-          className="solution-cards-grid"
+          className="cc-solution-grid"
           style={{ perspective: "1000px" }}
         >
           {cards.map((card, index) => (
@@ -124,7 +127,7 @@ export default function SolutionCardsSection() {
               ref={(el) => {
                 cardRefs.current[index] = el;
               }}
-              className={`solution-card ${hovered === index ? "solution-card-interacting" : ""}`}
+              className={`cc-solution-card solution-card ${hovered === index ? "solution-card-interacting" : ""}`}
               role="article"
               aria-label={card.heading}
               onMouseEnter={() => handleEnter(index)}
@@ -140,11 +143,11 @@ export default function SolutionCardsSection() {
                 })(),
               }}
             >
-              <h3 className="solution-card-heading">{card.heading}</h3>
-              <p className="solution-card-line">{card.line1}</p>
-              <p className="solution-card-line">{card.line2}</p>
+              <h3 className="cc-solution-card-heading">{card.heading}</h3>
+              <p className="cc-solution-card-line">{card.line1}</p>
+              <p className="cc-solution-card-line">{card.line2}</p>
               {card.line3 != null ? (
-                <p className="solution-card-line">{card.line3}</p>
+                <p className="cc-solution-card-line">{card.line3}</p>
               ) : null}
             </div>
           ))}

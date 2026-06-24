@@ -14,67 +14,74 @@ export const metadata: Metadata = {
 export default function FounderPage() {
   return (
     <>
-    <main className="rl-sec px-4 sm:px-6 md:px-8">
-      <div className="mx-auto w-full max-w-3xl">
-        <h1 className="rl-h1">
-          The Story Behind Rarelm
-        </h1>
-        <p className="mt-6 rl-ss">
-          Want to understand the mission? Read{" "}
-          <Link
-            href="/vision"
-            className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
-          >
-            Rarelm&apos;s vision
-          </Link>
-          , explore{" "}
-          <Link
-            href="/pagestock"
-            className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
-          >
-            PageStock
-          </Link>
-          , or{" "}
-          <Link
-            href="/join"
-            className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
-          >
-            join the waitlist
-          </Link>
-          .
-        </p>
-        <section className="mt-10 space-y-5">
-          <h2 className="rl-sh">
-            Why this needed to exist
-          </h2>
-          <p className="rl-ss">
-            Rarelm started from a simple observation: social media broke at the identity
-            layer. When anyone can create infinite fake accounts, every downstream
-            problem becomes inevitable — bots farming engagement, scams in DMs, fake
-            professionals selling advice, and real people losing trust in every signal.
-          </p>
-          <p className="rl-ss">
-            The founder story is the decision to rebuild from first principles: verify
-            every user as a real human before they can participate, while still
-            protecting expression through verified anonymity. That combination is the
-            foundation for everything else Rarelm is building — communities that feel
-            safe, commerce that can be trusted, and PageStock that only works when the
-            underlying growth data is real.
-          </p>
-          <p className="rl-ss">
-            If you want early access to the private beta and updates as the MVP rolls
-            out,{" "}
-            <Link
-              href="/join"
-              className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
-            >
-              join the waitlist
-            </Link>
-            .
-          </p>
+      <main className="cc-subpage">
+        <header className="cc-subpage-section cc-subpage-hero">
+          <div className="cc-section-inner">
+            <div className="cc-subpage-hero-stack">
+              <h1 className="rl-h1">
+                The Story Behind Rarelm
+              </h1>
+              <p className="mt-6 rl-ss">
+                Want to understand the mission? Read{" "}
+                <Link
+                  href="/vision"
+                  className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+                >
+                  Rarelm&apos;s vision
+                </Link>
+                , explore{" "}
+                <Link
+                  href="/pagestock"
+                  className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+                >
+                  PageStock
+                </Link>
+                , or{" "}
+                <Link
+                  href="/join"
+                  className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+                >
+                  join the waitlist
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </header>
+
+        <section className="cc-subpage-section">
+          <div className="cc-section-inner cc-subpage-prose space-y-5">
+            <h2 className="rl-sh">
+              Why this needed to exist
+            </h2>
+            <p className="rl-ss">
+              Rarelm started from a simple observation: social media broke at the identity
+              layer. When anyone can create infinite fake accounts, every downstream
+              problem becomes inevitable — bots farming engagement, scams in DMs, fake
+              professionals selling advice, and real people losing trust in every signal.
+            </p>
+            <p className="rl-ss">
+              The founder story is the decision to rebuild from first principles: verify
+              every user as a real human before they can participate, while still
+              protecting expression through verified anonymity. That combination is the
+              foundation for everything else Rarelm is building — communities that feel
+              safe, commerce that can be trusted, and PageStock that only works when the
+              underlying growth data is real.
+            </p>
+            <p className="rl-ss">
+              If you want early access to the private beta and updates as the MVP rolls
+              out,{" "}
+              <Link
+                href="/join"
+                className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+              >
+                join the waitlist
+              </Link>
+              .
+            </p>
+          </div>
         </section>
-      </div>
-    </main>
+      </main>
       <SiteFooter />
     </>
   );

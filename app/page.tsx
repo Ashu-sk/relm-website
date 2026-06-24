@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import HeroBackground from "@/components/HeroBackground";
 import ProblemCardsSection from "@/components/ProblemCardsSection";
 import SolutionCardsSection from "@/components/SolutionCardsSection";
 import USPCardsSection from "@/components/USPCardsSection";
@@ -26,16 +25,31 @@ export const metadata: Metadata = {
   },
 };
 
+const MANIFESTO_TEXT =
+  'NO BOTS · NO BURNER ACCOUNTS · NO "hey babe" from a crypto stranger · NO follower farms · NO main-character cosplay · NO 47-follower egg with strong opinions · REAL HUMANS ONLY · ';
+
+function MarqueeRow() {
+  return (
+    <div className="cc-marquee-row">
+      <span className="cc-marquee-line">{MANIFESTO_TEXT}</span>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
       <section
         id="hero"
-        className="relative grid min-h-screen place-items-center px-[clamp(1.5rem,5vw,8rem)] pb-16 pt-28 sm:py-20 md:py-24"
+        className="cc-hero"
         aria-labelledby="hero-heading"
       >
-        <HeroBackground />
-        <div className="relative z-10 animate-fade-enter-slow mx-auto max-w-2xl text-center">
+        <div className="cc-hero-atmosphere" aria-hidden>
+          <div className="cc-hero-glow-orange" />
+          <div className="cc-hero-glow-blue" />
+          <div className="cc-hero-grid" />
+        </div>
+        <div className="cc-hero-inner">
           <Image
             src="/relm-logo.png"
             alt="Rarelm"
@@ -44,45 +58,46 @@ export default function Home() {
             className="mx-auto h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
             priority
           />
-          <p className="mt-(--space-hero) text-caption uppercase tracking-wide text-(--fg-secondary) sm:text-body">
+          <p className="cc-hero-eyebrow mt-8">
+            <span className="cc-hero-dot" aria-hidden />
             Real Is Rare.
           </p>
-          <h1 id="hero-heading" className="hero-headline-block mx-auto mt-(--space-hero) max-w-[30ch] text-center">
-            <span className="block hero-headline-line1">Social Expression.</span>
-            <span className="block hero-headline-line2">For Real Humans.</span>
+          <h1 id="hero-heading" className="cc-hero-h1">
+            <span className="cc-hero-strike">Stop following.</span>
+            <span className="cc-hero-line2">
+              Start <span className="cc-hero-accent">backing.</span>
+            </span>
           </h1>
-          <p className="mx-auto mt-(--space-hero) max-w-md hero-subhead">
-            Speak openly.
-            <br />
-            Stay anonymous when needed.
-            <br />
-            Be heard without fear.
+          <p className="cc-hero-sub">
+            The follow economy is mostly fake. Rarelm is where verified humans back
+            each other — with identity, commerce, and upside that can&apos;t be
+            manufactured.
           </p>
-          <p className="mx-auto mt-(--space-hero) max-w-lg hero-proof">
-            An AI-verified social platform where identity is real and engagement can&apos;t be faked.
-          </p>
-          <p className="mx-auto mt-4 max-w-lg text-body leading-relaxed text-(--fg-secondary)">
-            New here? Start with{" "}
-            <Link
-              href="/pagestock"
-              className="link-accent underline underline-offset-2 transition-smooth hover:opacity-90"
-            >
-              PageStock
-            </Link>{" "}
-            and{" "}
-            <Link
-              href="/faq"
-              className="link-accent underline underline-offset-2 transition-smooth hover:opacity-90"
-            >
-              the FAQ
-            </Link>
-            .
-          </p>
-          <div className="mt-(--space-hero) flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="#join-waitlist"
-              className="hero-cta-primary hero-cta-mobile group inline-flex w-full items-center justify-center gap-2 text-body font-medium sm:w-auto"
-            >
+          <div className="cc-hero-steps" aria-label="How it works">
+            <div className="cc-hero-step">
+              <span className="cc-hero-step-num">01</span>
+              <span className="cc-hero-step-title">Verify</span>
+              <span className="cc-hero-step-body">
+                Mandatory AI face auth. One human. One account.
+              </span>
+            </div>
+            <div className="cc-hero-step">
+              <span className="cc-hero-step-num">02</span>
+              <span className="cc-hero-step-title">Claim</span>
+              <span className="cc-hero-step-body">
+                yourname.rarelm — your domain identity, not a handle.
+              </span>
+            </div>
+            <div className="cc-hero-step">
+              <span className="cc-hero-step-num">03</span>
+              <span className="cc-hero-step-title">Back</span>
+              <span className="cc-hero-step-body">
+                PageStock, commerce, and community that can&apos;t be faked.
+              </span>
+            </div>
+          </div>
+          <div className="cc-hero-actions">
+            <Link href="#join-waitlist" className="cc-btn-primary group">
               Enter Rarelm{" "}
               <span
                 aria-hidden
@@ -91,14 +106,9 @@ export default function Home() {
                 →
               </span>
             </Link>
-            <Link
-              href="#motion-manifesto"
-              className="hero-cta-mobile inline-flex w-full items-center justify-center gap-1.5 rounded-md border border-(--fg-tertiary)/30 px-6 py-3 text-body text-foreground transition-smooth hover:border-(--fg-secondary)/50 hover:bg-white/5 sm:w-auto"
-            >
+            <Link href="#motion-manifesto" className="cc-btn-ghost">
               See how it works{" "}
-              <span aria-hidden className="ml-1">
-                →
-              </span>
+              <span aria-hidden>→</span>
             </Link>
           </div>
         </div>
@@ -106,22 +116,14 @@ export default function Home() {
 
       <section
         id="motion-manifesto"
-        className="marquee-section overflow-x-hidden py-6 sm:py-8"
+        className="cc-marquee"
         aria-label="Motion Manifesto"
       >
-        <div className="marquee-track">
-          <span className="marquee-text">
-            NO BOTS · NO FAKE IDs · NO SCAMS · NO FAKE PROFESSIONALS · NO DEEPFAKES ·
-            NO SHOPPING SCAMS · NO FAKE NEWS · NO FAKE FACTS · NO FAKE ENGAGEMENT ·
-            NO FAKE FOLLOWERS · NO FAKE CONNECTIONS · NO IMPERSONATION ·
-            NO FAKE HUMANS · NO FAKE ADVERTISEMENTS ·
-          </span>
-          <span className="marquee-text" aria-hidden>
-            NO BOTS · NO FAKE IDs · NO SCAMS · NO FAKE PROFESSIONALS · NO DEEPFAKES ·
-            NO SHOPPING SCAMS · NO FAKE NEWS · NO FAKE FACTS · NO FAKE ENGAGEMENT ·
-            NO FAKE FOLLOWERS · NO FAKE CONNECTIONS · NO IMPERSONATION ·
-            NO FAKE HUMANS · NO FAKE ADVERTISEMENTS ·
-          </span>
+        <div className="cc-marquee-track">
+          <MarqueeRow />
+          <div aria-hidden>
+            <MarqueeRow />
+          </div>
         </div>
       </section>
 
@@ -159,54 +161,37 @@ export default function Home() {
 
       <ContactUsSection />
 
-      <footer
-        className="section-block section-padding-standard text-center"
-        aria-label="Site footer"
-      >
-        <div className="section-container max-w-2xl mx-auto">
-          <p className="text-body font-normal text-foreground">Rarelm</p>
-          <p className="mt-2 text-body text-(--fg-tertiary)">
-            Founder — Ashutosh Kesharwani
+      <footer className="cc-footer" aria-label="Site footer">
+        <div className="cc-footer-inner">
+          <p className="cc-footer-wordmark">
+            rarel<span className="cc-footer-wordmark-accent">m</span>
           </p>
-          <nav className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2" aria-label="Explore Rarelm">
-            <Link
-              href="/pagestock"
-              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
-            >
-              Explore PageStock
+          <p className="cc-footer-tagline">real is rare.</p>
+          <p className="cc-footer-muted">The bots didn&apos;t make it this far.</p>
+          <p className="cc-footer-founder">Founder — Ashutosh Kesharwani</p>
+          <nav className="cc-footer-nav" aria-label="Explore Rarelm">
+            <Link href="/pagestock" className="cc-footer-link">
+              PageStock
             </Link>
-            <Link
-              href="/original-tag"
-              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
-            >
+            <Link href="/original-tag" className="cc-footer-link">
               Original Tag
             </Link>
-            <Link
-              href="/qac"
-              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
-            >
+            <Link href="/qac" className="cc-footer-link">
               QAC
             </Link>
-            <Link
-              href="/faq"
-              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
-            >
-              Read the FAQ
+            <Link href="/faq" className="cc-footer-link">
+              FAQ
             </Link>
-            <Link
-              href="/join"
-              className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
-            >
-              Join the waitlist
+            <Link href="/join" className="cc-footer-link">
+              Join
             </Link>
           </nav>
-          <nav className="footer-icons mt-4 flex justify-center gap-6" aria-label="Social links">
+          <nav className="cc-footer-social" aria-label="Social links">
             <a
-              href="https://x.com/relm978149"
+              href="https://x.com/rarelmHQ"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-icon text-(--fg-tertiary) transition-colors hover:text-(--fg-secondary)"
-              aria-label="X (Twitter)"
+              aria-label="X (Twitter) @rarelmHQ"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -216,7 +201,6 @@ export default function Home() {
               href="https://www.linkedin.com/company/rarelm/"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-icon text-(--fg-tertiary) transition-colors hover:text-(--fg-secondary)"
               aria-label="LinkedIn"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -226,9 +210,7 @@ export default function Home() {
               </svg>
             </a>
           </nav>
-          <p className="mt-4 text-body text-(--fg-tertiary)">
-            © Rarelm. All rights reserved.
-          </p>
+          <p className="cc-footer-copy">© Rarelm. All rights reserved.</p>
         </div>
       </footer>
     </>

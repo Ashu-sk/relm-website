@@ -13,6 +13,9 @@ const INTEREST_OPTIONS = [
   "Others",
 ] as const;
 
+const proInputClass = "cc-form-input form-input";
+const proSelectClass = "cc-form-select-inline form-input form-select";
+
 export default function JoinAsProfessionalSection() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -105,10 +108,10 @@ export default function JoinAsProfessionalSection() {
 
   if (isSuccess) {
     return (
-      <section className="rl-sec">
-        <div className="mx-auto max-w-xl py-24 text-center">
-          <h2 className="rl-sh">You&apos;re in.</h2>
-          <p className="mt-4 text-body text-(--fg-secondary)">
+      <section className="cc-section cc-pro-form">
+        <div className="cc-section-inner mx-auto max-w-xl py-16 text-center">
+          <h2 className="cc-section-h2 cc-section-h2-center">You&apos;re in.</h2>
+          <p className="cc-expression-sub">
             We&apos;ve received your application.
             <br />
             We&apos;ll reach out when Rarelm opens for professionals.
@@ -121,277 +124,246 @@ export default function JoinAsProfessionalSection() {
   return (
     <section
       id="join-as-professional"
-      className="rl-sec"
+      className="cc-section cc-section-calm cc-pro-form"
       aria-labelledby="join-professional-heading"
     >
-      <div className="section-container">
-        <div className="mx-auto w-full max-w-2xl text-center">
-          <h2
-            id="join-professional-heading"
-            className="rl-sh"
-          >
-            Professionals Only
-          </h2>
-          <p className="join-professional-lead mt-6 rl-ss">
-            If trust matters to your work,
-            <br />
-            Rarelm is built for you.
-          </p>
-          <ul className="join-professional-list mt-6 rl-ss">
-            <li>Verified presence</li>
-            <li>Real people, real intent</li>
-            <li>Direct value for your experience</li>
-          </ul>
+      <div className="cc-section-inner">
+        <p className="cc-section-eyebrow cc-section-eyebrow-center">
+          <span className="cc-hero-dot" aria-hidden />
+          Professionals
+        </p>
+        <h2 id="join-professional-heading" className="cc-section-h2 cc-section-h2-center">
+          Professionals Only
+        </h2>
+        <p className="cc-expression-sub">
+          If trust matters to your work,
+          <br />
+          Rarelm is built for you.
+        </p>
+        <ul className="join-professional-list cc-expression-sub">
+          <li>Verified presence</li>
+          <li>Real people, real intent</li>
+          <li>Direct value for your experience</li>
+        </ul>
 
-          <form
-            className="join-professional-form mt-10"
-            onSubmit={handleSubmit}
-            noValidate
-          >
-            {/* Form container: glassmorphism */}
-            <div className="mx-auto max-w-md space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-200 ease-in-out">
-              <div className="space-y-1">
-                <label
-                  htmlFor="pro-name"
-                  className="block text-left text-sm font-normal text-(--fg-secondary)"
-                >
-                  Name
-                </label>
-                <input
-                  id="pro-name"
-                  type="text"
-                  value={formData.fullName}
+        <form className="join-professional-form" onSubmit={handleSubmit} noValidate>
+          <div className="cc-form-card">
+            <div className="cc-form-field">
+              <label htmlFor="pro-name" className="cc-form-label">
+                Name
+              </label>
+              <input
+                id="pro-name"
+                type="text"
+                value={formData.fullName}
+                onChange={(e) =>
+                  setFormData({ ...formData, fullName: e.target.value })
+                }
+                autoComplete="name"
+                required
+                className={proInputClass}
+                placeholder="Your name"
+              />
+              <p className="cc-form-hint">As it appears on your credentials.</p>
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="pro-email" className="cc-form-label">
+                Email
+              </label>
+              <input
+                id="pro-email"
+                type="email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                autoComplete="email"
+                required
+                className={proInputClass}
+                placeholder="you@example.com"
+              />
+              <p className="cc-form-hint">Professional contact only.</p>
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="pro-phone" className="cc-form-label">
+                Phone
+              </label>
+              <div className="cc-form-phone-row">
+                <select
+                  id="pro-country-code"
+                  value={formData.countryCode}
                   onChange={(e) =>
-                    setFormData({ ...formData, fullName: e.target.value })
+                    setFormData({ ...formData, countryCode: e.target.value })
                   }
-                  autoComplete="name"
+                  className={proSelectClass}
+                >
+                  {COUNTRY_CODES.map(({ code, label }) => (
+                    <option key={code} value={code}>
+                      {code}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  id="pro-phone"
+                  type="tel"
+                  inputMode="numeric"
+                  value={formData.phone}
+                  onChange={(e) => {
+                    const v = e.target.value.replaceAll(/\D/g, "").slice(0, 10);
+                    setFormData({ ...formData, phone: v });
+                  }}
+                  autoComplete="tel-national"
                   required
-                  className="form-input"
-                  placeholder="Your name"
+                  maxLength={10}
+                  placeholder="Phone number"
+                  className={proInputClass}
                 />
               </div>
-              <div className="space-y-1">
-                <label
-                  htmlFor="pro-email"
-                  className="block text-left text-sm font-normal text-(--fg-secondary)"
-                >
-                  Email
-                </label>
-                <input
-                  id="pro-email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  autoComplete="email"
-                  required
-                  className="form-input"
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div className="space-y-1">
-                <label
-                  htmlFor="pro-phone"
-                  className="block text-left text-sm font-normal text-(--fg-secondary)"
-                >
-                  Phone
-                </label>
-                <div className="flex w-full gap-2">
-                  <select
-                    id="pro-country-code"
-                    value={formData.countryCode}
-                    onChange={(e) =>
-                      setFormData({ ...formData, countryCode: e.target.value })
-                    }
-                    className="h-11 w-[120px] shrink-0 rounded-[8px] border border-[#444] bg-[#222] px-3 text-[14px] text-white"
-                  >
-                    {COUNTRY_CODES.map(({ code, label }) => (
-                      <option key={code} value={code}>
-                        {code}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    id="pro-phone"
-                    type="tel"
-                    inputMode="numeric"
-                    value={formData.phone}
-                    onChange={(e) => {
-                      const v = e.target.value.replaceAll(/\D/g, "").slice(0, 10);
-                      setFormData({ ...formData, phone: v });
+              <p className="cc-form-hint">10-digit mobile number.</p>
+              {formErrors.phone && (
+                <p className="cc-form-error">{formErrors.phone}</p>
+              )}
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="pro-profession" className="cc-form-label">
+                Profession
+              </label>
+              <select
+                id="pro-profession"
+                value={formData.profession}
+                onChange={(e) =>
+                  setFormData({ ...formData, profession: e.target.value })
+                }
+                required
+                className={`${proInputClass} form-select`}
+              >
+                <option value="">Select — Counsellor, Expert, or Advisor</option>
+                <option value="counsellor">Counsellor</option>
+                <option value="expert">Expert</option>
+                <option value="advisor">Advisor</option>
+              </select>
+              <p className="cc-form-hint">How you&apos;ll show up on Rarelm.</p>
+            </div>
+
+            <div className="cc-form-field">
+              <span className="cc-form-label">
+                Interest <span className="normal-case tracking-normal">(optional)</span>
+              </span>
+              <div className="cc-pro-pills">
+                {INTEREST_OPTIONS.map((opt) => (
+                  <button
+                    key={opt}
+                    type="button"
+                    onClick={() => {
+                      setInterest(interest === opt ? "" : opt);
+                      if (interest === opt) setOthersCustom("");
                     }}
-                    autoComplete="tel-national"
-                    required
-                    maxLength={10}
-                    placeholder="Phone number"
-                    className="h-11 min-w-0 flex-1 rounded-[8px] border border-[#444] bg-[#222] px-3 text-[14px] text-white"
+                    className={`cc-pro-pill ${interest === opt ? "cc-pro-pill-active" : ""}`}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+              {interest === "Others" && (
+                <div className="cc-pro-others-wrap">
+                  <input
+                    type="text"
+                    value={othersCustom}
+                    onChange={(e) => setOthersCustom(e.target.value)}
+                    placeholder="Describe your interest…"
+                    className={proInputClass}
                   />
                 </div>
-                {formErrors.phone && (
-                  <p className="mt-2 text-sm text-red-400">{formErrors.phone}</p>
-                )}
-              </div>
-              <div className="space-y-1">
-                <label
-                  htmlFor="pro-profession"
-                  className="block text-left text-sm font-normal text-(--fg-secondary)"
-                >
-                  Profession
-                </label>
-                <select
-                  id="pro-profession"
-                  value={formData.profession}
-                  onChange={(e) =>
-                    setFormData({ ...formData, profession: e.target.value })
-                  }
-                  required
-                  className="form-input form-select"
-                >
-                  <option value="">Select — Counsellor, Expert, or Advisor</option>
-                  <option value="counsellor">Counsellor</option>
-                  <option value="expert">Expert</option>
-                  <option value="advisor">Advisor</option>
-                </select>
-              </div>
-
-              {/* Interest — pill selector */}
-              <div className="space-y-2">
-                <span className="block text-left text-sm font-normal text-(--fg-secondary)">
-                  Interest <span className="text-(--fg-tertiary)">(optional)</span>
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {INTEREST_OPTIONS.map((opt) => (
-                    <button
-                      key={opt}
-                      type="button"
-                      onClick={() => {
-                        setInterest(interest === opt ? "" : opt);
-                        if (interest === opt) setOthersCustom("");
-                      }}
-                      className={`rounded-full border px-4 py-2 text-sm font-normal transition-all duration-200 ease-in-out ${
-                        interest === opt
-                          ? "scale-105 border-white/20 bg-white/10 ring-1 ring-white/20"
-                          : "border-white/10 bg-white/5 text-(--fg-secondary) hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground"
-                      }`}
-                    >
-                      {opt}
-                    </button>
-                  ))}
-                </div>
-                {interest === "Others" && (
-                  <div className="animate-slide-up-fade overflow-hidden rounded-xl border border-white/10 bg-white/5 pt-3">
-                    <input
-                      type="text"
-                      value={othersCustom}
-                      onChange={(e) => setOthersCustom(e.target.value)}
-                      placeholder="Describe your interest…"
-                      className="form-input w-full border-0 bg-transparent px-4 pb-3 focus:outline-none"
-                    />
-                  </div>
-                )}
-              </div>
-
-              <div className="space-y-1">
-                <label
-                  htmlFor="pro-experience"
-                  className="block text-left text-sm font-normal text-(--fg-secondary)"
-                >
-                  Experience
-                </label>
-                <input
-                  id="pro-experience"
-                  type="text"
-                  value={formData.experience}
-                  onChange={(e) =>
-                    setFormData({ ...formData, experience: e.target.value })
-                  }
-                  required
-                  placeholder="e.g. 5 years"
-                  className="form-input"
-                />
-              </div>
-              <div className="space-y-1">
-                <label
-                  htmlFor="pro-country"
-                  className="block text-left text-sm font-normal text-(--fg-secondary)"
-                >
-                  Country <span className="text-(--fg-tertiary)">(optional)</span>
-                </label>
-                <input
-                  id="pro-country"
-                  type="text"
-                  value={formData.country}
-                  onChange={(e) =>
-                    setFormData({ ...formData, country: e.target.value })
-                  }
-                  autoComplete="country-name"
-                  placeholder="e.g. India, USA"
-                  className="form-input"
-                />
-              </div>
-              <div className="space-y-1">
-                <label
-                  htmlFor="pro-linkedin"
-                  className="block text-left text-sm font-normal text-(--fg-secondary)"
-                >
-                  LinkedIn <span className="text-(--fg-tertiary)">(optional)</span>
-                </label>
-                <input
-                  id="pro-linkedin"
-                  type="url"
-                  value={formData.linkedin}
-                  onChange={(e) =>
-                    setFormData({ ...formData, linkedin: e.target.value })
-                  }
-                  placeholder="https://linkedin.com/in/..."
-                  className="form-input"
-                />
-              </div>
-              <div className="space-y-1">
-                <label
-                  htmlFor="pro-domain"
-                  className="block text-left text-sm font-normal text-(--fg-secondary)"
-                >
-                  Desired Domain{" "}
-                  <span className="text-(--fg-tertiary)">(optional)</span>
-                </label>
-                <input
-                  id="pro-domain"
-                  type="text"
-                  value={formData.desiredDomain}
-                  onChange={(e) =>
-                    setFormData({ ...formData, desiredDomain: e.target.value })
-                  }
-                  className="form-input"
-                  placeholder="your.relm"
-                />
-              </div>
-
-              {formErrors._ && (
-                <p className="text-sm text-red-400">{formErrors._}</p>
               )}
             </div>
 
-            <div className="mt-6">
+            <div className="cc-form-field">
+              <label htmlFor="pro-experience" className="cc-form-label">
+                Experience
+              </label>
+              <input
+                id="pro-experience"
+                type="text"
+                value={formData.experience}
+                onChange={(e) =>
+                  setFormData({ ...formData, experience: e.target.value })
+                }
+                required
+                placeholder="e.g. 5 years"
+                className={proInputClass}
+              />
+              <p className="cc-form-hint">Years in practice or field.</p>
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="pro-country" className="cc-form-label">
+                Country <span className="normal-case tracking-normal">(optional)</span>
+              </label>
+              <input
+                id="pro-country"
+                type="text"
+                value={formData.country}
+                onChange={(e) =>
+                  setFormData({ ...formData, country: e.target.value })
+                }
+                autoComplete="country-name"
+                placeholder="e.g. India, USA"
+                className={proInputClass}
+              />
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="pro-linkedin" className="cc-form-label">
+                LinkedIn <span className="normal-case tracking-normal">(optional)</span>
+              </label>
+              <input
+                id="pro-linkedin"
+                type="url"
+                value={formData.linkedin}
+                onChange={(e) =>
+                  setFormData({ ...formData, linkedin: e.target.value })
+                }
+                placeholder="https://linkedin.com/in/..."
+                className={proInputClass}
+              />
+            </div>
+            <div className="cc-form-field">
+              <label htmlFor="pro-domain" className="cc-form-label">
+                Desired Domain{" "}
+                <span className="normal-case tracking-normal">(optional)</span>
+              </label>
+              <input
+                id="pro-domain"
+                type="text"
+                value={formData.desiredDomain}
+                onChange={(e) =>
+                  setFormData({ ...formData, desiredDomain: e.target.value })
+                }
+                className={proInputClass}
+                placeholder="your.rarelm"
+              />
+              <p className="cc-form-hint">Optional — claim when ready.</p>
+            </div>
+
+            {formErrors._ && <p className="cc-form-error">{formErrors._}</p>}
+
+            <div className="cc-form-submit">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="hero-cta-primary group w-full max-w-md text-body font-medium disabled:cursor-not-allowed disabled:opacity-60"
+                className="cc-btn-primary group w-full max-w-none disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {isSubmitting ? "Submitting…" : "Apply"}
                 {!isSubmitting && (
                   <span
                     aria-hidden
-                    className="ml-1.5 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
+                    className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
                   >
                     →
                   </span>
                 )}
               </button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </section>
   );

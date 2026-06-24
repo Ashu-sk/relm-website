@@ -114,44 +114,48 @@ export default function OriginalTagPage() {
           __html: JSON.stringify(originalTagSchema),
         }}
       />
-      <main className="rl-sec px-4 sm:px-6 md:px-8">
-        <article className="mx-auto w-full max-w-3xl">
-          <header className="mb-12">
-            <p className="rl-ey ey-w">
-              ORIGINAL TAG · RARELM
-            </p>
-            <h1 className="mt-4 rl-h1">
-              If It&apos;s Real, It&apos;s Marked.
-            </h1>
-            <p className="hero-definition mt-6 rl-ss">
-              The Original Tag is Rarelm&apos;s platform-level verification badge for authentic
-              content — assigned by AI to photos, videos, audio, and written posts that were
-              created by a real, AI-verified human without artificial generation or manipulation.
-              It is not a filter or a self-declaration. It is Rarelm&apos;s AI confirming the
-              content is real before the tag is granted.
-            </p>
-            <p className="mt-4 rl-ss">
-              On every other platform, you cannot tell the difference between a real photo and an
-              AI-generated one. Between an original video and a deepfake. Between a real voice and
-              a synthetic clone. The Original Tag changes that.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/join"
-                className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
-              >
-                <span>Join the Waitlist →</span>
-                <span
-                  aria-hidden
-                  className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
+      <main className="cc-subpage">
+        <header className="cc-subpage-section cc-subpage-hero">
+          <div className="cc-section-inner">
+            <div className="cc-subpage-hero-stack">
+              <p className="rl-ey ey-w">
+                ORIGINAL TAG · RARELM
+              </p>
+              <h1 className="mt-4 rl-h1">
+                If It&apos;s Real, It&apos;s Marked.
+              </h1>
+              <p className="hero-definition mt-6 rl-ss">
+                The Original Tag is Rarelm&apos;s platform-level verification badge for authentic
+                content — assigned by AI to photos, videos, audio, and written posts that were
+                created by a real, AI-verified human without artificial generation or manipulation.
+                It is not a filter or a self-declaration. It is Rarelm&apos;s AI confirming the
+                content is real before the tag is granted.
+              </p>
+              <p className="mt-4 rl-ss">
+                On every other platform, you cannot tell the difference between a real photo and an
+                AI-generated one. Between an original video and a deepfake. Between a real voice and
+                a synthetic clone. The Original Tag changes that.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/join"
+                  className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
                 >
-                  →
-                </span>
-              </Link>
+                  <span>Join the Waitlist →</span>
+                  <span
+                    aria-hidden
+                    className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
+                  >
+                    →
+                  </span>
+                </Link>
+              </div>
             </div>
-          </header>
+          </div>
+        </header>
 
-          <section className="mt-14 space-y-6" aria-labelledby="original-problem">
+        <section className="cc-subpage-section" aria-labelledby="original-problem">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 THE PROBLEM
@@ -170,9 +174,11 @@ export default function OriginalTagPage() {
             <div className="key-claim rounded-2xl border border-white/10 bg-white/5 p-6 text-foreground backdrop-blur-xl">
               <p className="text-body font-medium">The Original Tag does.</p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="original-what">
+        <section className="cc-subpage-section" aria-labelledby="original-what">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 WHAT IS THE ORIGINAL TAG
@@ -193,9 +199,11 @@ export default function OriginalTagPage() {
             <div className="key-claim rounded-2xl border border-white/10 bg-white/5 p-6 text-foreground backdrop-blur-xl">
               <p className="text-body font-medium">If it carries the Original Tag, it is real. Full stop.</p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="original-how">
+        <section className="cc-subpage-section" aria-labelledby="original-how">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 HOW IT WORKS
@@ -211,10 +219,12 @@ export default function OriginalTagPage() {
               <li>The tag is publicly visible, searchable, and tamper-proof on the content</li>
               <li>Any subsequent edit or AI modification automatically removes the tag</li>
             </ol>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-8" aria-labelledby="original-covers">
-            <header className="space-y-2">
+        <section className="cc-subpage-section" aria-labelledby="original-covers">
+          <div className="cc-section-inner">
+            <header className="space-y-2 cc-subpage-prose">
               <p className="rl-ey ey-w">
                 WHAT THE ORIGINAL TAG COVERS
               </p>
@@ -223,7 +233,7 @@ export default function OriginalTagPage() {
               </h2>
             </header>
 
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Photos</h3>
                 <p className="mt-3 rl-ss">
@@ -253,9 +263,11 @@ export default function OriginalTagPage() {
                 </p>
               </section>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="original-rarelm">
+        <section className="cc-subpage-section" aria-labelledby="original-rarelm">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 THE RARELM DIFFERENCE
@@ -276,10 +288,12 @@ export default function OriginalTagPage() {
             <div className="key-claim rounded-2xl border border-white/10 bg-white/5 p-6 text-foreground backdrop-blur-xl">
               <p className="text-body font-medium">Identity is real. Content is real. The tag makes it official.</p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="original-profiles">
-            <header className="space-y-2">
+        <section className="cc-subpage-section" aria-labelledby="original-profiles">
+          <div className="cc-section-inner">
+            <header className="space-y-2 cc-subpage-prose">
               <p className="rl-ey ey-w">
                 ORIGINAL TAG ACROSS YOUR 3 PROFILES
               </p>
@@ -287,7 +301,7 @@ export default function OriginalTagPage() {
                 The Original Tag works across all three Rarelm profiles
               </h2>
             </header>
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="mt-8 grid gap-6 sm:grid-cols-3">
               <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                 <h3 className="text-title font-semibold text-foreground">Anonymous (Me)</h3>
                 <p className="mt-3 rl-ss">
@@ -310,9 +324,11 @@ export default function OriginalTagPage() {
                 </p>
               </section>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-8" aria-labelledby="original-faq">
+        <section className="cc-subpage-section" aria-labelledby="original-faq">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <header className="space-y-2">
               <p className="rl-ey ey-w">
                 FREQUENTLY ASKED QUESTIONS
@@ -322,7 +338,7 @@ export default function OriginalTagPage() {
               </h2>
             </header>
 
-            <dl className="space-y-6">
+            <dl className="mt-8 space-y-6">
               {originalTagFaq.map((item) => (
                 <div
                   key={item.question}
@@ -333,9 +349,11 @@ export default function OriginalTagPage() {
                 </div>
               ))}
             </dl>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="original-close">
+        <section className="cc-subpage-section" aria-labelledby="original-close">
+          <div className="cc-section-inner cc-subpage-prose space-y-6">
             <h2 id="original-close" className="rl-sh">
               Real content deserves a mark. Original Tag makes sure it gets one.
             </h2>
@@ -351,8 +369,8 @@ export default function OriginalTagPage() {
                 <span>Join the Waitlist →</span>
               </Link>
             </div>
-          </section>
-        </article>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </>

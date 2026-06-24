@@ -23,90 +23,52 @@ export default function DiscoverySection() {
     <section
       id="discovery"
       ref={ref}
-      className="rl-sec"
+      className="cc-section cc-section-calm"
       aria-labelledby="discovery-heading"
     >
-      <div className="section-container">
-        <div className="mx-auto max-w-2xl text-center">
+      <div className="cc-section-inner">
         <div className={`discovery-reveal ${revealed ? "revealed" : ""}`}>
+          <p className="cc-section-eyebrow cc-section-eyebrow-center discovery-reveal-item discovery-reveal-item-1">
+            <span className="cc-hero-dot" aria-hidden />
+            Discovery
+          </p>
           <h2
             id="discovery-heading"
-            className="discovery-reveal-item discovery-reveal-item-1 text-display font-semibold"
+            className="cc-section-h2 cc-section-h2-center discovery-reveal-item discovery-reveal-item-1"
           >
             Search people, not usernames.
           </h2>
-          <p className="discovery-reveal-item discovery-reveal-item-2 mt-6 rl-ss">
-            Find real humans through trusted, Domain based searchable identities.
+          <p className="cc-hero-sub mx-auto max-w-lg text-center discovery-reveal-item discovery-reveal-item-2">
+            Find real humans through trusted, domain-based searchable identities.
           </p>
-          <p className="discovery-reveal-item discovery-reveal-item-3 mt-6 rl-sh">
-            Presence over profiles.
-          </p>
-        </div>
 
-        <div className="discovery-visual mt-12 sm:mt-14" aria-hidden>
-          <svg
-            className="discovery-visual-svg"
-            viewBox="0 0 280 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="cc-discovery-search discovery-reveal-item discovery-reveal-item-3"
+            aria-label="Example search results (illustration only)"
           >
-            {/* Face (circle) + search cue */}
-            <circle
-              className="discovery-face"
-              cx="70"
-              cy="50"
-              r="28"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <circle
-              cx="88"
-              cy="32"
-              r="12"
-              stroke="currentColor"
-              strokeWidth="1"
-              fill="none"
-              opacity="0.6"
-            />
-            <line
-              x1="96"
-              y1="40"
-              x2="102"
-              y2="46"
-              stroke="currentColor"
-              strokeWidth="1"
-              opacity="0.6"
-            />
-            {/* Arrow / flow */}
-            <path
-              className="discovery-arrow"
-              d="M110 50 H165 M160 45 L165 50 L160 55"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-            />
-            {/* Profile card (reveal) */}
-            <g className="discovery-profile">
-              <rect
-                x="185"
-                y="22"
-                width="95"
-                height="56"
-                rx="6"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                fill="none"
-              />
-              <circle cx="210" cy="38" r="8" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.8" />
-              <line x1="225" y1="36" x2="265" y2="36" stroke="currentColor" strokeWidth="1" opacity="0.6" />
-              <line x1="225" y1="44" x2="255" y2="44" stroke="currentColor" strokeWidth="1" opacity="0.4" />
-            </g>
-          </svg>
+            <div className="cc-discovery-search-bar">
+              <span className="cc-discovery-search-icon" aria-hidden>
+                ⌕
+              </span>
+              <span>Search Rarelm…</span>
+            </div>
+            <div className="cc-discovery-results">
+              <div className="cc-discovery-result">
+                <span className="cc-discovery-avatar cc-discovery-avatar-real" aria-hidden />
+                <span className="cc-discovery-identity">
+                  <span className="cc-discovery-domain">yourname.rarelm</span>
+                </span>
+                <span className="cc-discovery-badge">Verified</span>
+              </div>
+              <div className="cc-discovery-result cc-discovery-result-fake">
+                <span className="cc-discovery-avatar" aria-hidden />
+                <span className="cc-discovery-identity">
+                  <span className="cc-discovery-handle">@xx_shadow_99</span>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );

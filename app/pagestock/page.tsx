@@ -3,24 +3,25 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "PageStock by Rarelm — The World's First Creator Stock Market",
+  title: "PageStock by Rarelm — Back the Ones You Believe In",
   description:
-    "Buy shares in creators and public pages. Earn real returns as they grow. PageStock is the world's first AI-verified creator stock market — free for every verified user.",
+    "PageStock turns early support into founding-supporter standing on Rarelm. Back verified creators before the world catches on — free for every verified human.",
   alternates: {
     canonical: "/pagestock",
   },
   openGraph: {
-    title: "PageStock — Invest in Creators. Earn as They Grow.",
+    title: "PageStock — Back the Ones You Believe In. Early.",
     description:
-      "The world's first creator stock market. Buy shares in verified creators and public pages. Built into Rarelm — free for every verified user.",
+      "On rarelm, backing the real ones early gives you founding-supporter standing and a place in the story as they rise. Free for every verified human.",
     url: "https://www.rarelm.com/pagestock",
     type: "website",
     images: [{ url: "https://www.rarelm.com/og-pagestock.png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PageStock — The World's First Creator Stock Market",
-    description: "Invest in creators. Earn as they grow. PageStock by Rarelm.",
+    title: "PageStock — Back the Ones You Believe In. Early.",
+    description:
+      "Founding-supporter standing for the people who believed first. PageStock by Rarelm.",
     images: ["https://www.rarelm.com/og-pagestock.png"],
   },
 };
@@ -29,22 +30,17 @@ const pagestockFaq = [
   {
     question: "What is PageStock?",
     answer:
-      "PageStock is the world's first creator stock market — built into Rarelm. It lets fans and investors buy shares in AI-verified creators and public pages, earning real financial returns as those pages grow in followers, engagement, and influence. Every creator and public page on Rarelm can list on PageStock, and every verified user can buy shares.",
+      "PageStock is rarelm's way of turning support into standing. Back a verified creator or page early and you become one of their founding supporters — recognized, on the record, part of the rise from the beginning. Free for every verified human, built into rarelm.",
   },
   {
     question: "How does PageStock work?",
     answer:
-      "Creators and public pages on Rarelm list on PageStock by setting the number of shares they want to offer and an initial value. Fans, investors, and businesses buy shares directly. As the page grows in verified followers, engagement, and influence, the value of those shares increases. Every participant — creator, fan, or investor — must be AI-verified as a real human on Rarelm.",
+      "Find verified creators and pages with real growth and real humans. Back them early and take your founding-supporter position before the world catches on. As they rise, your early standing grows with them — founding-supporter status, recognition, and a front-row place in what you helped build.",
   },
   {
-    question: "Is PageStock like crypto or NFTs?",
+    question: "Can any creator use PageStock?",
     answer:
-      "No. PageStock is not built on blockchain or cryptocurrency. It is a creator investment system built directly into the Rarelm platform — designed to be simple and accessible to everyone, regardless of crypto or investment background.",
-  },
-  {
-    question: "Can any creator list on PageStock?",
-    answer:
-      "Any AI-verified creator or public page on Rarelm can list on PageStock. Mandatory AI verification ensures every listing is a real human or real entity — protecting investors from bot-inflated or fake pages.",
+      "Any AI-verified creator or public page on Rarelm can use PageStock. Mandatory AI verification ensures every creator and page is a real human or real entity — no bot-inflated or fake pages.",
   },
   {
     question: "Is PageStock free to join?",
@@ -52,14 +48,14 @@ const pagestockFaq = [
       "Yes. Creating a Rarelm account and accessing PageStock is completely free. Join the waitlist at rarelm.com to secure your free account.",
   },
   {
-    question: "How is share value calculated on PageStock?",
+    question: "Why does PageStock only work on Rarelm?",
     answer:
-      "Share value on PageStock is based on a creator's verified growth metrics — including followers, engagement, and activity on Rarelm. Because every Rarelm user is AI-verified as a real human, these metrics reflect genuine human interest rather than bot-inflated numbers.",
+      "On every other platform, follower counts are inflated by bots and growth is gamed — so none of it can be trusted. PageStock means something only because rarelm verifies every human. Real people. Real growth. Real backing — no fake supporters, no inflated numbers.",
   },
   {
-    question: "Who can use PageStock?",
+    question: "Is PageStock like crypto or NFTs?",
     answer:
-      "PageStock is built for four groups: creators and public pages who want to raise investment from their community; fans and general users who want to earn returns on creators they believe in; investors and traders looking to participate in the creator economy; and businesses and brands who want a long-term financial stake in creator partnerships rather than one-off sponsorships.",
+      "No. PageStock is not built on blockchain or cryptocurrency. It is built directly into the Rarelm platform — designed to be simple and accessible to everyone.",
   },
 ] as const;
 
@@ -70,16 +66,15 @@ const pagestockSchema = {
       "@type": "WebPage",
       "@id": "https://www.rarelm.com/pagestock",
       url: "https://www.rarelm.com/pagestock",
-      name: "PageStock by Rarelm — The World's First Creator Stock Market",
+      name: "PageStock by Rarelm — Back the Ones You Believe In",
       description:
-        "PageStock is the world's first creator stock market. Fans and investors buy shares in AI-verified creators and public pages, earning financial returns as those pages grow.",
+        "PageStock turns early support into founding-supporter standing on Rarelm. Back verified creators before the world catches on.",
       isPartOf: { "@id": "https://www.rarelm.com" },
       about: {
         "@type": "Thing",
-        name: "Creator Stock Market",
+        name: "PageStock",
         description:
-          "A financial market where fans and investors can buy and sell shares in social media creators and public pages, earning returns as those pages grow in followers, engagement, and influence.",
-        sameAs: [],
+          "Rarelm's way of turning early support into founding-supporter standing for verified creators and public pages.",
       },
       mentions: [
         {
@@ -107,7 +102,7 @@ const pagestockSchema = {
       },
       speakable: {
         "@type": "SpeakableSpecification",
-        cssSelector: ["h1", ".hero-definition", ".key-claim"],
+        cssSelector: ["h1", ".cc-pagestock-hero-sub"],
       },
     },
     {
@@ -135,400 +130,190 @@ export default function PageStockPage() {
           __html: JSON.stringify(pagestockSchema),
         }}
       />
-      <main className="rl-sec px-4 sm:px-6 md:px-8">
-        <article className="mx-auto w-full max-w-3xl">
-          <header className="mb-12">
-            <p className="rl-ey ey-w">
-              PAGESTOCK · RARELM.COM/PAGESTOCK
-            </p>
-            <h1 className="mt-4 rl-h1">
-              The World&apos;s First Creator Stock Market
-            </h1>
-            <p className="hero-definition mt-6 rl-ss">
-              PageStock is Rarelm&apos;s built-in creator stock market — the first system
-              that lets fans and investors buy shares in social media creators and public
-              pages, earning financial returns as those pages grow in verified followers,
-              engagement, and influence. It is free for every verified user and built
-              directly into the Rarelm platform.
-            </p>
-            <p className="mt-4 rl-ss">
-              Social media made billions of people famous. PageStock makes them investable.
-              For the first time, you can own a stake in the creators you helped build —
-              and earn real returns as they grow.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link
-                href="/join"
-                className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
-              >
-                <span>Join the Waitlist — It&apos;s Free</span>
-                <span
-                  aria-hidden
-                  className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
-                >
-                  →
-                </span>
-              </Link>
-              <Link
-                href="#pagestock-faq"
-                className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
-              >
-                Read the PageStock FAQ
-              </Link>
-            </div>
-          </header>
-
-          <section className="mt-14 space-y-6" aria-labelledby="pagestock-problem">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                THE PROBLEM
+      <main className="cc-subpage">
+        <header className="cc-subpage-section cc-subpage-hero">
+          <div className="cc-section-inner">
+            <div className="cc-subpage-hero-stack">
+              <p className="cc-section-eyebrow">PageStock · rarelm</p>
+              <h1 className="cc-hero-h1 cc-pagestock-h1">
+                Back the ones you believe in. Early.
+              </h1>
+              <p className="cc-pagestock-hero-sub">
+                Everywhere else, being early to a creator gets you bragging rights and
+                nothing else. On rarelm, backing the real ones early gives you
+                founding-supporter standing — and a place in the story as they rise.
               </p>
-              <h2 id="pagestock-problem" className="rl-sh">
-                Everyone builds value on social media. Almost nobody gets paid for it.
-              </h2>
-            </header>
-            <p className="rl-ss">
-              A creator builds an audience of 5 million people over 5 years. Their fans share
-              content, comment, promote, and drive every metric that makes the creator
-              valuable. Brands pay the creator millions. The platform earns billions from the
-              attention those fans generate. The creator economy is projected to reach $1
-              trillion — built almost entirely on unpaid fan contribution.
-            </p>
-            <p className="rl-ss">
-              The fans? They get nothing. Not a single cent. No stake. No share. No upside.
-              Just the privilege of watching someone else profit from the value they helped
-              create.
-            </p>
-            <div className="key-claim rounded-2xl border border-white/10 bg-white/5 p-6 text-foreground backdrop-blur-xl">
-              <p className="text-body font-medium">
-                PageStock changes this permanently.
-              </p>
-            </div>
-          </section>
-
-          <section className="mt-14 space-y-6" aria-labelledby="pagestock-definition">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                WHAT IS PAGESTOCK
-              </p>
-              <h2 id="pagestock-definition" className="rl-sh">
-                A stock market — but for creators and public pages instead of companies.
-              </h2>
-            </header>
-            <p className="rl-ss">
-              Just like the stock market lets you invest in companies you believe in — PageStock
-              lets you invest in creators, public figures, and social pages you believe in, and
-              earn as they grow.
-            </p>
-            <p className="rl-ss">
-              Every creator and public page on Rarelm can list on PageStock. Every verified user
-              can buy shares. As the page grows in followers, engagement, and influence — the
-              value of those shares grows with it.
-            </p>
-            <div className="key-claim rounded-2xl border border-white/10 bg-white/5 p-6 text-foreground backdrop-blur-xl">
-              <p className="text-body font-medium">
-                You believed in them before anyone else. Now you can own a piece of what you
-                helped build.
-              </p>
-            </div>
-          </section>
-
-          <section className="mt-14 space-y-10" aria-labelledby="pagestock-how">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                HOW IT WORKS
-              </p>
-              <h2 id="pagestock-how" className="rl-sh">
-                How PageStock works
-              </h2>
-            </header>
-
-            <div className="grid gap-10 md:grid-cols-2">
-              <section className="space-y-4" aria-labelledby="pagestock-creators">
-                <h3 id="pagestock-creators" className="text-title font-semibold text-foreground">
-                  For Creators &amp; Public Pages
-                </h3>
-                <ol className="list-decimal space-y-3 pl-5 rl-ss">
-                  <li>
-                    Get AI-verified on Rarelm. Every creator and public page is mandatorily
-                    verified by AI — confirming a real human or real entity is behind every
-                    account. No fake pages. No bot-inflated counts.
-                  </li>
-                  <li>
-                    List your page on PageStock. Set the number of shares you want to offer and
-                    an initial value. Your community buys shares directly, turning your most
-                    loyal supporters into genuine financial stakeholders.
-                  </li>
-                  <li>
-                    Grow together. As your page grows, so does the value of every share. Fans,
-                    businesses, and early believers grow with you.
-                  </li>
-                  <li>
-                    Raise investment from your own audience — not only from brand deals or
-                    platform ad revenue. A direct line to investment from the people who know
-                    your value best.
-                  </li>
-                </ol>
-              </section>
-
-              <section className="space-y-4" aria-labelledby="pagestock-fans">
-                <h3 id="pagestock-fans" className="text-title font-semibold text-foreground">
-                  For Fans, Investors &amp; Businesses
-                </h3>
-                <ol className="list-decimal space-y-3 pl-5 rl-ss">
-                  <li>
-                    Join Rarelm for free. Create your AI-verified account. Every user is
-                    confirmed as a real human — so every investment decision is made in a
-                    trustworthy, bot-free environment.
-                  </li>
-                  <li>
-                    Browse PageStock. Discover creators, public figures, and pages listed on
-                    PageStock. See their verified growth metrics, engagement data, and share
-                    value — all transparent, all verified.
-                  </li>
-                  <li>
-                    Buy shares in pages you believe in. Invest in the creators you love, the
-                    pages you follow, or the emerging voices you spotted early. Your shares
-                    represent a real financial stake in their growth.
-                  </li>
-                  <li>
-                    Earn as they grow. As the pages you invested in grow in followers,
-                    engagement, and influence — your share value increases. PageStock turns
-                    your social media knowledge into a genuine investment advantage.
-                  </li>
-                </ol>
-              </section>
-            </div>
-          </section>
-
-          <section className="mt-14 space-y-8" aria-labelledby="pagestock-who">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                WHO IS PAGESTOCK FOR
-              </p>
-              <h2 id="pagestock-who" className="rl-sh">
-                Built for everyone in the creator economy
-              </h2>
-            </header>
-
-            <div className="grid gap-6 sm:grid-cols-2">
-              <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                <h3 className="text-title font-semibold text-foreground">Creators &amp; Public Pages</h3>
-                <p className="mt-3 rl-ss">
-                  You have built something real. Your audience is your most valuable asset.
-                  PageStock lets you unlock the financial value of that asset — raising
-                  investment from the people who believe in you most and rewarding your
-                  earliest supporters with genuine financial stakes in your success.
-                </p>
-              </section>
-              <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                <h3 className="text-title font-semibold text-foreground">Fans &amp; General Users</h3>
-                <p className="mt-3 rl-ss">
-                  You have always known which creators were going to blow up before anyone
-                  else did. Now you can put money behind that instinct. Buy shares in creators
-                  early, watch them grow, and earn real financial returns — turning years of
-                  scrolling and supporting into something that pays back.
-                </p>
-              </section>
-              <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                <h3 className="text-title font-semibold text-foreground">Investors &amp; Traders</h3>
-                <p className="mt-3 rl-ss">
-                  The creator economy is projected to reach $1 trillion. Until now there has
-                  been no structured, transparent way to invest in it. PageStock brings the
-                  logic of financial markets to creator influence — with verified identities,
-                  real growth data, and a platform built for trust from the ground up.
-                </p>
-              </section>
-              <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                <h3 className="text-title font-semibold text-foreground">Businesses &amp; Brands</h3>
-                <p className="mt-3 rl-ss">
-                  Sponsorship deals are transactional. PageStock creates something deeper —
-                  a genuine financial stake in a creator&apos;s future. Instead of paying for
-                  one campaign, invest in a creator&apos;s long-term growth and build a
-                  partnership that compounds over time.
-                </p>
-              </section>
-            </div>
-          </section>
-
-          <section className="mt-14 space-y-6" aria-labelledby="pagestock-table">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                WHY PAGESTOCK IS DIFFERENT
-              </p>
-              <h2 id="pagestock-table" className="rl-sh">
-                What no other platform offers
-              </h2>
-            </header>
-
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[720px] text-left text-body">
-                  <thead className="border-b border-white/10">
-                    <tr>
-                      <th scope="col" className="px-4 py-3 font-semibold text-foreground sm:px-5">
-                        Feature
-                      </th>
-                      <th scope="col" className="px-4 py-3 font-semibold text-foreground sm:px-5">
-                        Traditional Social Media
-                      </th>
-                      <th scope="col" className="px-4 py-3 font-semibold text-foreground sm:px-5">
-                        PageStock on Rarelm
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-white/10 text-(--fg-secondary)">
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-foreground sm:px-5">
-                        Who earns financial returns?
-                      </td>
-                      <td className="px-4 py-3 sm:px-5">Platform and top creators only</td>
-                      <td className="px-4 py-3 sm:px-5">Every user — fans, creators, investors</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-foreground sm:px-5">
-                        Can fans invest in creators?
-                      </td>
-                      <td className="px-4 py-3 sm:px-5">No</td>
-                      <td className="px-4 py-3 sm:px-5">Yes</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-foreground sm:px-5">
-                        Are accounts verified?
-                      </td>
-                      <td className="px-4 py-3 sm:px-5">No — bots and fakes widespread</td>
-                      <td className="px-4 py-3 sm:px-5">Yes — mandatory AI verification</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-foreground sm:px-5">
-                        Can creators raise from their audience?
-                      </td>
-                      <td className="px-4 py-3 sm:px-5">No</td>
-                      <td className="px-4 py-3 sm:px-5">Yes</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-foreground sm:px-5">
-                        Built on crypto or NFTs?
-                      </td>
-                      <td className="px-4 py-3 sm:px-5">N/A</td>
-                      <td className="px-4 py-3 sm:px-5">No — simple and accessible to everyone</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-foreground sm:px-5">
-                        Who can participate?
-                      </td>
-                      <td className="px-4 py-3 sm:px-5">Anyone including bots</td>
-                      <td className="px-4 py-3 sm:px-5">Verified real humans only</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div className="cc-pagestock-actions">
+                <Link href="/join" className="cc-btn-primary group">
+                  <span>Join the waitlist — it&apos;s free</span>
+                  <span aria-hidden className="cc-pagestock-cta-arrow">
+                    →
+                  </span>
+                </Link>
+                <Link href="#pagestock-faq" className="cc-pagestock-link">
+                  Read the PageStock FAQ
+                </Link>
               </div>
             </div>
-          </section>
+          </div>
+        </header>
 
-          <section className="mt-14 space-y-6" aria-labelledby="pagestock-rarelm">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                THE RARELM DIFFERENCE
-              </p>
-              <h2 id="pagestock-rarelm" className="rl-sh">
-                PageStock is only possible because Rarelm is built differently.
-              </h2>
-            </header>
-            <p className="rl-ss">
-              On every other social platform, follower counts are inflated by bots, engagement
-              is gamed by fake accounts, and there is no way to trust the data behind a
-              creator&apos;s growth. This makes creator investing genuinely risky.
+        <section
+          className="cc-subpage-section"
+          aria-labelledby="pagestock-definition"
+        >
+          <div className="cc-section-inner cc-subpage-prose">
+            <p className="cc-section-eyebrow">What PageStock is</p>
+            <h2 id="pagestock-definition" className="cc-section-h2">
+              Turning support into standing
+            </h2>
+            <p className="cc-pagestock-body">
+              PageStock is rarelm&apos;s way of turning support into standing. Back a
+              verified creator or page early and you become one of their founding
+              supporters — recognized, on the record, part of the rise from the
+              beginning. Free for every verified human, built into rarelm.
             </p>
-            <p className="rl-ss">
-              On Rarelm, every follower is a verified real human. Every engagement signal is
-              authentic. Every creator is confirmed as a real person or real entity. This makes
-              PageStock something that has never existed before — a trustworthy, bot-free
-              creator investment market where the data you are investing on is real.
+          </div>
+        </section>
+
+        <section
+          className="cc-subpage-section"
+          aria-labelledby="pagestock-problem"
+        >
+          <div className="cc-section-inner cc-subpage-prose">
+            <p className="cc-section-eyebrow">The problem</p>
+            <h2 id="pagestock-problem" className="cc-section-h2">
+              Being early should mean something.
+            </h2>
+            <p className="cc-pagestock-body">
+              You found them first. You shared the early posts, brought the friends,
+              believed before the numbers did. And everywhere on the internet, that
+              counts for exactly nothing — no recognition, no standing, no place in the
+              story. The people who help build a creator&apos;s rise go invisible the
+              moment it happens.
             </p>
-            <div className="key-claim rounded-2xl border border-white/10 bg-white/5 p-6 text-foreground backdrop-blur-xl">
-              <p className="text-body font-medium">
-                No bots. No fake accounts. No scams. Just verified humans building real value —
-                and sharing it.
-              </p>
-            </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="pagestock-profiles">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                PAGESTOCK ACROSS YOUR 3 PROFILES
-              </p>
-              <h2 id="pagestock-profiles" className="rl-sh">
-                PageStock works across all three Rarelm profiles
+        <section
+          className="cc-subpage-section"
+          aria-labelledby="pagestock-how"
+        >
+          <div className="cc-section-inner">
+            <div className="cc-subpage-prose">
+              <p className="cc-section-eyebrow">How it works</p>
+              <h2 id="pagestock-how" className="cc-section-h2">
+                Three steps to founding-supporter standing
               </h2>
-            </header>
-
-            <div className="grid gap-6 sm:grid-cols-3">
-              <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                <h3 className="text-title font-semibold text-foreground">Anonymous (Me)</h3>
-                <p className="mt-3 rl-ss">
-                  Invest in creators privately. Your portfolio is yours alone. Participate
-                  financially without revealing your identity.
-                </p>
-              </section>
-              <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                <h3 className="text-title font-semibold text-foreground">Family &amp; Friends</h3>
-                <p className="mt-3 rl-ss">
-                  Share investment ideas with the people you trust. Discover creators together.
-                  Build a shared portfolio with people close to you.
-                </p>
-              </section>
-              <section className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                <h3 className="text-title font-semibold text-foreground">Professional</h3>
-                <p className="mt-3 rl-ss">
-                  For serious investors, traders, and businesses. Manage positions, access
-                  deeper analytics, and build verified creator partnerships through your
-                  professional identity.
-                </p>
-              </section>
             </div>
-          </section>
+            <ol className="cc-hero-steps cc-pagestock-steps">
+              <li className="cc-hero-step">
+                <span className="cc-hero-step-num">01</span>
+                <span className="cc-hero-step-title">Find the real ones</span>
+                <span className="cc-hero-step-body">
+                  Verified creators and pages. Real growth, real humans, no bots.
+                </span>
+              </li>
+              <li className="cc-hero-step">
+                <span className="cc-hero-step-num">02</span>
+                <span className="cc-hero-step-title">Back them early</span>
+                <span className="cc-hero-step-body">
+                  Take your founding-supporter position before the world catches on.
+                </span>
+              </li>
+              <li className="cc-hero-step">
+                <span className="cc-hero-step-num">03</span>
+                <span className="cc-hero-step-title">Rise together</span>
+                <span className="cc-hero-step-body">
+                  As they grow, your early standing grows with them: founding-supporter
+                  status, recognition, and a front-row place in what you helped build.
+                </span>
+              </li>
+            </ol>
+          </div>
+        </section>
 
-          <section id="pagestock-faq" className="mt-14 space-y-8" aria-labelledby="pagestock-faq-heading">
-            <header className="space-y-2">
-              <p className="rl-ey ey-w">
-                FREQUENTLY ASKED QUESTIONS
-              </p>
-              <h2 id="pagestock-faq-heading" className="rl-sh">
-                PageStock FAQ
-              </h2>
-            </header>
+        <section
+          className="cc-subpage-section"
+          aria-labelledby="pagestock-creators"
+        >
+          <div className="cc-section-inner cc-subpage-prose">
+            <p className="cc-section-eyebrow">For creators</p>
+            <h2 id="pagestock-creators" className="cc-section-h2">
+              Let the people who believe in you stand with you.
+            </h2>
+            <p className="cc-pagestock-body">
+              Your earliest supporters are your most valuable — and everywhere else,
+              they&apos;re just a number. PageStock lets you recognize them: turn loyal
+              followers into founding supporters with real standing in your story, and
+              build a community genuinely committed to your rise. Free, built into your
+              verified rarelm presence.
+            </p>
+          </div>
+        </section>
 
-            <dl className="space-y-6">
+        <section
+          className="cc-subpage-section"
+          aria-labelledby="pagestock-rarelm"
+        >
+          <div className="cc-section-inner cc-subpage-prose">
+            <p className="cc-section-eyebrow">Why it only works on rarelm</p>
+            <h2 id="pagestock-rarelm" className="cc-section-h2">
+              This only works because everyone&apos;s real.
+            </h2>
+            <p className="cc-pagestock-body">
+              On every other platform, follower counts are inflated by bots and growth is
+              gamed — so none of it can be trusted. PageStock means something only
+              because rarelm verifies every human. Real people. Real growth. Real
+              backing — no fake supporters, no inflated numbers.
+            </p>
+          </div>
+        </section>
+
+        <section
+          id="pagestock-faq"
+          className="cc-subpage-section"
+          aria-labelledby="pagestock-faq-heading"
+        >
+          <div className="cc-section-inner cc-subpage-prose">
+            <p className="cc-section-eyebrow">Frequently asked questions</p>
+            <h2 id="pagestock-faq-heading" className="cc-section-h2">
+              PageStock FAQ
+            </h2>
+            <dl className="cc-pagestock-faq">
               {pagestockFaq.map((item) => (
-                <div key={item.question} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                  <dt className="text-title font-semibold text-foreground">{item.question}</dt>
-                  <dd className="mt-3 rl-ss">{item.answer}</dd>
+                <div key={item.question} className="cc-pagestock-faq-item">
+                  <dt className="cc-pagestock-faq-q">{item.question}</dt>
+                  <dd className="cc-pagestock-faq-a">{item.answer}</dd>
                 </div>
               ))}
             </dl>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-14 space-y-6" aria-labelledby="pagestock-close">
-            <h2 id="pagestock-close" className="rl-sh">
-              The creator economy is worth billions. You have been funding it for free.
-            </h2>
-            <p className="rl-ss">
-              PageStock changes that. Be among the first to invest in creators, earn from the
-              platform, and own a stake in the future of social media. Join the Rarelm waitlist —
-              free, takes 30 seconds.
-            </p>
-            <div className="pt-2">
-              <Link
-                href="/join"
-                className="hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-body font-medium"
-              >
-                <span>Join the Waitlist →</span>
-              </Link>
+        <section
+          className="cc-subpage-section"
+          aria-labelledby="pagestock-close"
+        >
+          <div className="cc-section-inner cc-subpage-prose">
+            <div className="cc-pagestock-close">
+              <h2 id="pagestock-close" className="cc-section-h2 cc-section-h2-center">
+                Be early. Be real.
+              </h2>
+              <p className="cc-pagestock-body cc-pagestock-body-center">
+                Back the real ones before the world does.
+              </p>
+              <div className="cc-pagestock-actions cc-pagestock-actions-center">
+                <Link href="/join" className="cc-btn-primary group">
+                  <span>Join the waitlist — it&apos;s free</span>
+                  <span aria-hidden className="cc-pagestock-cta-arrow">
+                    →
+                  </span>
+                </Link>
+              </div>
             </div>
-          </section>
-        </article>
+          </div>
+        </section>
       </main>
     </>
   );
