@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
 
@@ -18,6 +19,14 @@ export default function FounderPage() {
         <header className="cc-subpage-section cc-subpage-hero">
           <div className="cc-section-inner">
             <div className="cc-subpage-hero-stack">
+              <Image
+                src="/founder-ashutosh.png"
+                alt="Ashutosh Kesharwani, Founder of Rarelm"
+                width={180}
+                height={180}
+                className="mb-6 h-[180px] w-[180px] rounded-full border border-[rgba(255,255,255,0.08)] object-cover"
+                priority
+              />
               <h1 className="rl-h1">
                 The Story Behind Rarelm
               </h1>
