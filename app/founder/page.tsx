@@ -24,9 +24,28 @@ export default function FounderPage() {
                 alt="Ashutosh Kesharwani, Founder of Rarelm"
                 width={180}
                 height={180}
-                className="mb-6 h-[180px] w-[180px] rounded-full border border-[rgba(255,255,255,0.08)] object-cover"
+                className="mb-3 h-[180px] w-[180px] rounded-full border border-[rgba(255,255,255,0.08)] object-cover"
                 priority
               />
+              <p className="mb-6 text-body leading-relaxed text-(--fg-secondary)">
+                <a
+                  href="https://www.linkedin.com/in/ashutoshkesharwani/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+                >
+                  LinkedIn
+                </a>
+                {" · "}
+                <a
+                  href="https://www.instagram.com/amk.ashu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground underline underline-offset-2 transition-smooth hover:opacity-90"
+                >
+                  Instagram
+                </a>
+              </p>
               <h1 className="rl-h1">
                 The Story Behind Rarelm
               </h1>
