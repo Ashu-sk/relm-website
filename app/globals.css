@@ -1906,47 +1906,6 @@ b {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .cc-marquee {
-    overflow: visible;
-    padding: 1rem clamp(1rem, 5vw, 2rem);
-  }
-
-  .cc-marquee-track {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    animation: none;
-    -webkit-animation: none;
-    will-change: auto;
-    transform: none;
-    -webkit-transform: none;
-    -webkit-backface-visibility: visible;
-    backface-visibility: visible;
-  }
-
-  .cc-marquee-row[aria-hidden] {
-    display: none;
-  }
-
-  .cc-marquee-row {
-    flex: 1 1 100%;
-    min-width: 0;
-    justify-content: center;
-  }
-
-  .cc-marquee-line {
-    flex: 1 1 auto;
-    max-width: 100%;
-    white-space: normal;
-    text-align: center;
-    text-wrap: balance;
-  }
-}
-
 /* ---------------------------------------------------------------------------
    Shared Cybercity sections (§4–§20)
    --------------------------------------------------------------------------- */
