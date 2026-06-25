@@ -18,23 +18,13 @@ import JoinWaitlistSection from "@/components/JoinWaitlistSection";
 import JoinAsProfessionalSection from "@/components/JoinAsProfessionalSection";
 import FounderSection from "@/components/FounderSection";
 import ContactUsSection from "@/components/ContactUsSection";
+import ManifestoMarquee from "@/components/ManifestoMarquee";
 
 export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
 };
-
-const MANIFESTO_TEXT =
-  'NO BOTS · NO BURNER ACCOUNTS · NO "hey babe" from a crypto stranger · NO follower farms · NO main-character cosplay · NO 47-follower egg with strong opinions · REAL HUMANS ONLY · ';
-
-function MarqueeRow() {
-  return (
-    <div className="cc-marquee-row">
-      <span className="cc-marquee-line">{MANIFESTO_TEXT}</span>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -114,18 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="motion-manifesto"
-        className="cc-marquee"
-        aria-label="Motion Manifesto"
-      >
-        <div className="cc-marquee-track">
-          <MarqueeRow />
-          <div aria-hidden>
-            <MarqueeRow />
-          </div>
-        </div>
-      </section>
+      <ManifestoMarquee />
 
       <ProblemCardsSection />
 
