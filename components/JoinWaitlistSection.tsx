@@ -199,6 +199,7 @@ export default function JoinWaitlistSection() {
                     setFormData({ ...formData, countryCode: e.target.value })
                   }
                   className={waitlistSelectClass}
+                  aria-label="Country calling code"
                 >
                   {COUNTRY_CODES.map(({ code, label }) => (
                     <option key={code} value={code}>
@@ -253,6 +254,7 @@ export default function JoinWaitlistSection() {
                 type="submit"
                 disabled={isSubmitting}
                 className="cc-btn-primary group disabled:cursor-not-allowed disabled:opacity-50"
+                aria-label="Join Rarelm waitlist"
               >
                 {isSubmitting ? "Submitting…" : "Enter Rarelm"}
                 {!isSubmitting && (

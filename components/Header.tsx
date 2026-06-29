@@ -75,7 +75,7 @@ export default function Header() {
         >
           <Image
             src="/relm-logo.png"
-            alt="Rarelm"
+            alt="Rarelm logo"
             width={24}
             height={24}
             className="h-6 w-6"
@@ -88,6 +88,7 @@ export default function Header() {
 
       <nav
         className="relative z-10 hidden justify-center gap-6 lg:flex xl:gap-8"
+        role="navigation"
         aria-label="Primary"
       >
         {navItems.map(({ label, href }) => (
@@ -105,6 +106,7 @@ export default function Header() {
         <Link
           href="/join"
           className="flex items-center gap-1.5 whitespace-nowrap rounded-[8px] border-[1.5px] border-[#FF6B35] px-[14px] py-[7px] text-[13px] leading-none text-foreground transition-smooth hover:bg-white/5"
+          aria-label="Join Rarelm waitlist"
           onClick={closeMenu}
         >
           <span>Join Waitlist</span>
@@ -118,8 +120,13 @@ export default function Header() {
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!menuOpen}
+        inert={!menuOpen}
       >
-        <nav className="flex flex-1 flex-col gap-1 px-4 py-6 sm:px-6" aria-label="Mobile navigation">
+        <nav
+          className="flex flex-1 flex-col gap-1 px-4 py-6 sm:px-6"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
           {navItems.map(({ label, href }) => (
             <Link
               key={href}

@@ -13,6 +13,7 @@ export default function SiteFooter() {
         </p>
         <nav
           className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2"
+          role="navigation"
           aria-label="Explore Rarelm"
         >
           <Link
@@ -54,6 +55,7 @@ export default function SiteFooter() {
         </nav>
         <nav
           className="footer-icons mt-4 flex justify-center gap-6"
+          role="navigation"
           aria-label="Social links"
         >
           <a
@@ -61,7 +63,7 @@ export default function SiteFooter() {
             target="_blank"
             rel="noopener noreferrer"
             className="footer-icon text-(--fg-tertiary) transition-colors hover:text-(--fg-secondary)"
-            aria-label="X (Twitter)"
+            aria-label="Rarelm on X (Twitter)"
           >
             <svg
               width="20"
@@ -82,7 +84,7 @@ export default function SiteFooter() {
             target="_blank"
             rel="noopener noreferrer"
             className="footer-icon text-(--fg-tertiary) transition-colors hover:text-(--fg-secondary)"
-            aria-label="LinkedIn"
+            aria-label="Rarelm on LinkedIn"
           >
             <svg
               width="20"

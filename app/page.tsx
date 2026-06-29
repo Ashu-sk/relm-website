@@ -29,6 +29,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <main role="main">
       <section
         id="hero"
         className="cc-hero"
@@ -42,7 +43,7 @@ export default function Home() {
         <div className="cc-hero-inner">
           <Image
             src="/relm-logo.png"
-            alt="Rarelm"
+            alt="Rarelm logo"
             width={64}
             height={64}
             className="mx-auto h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
@@ -139,6 +140,7 @@ export default function Home() {
       <FounderSection />
 
       <ContactUsSection />
+      </main>
 
       <footer className="cc-footer" aria-label="Site footer">
         <div className="cc-footer-inner">
@@ -148,7 +150,7 @@ export default function Home() {
           <p className="cc-footer-tagline">real is rare.</p>
           <p className="cc-footer-muted">The bots didn&apos;t make it this far.</p>
           <p className="cc-footer-founder">Founder — Ashutosh Kesharwani</p>
-          <nav className="cc-footer-nav" aria-label="Explore Rarelm">
+          <nav className="cc-footer-nav" role="navigation" aria-label="Explore Rarelm">
             <Link href="/pagestock" className="cc-footer-link">
               PageStock
             </Link>
@@ -165,12 +167,12 @@ export default function Home() {
               Join
             </Link>
           </nav>
-          <nav className="cc-footer-social" aria-label="Social links">
+          <nav className="cc-footer-social" role="navigation" aria-label="Social links">
             <a
               href="https://x.com/rarelmHQ"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="X (Twitter) @rarelmHQ"
+              aria-label="Rarelm on X (Twitter)"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -180,7 +182,7 @@ export default function Home() {
               href="https://www.linkedin.com/company/rarelm/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label="Rarelm on LinkedIn"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />

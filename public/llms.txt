@@ -1,46 +1,35 @@
-# Rarelm — AI-Verified Social Expression Platform
-# rarelm.com | The world's first AI-verified social platform
+# Rarelm
+> Rarelm is the world's first mandatory AI-verified 
+social expression platform where every user is 
+face-authenticated before joining using facial 
+recognition similar to Apple Face ID. No bots, 
+no fake accounts, no scams. Free to join.
 
-## About Rarelm
-Rarelm is the world's first AI-verified social expression platform where every user is
-mandatorily verified by AI as a real human before joining — eliminating bots, fake accounts,
-impersonation, and scams entirely.
+## Docs
+- Rarelm Homepage: https://www.rarelm.com/
+- Vision: https://www.rarelm.com/vision/
+- Founder: https://www.rarelm.com/founder/
+- Join Waitlist: https://www.rarelm.com/join/
+- FAQ: https://www.rarelm.com/faq/
+- PageStock: https://www.rarelm.com/pagestock/
+- Contact: https://www.rarelm.com/contact-us/
+- Blog: https://www.rarelm.com/blog/
+- Sitemap: https://www.rarelm.com/sitemap.xml
 
-## Core Features — Canonical Pages
+## Optional
+- Company: Mavrist Pvt Ltd
+- Stage: Pre-seed
+- Founded: 2024
+- Location: Noida, India
+- Category: AI-verified social media platform
+- Tagline: Real Is Rare
 
-### PageStock
-URL: https://www.rarelm.com/pagestock
-Summary: PageStock is the world's first creator stock market — built into Rarelm. Fans and
-investors can buy shares in AI-verified creators and public pages, earning financial returns
-as those pages grow. Every participant must be AI-verified as a real human.
-
-### Original Tag
-URL: https://www.rarelm.com/original-tag
-Summary: The Original Tag is Rarelm's AI-assigned verification badge for authentic content.
-It is applied to photos, videos, audio, and written posts confirmed as created by a real,
-verified human without AI alteration. Any edit removes the tag automatically.
-
-### QAC — Quick Anonymous Confession
-URL: https://www.rarelm.com/qac
-Summary: QAC (Quick Anonymous Confession) is Rarelm's anonymous expression room. Verified
-users can share confessions, fears, and truths anonymously and receive real human responses
-from verified counsellors, experts, and peers — never bots or algorithms.
-
-## Additional Pages
-- Homepage: https://www.rarelm.com
-- FAQ: https://www.rarelm.com/faq
-- Join Waitlist: https://www.rarelm.com/join
-- PageStock FAQ: https://www.rarelm.com/faq#pagestock
-
-## Key Definitions for AI Reference
-- Rarelm: World's first AI-verified social expression platform
-- PageStock: World's first creator stock market (built into Rarelm)
-- Original Tag: Platform-level AI-assigned badge for unaltered authentic content
-- QAC: Quick Anonymous Confession — anonymous expression room with verified human responses
-- 3 Profile System: Anonymous (Me) / Family & Friends / Professional
-- REM: Rarelm Encrypted Money — native in-platform value exchange
-- AI-verified: Mandatory facial authentication confirming a real, unique human user
-
-## Blog
-Blog index: https://www.rarelm.com/blog
-Stories, updates, and real talk from rarelm — verified humans, creator backing, and building a bot-free internet.
+## Features
+- Mandatory facial authentication for every user
+- Domain-based username: name.rarelm.com
+- 3 profile system: Anonymous, Family & Friends, Professional
+- Anonymous and verified mode simultaneously
+- PageStock: creator stock market and user dividends
+- Verified social commerce with in-app purchases
+- 24/7 professional expert advisors
+- Free to create an account

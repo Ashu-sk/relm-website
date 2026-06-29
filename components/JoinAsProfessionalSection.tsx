@@ -196,6 +196,7 @@ export default function JoinAsProfessionalSection() {
                     setFormData({ ...formData, countryCode: e.target.value })
                   }
                   className={proSelectClass}
+                  aria-label="Country calling code"
                 >
                   {COUNTRY_CODES.map(({ code, label }) => (
                     <option key={code} value={code}>
@@ -246,10 +247,14 @@ export default function JoinAsProfessionalSection() {
             </div>
 
             <div className="cc-form-field">
-              <span className="cc-form-label">
+              <span id="pro-interest-label" className="cc-form-label">
                 Interest <span className="normal-case tracking-normal">(optional)</span>
               </span>
-              <div className="cc-pro-pills">
+              <div
+                className="cc-pro-pills"
+                role="group"
+                aria-labelledby="pro-interest-label"
+              >
                 {INTEREST_OPTIONS.map((opt) => (
                   <button
                     key={opt}
@@ -259,6 +264,7 @@ export default function JoinAsProfessionalSection() {
                       if (interest === opt) setOthersCustom("");
                     }}
                     className={`cc-pro-pill ${interest === opt ? "cc-pro-pill-active" : ""}`}
+                    aria-pressed={interest === opt}
                   >
                     {opt}
                   </button>
@@ -272,6 +278,7 @@ export default function JoinAsProfessionalSection() {
                     onChange={(e) => setOthersCustom(e.target.value)}
                     placeholder="Describe your interest…"
                     className={proInputClass}
+                    aria-label="Describe your interest"
                   />
                 </div>
               )}
@@ -350,6 +357,7 @@ export default function JoinAsProfessionalSection() {
                 type="submit"
                 disabled={isSubmitting}
                 className="cc-btn-primary group w-full max-w-none disabled:cursor-not-allowed disabled:opacity-60"
+                aria-label="Apply as a Rarelm professional"
               >
                 {isSubmitting ? "Submitting…" : "Apply"}
                 {!isSubmitting && (

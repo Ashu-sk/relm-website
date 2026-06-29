@@ -29,7 +29,7 @@ export default function ContactUsSection() {
           <a
             href="mailto:ashutosh@rarelm.com"
             className="cc-contact-email"
-            aria-label="Email us"
+            aria-label="Email Ashutosh at rarelm"
           >
             Email →
           </a>
