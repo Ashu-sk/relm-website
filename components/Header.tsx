@@ -8,6 +8,7 @@ const navItems = [
   { label: "PageStock", href: "/pagestock" },
   { label: "Original Tag", href: "/original-tag" },
   { label: "QAC", href: "/qac" },
+  { label: "Blog", href: "/blog" },
   { label: "Our Stand", href: "/#our-stand" },
   { label: "Vision", href: "/vision" },
   { label: "Founder", href: "/founder" },

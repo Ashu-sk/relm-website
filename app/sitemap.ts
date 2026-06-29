@@ -1,67 +1,82 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { getPublishedPosts } from "@/lib/blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+const SITE_ORIGIN = "https://www.rarelm.com";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPublishedPosts();
+
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: 'https://www.rarelm.com/',
+      url: `${SITE_ORIGIN}/`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: 'https://www.rarelm.com/vision/',
+      url: `${SITE_ORIGIN}/vision/`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://www.rarelm.com/founder/',
+      url: `${SITE_ORIGIN}/founder/`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://www.rarelm.com/join/',
+      url: `${SITE_ORIGIN}/join/`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: 'https://www.rarelm.com/contact-us/',
+      url: `${SITE_ORIGIN}/contact-us/`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: 'https://www.rarelm.com/faq/',
+      url: `${SITE_ORIGIN}/faq/`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://www.rarelm.com/pagestock/',
+      url: `${SITE_ORIGIN}/pagestock/`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: 'https://www.rarelm.com/original-tag/',
+      url: `${SITE_ORIGIN}/original-tag/`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: 'https://www.rarelm.com/qac/',
+      url: `${SITE_ORIGIN}/qac/`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: 'https://www.rarelm.com/blog/',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      url: `${SITE_ORIGIN}/blog/`,
+      lastModified: posts[0]
+        ? new Date(posts[0].published_at)
+        : new Date(),
+      changeFrequency: "weekly",
       priority: 0.7,
     },
-  ]
-}
+  ];
 
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${SITE_ORIGIN}/blog/${post.slug}`,
+    lastModified: new Date(post.published_at),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...blogRoutes];
+}

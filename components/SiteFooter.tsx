@@ -34,6 +34,12 @@ export default function SiteFooter() {
             QAC
           </Link>
           <Link
+            href="/blog"
+            className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
+          >
+            Blog
+          </Link>
+          <Link
             href="/faq"
             className="text-body text-(--fg-secondary) underline underline-offset-4 transition-smooth hover:text-foreground"
           >

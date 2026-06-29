@@ -40,3 +40,7 @@ from verified counsellors, experts, and peers — never bots or algorithms.
 - 3 Profile System: Anonymous (Me) / Family & Friends / Professional
 - REM: Rarelm Encrypted Money — native in-platform value exchange
 - AI-verified: Mandatory facial authentication confirming a real, unique human user
+
+## Blog
+Blog index: https://www.rarelm.com/blog
+Stories, updates, and real talk from rarelm — verified humans, creator backing, and building a bot-free internet.
