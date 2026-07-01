@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description: BLOG_DESCRIPTION,
   alternates: {
     canonical: BLOG_URL,
+    types: {
+      "application/rss+xml": [{ url: "/feed.xml", title: "rarelm Blog" }],
+    },
   },
   openGraph: {
     title: "Blog — rarelm",
@@ -94,6 +97,14 @@ export default async function BlogIndexPage() {
                 Updates on verified humans, creator backing, and building a
                 bot-free internet — in plain language.
               </p>
+              <a
+                href="/feed.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block text-caption text-(--fg-tertiary) underline underline-offset-2 transition-smooth hover:text-(--fg-secondary)"
+              >
+                Subscribe via RSS
+              </a>
             </div>
           </div>
         </header>
