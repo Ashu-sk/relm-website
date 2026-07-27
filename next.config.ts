@@ -19,9 +19,9 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdn.jsdelivr.net",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "font-src 'self' https://fonts.gstatic.com",
+      "font-src 'self' blob: https://fonts.gstatic.com",
       "img-src 'self' data: blob: https:",
       "connect-src 'self' https://*.supabase.co wss://*.supabase.co",
       "frame-ancestors 'none'",
@@ -32,6 +32,12 @@ const securityHeaders = [
 ] as const;
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return [
+      { source: "/showcase", destination: "/showcase.html" },
+      { source: "/film", destination: "/film.html" },
+    ];
+  },
   async redirects() {
     return [
       {
