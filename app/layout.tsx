@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   title: "Rarelm — The AI-Verified Social Expression Platform",
   description:
     "Rarelm is the world's first AI-verified social expression platform — where every user is mandatorily verified by AI. No bots, no fake accounts, no scams. Free to join.",
-  verification: { yandex: "85b3ddf91503721f" },
+  verification: { yandex: "85b3ddf91503721f", other: { "p:domain_verify": "24c6067c3e173ea3e6ed3c01a8fb7206" } },
   alternates: {
     types: {
       "application/rss+xml": [{ url: "/feed.xml", title: "rarelm Blog" }],
