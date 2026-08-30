@@ -2,37 +2,126 @@
 
 import { useState, useEffect } from "react";
 import { fireConfetti } from "@/lib/confetti";
-import { COUNTRY_CODES, PHONE_REGEX } from "@/lib/countryCodes";
+import { supabase } from "@/lib/supabaseClient";
+import type { User } from "@supabase/supabase-js";
 
 const waitlistInputClass = "cc-form-input form-input";
-const waitlistSelectClass = "cc-form-select-inline form-input form-select";
+
+function nameFromUser(user: User): string {
+  const meta = user.user_metadata ?? {};
+  if (typeof meta.full_name === "string" && meta.full_name.trim()) {
+    return meta.full_name.trim();
+  }
+  if (typeof meta.name === "string" && meta.name.trim()) {
+    return meta.name.trim();
+  }
+  return "";
+}
 
 export default function JoinWaitlistSection() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    countryCode: "+91",
-    phone: "",
-    desiredDomain: "",
-    country: "",
   });
 
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     if (isSuccess) fireConfetti();
   }, [isSuccess]);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    const applyUser = (user: User | null) => {
+      if (!user || cancelled) return;
+      const email = user.email?.trim() ?? "";
+      const fullName = nameFromUser(user);
+      setFormData((prev) => ({
+        fullName: fullName || prev.fullName,
+        email: email || prev.email,
+      }));
+    };
+
+    const init = async () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("error_description")) {
+        setFormErrors({ _: params.get("error_description") ?? "Google sign-in failed." });
+      }
+
+      const { data } = await supabase.auth.getSession();
+      if (cancelled) return;
+      applyUser(data.session?.user ?? null);
+
+      const returnedFromOAuth =
+        params.has("code") ||
+        params.has("waitlist_oauth") ||
+        params.has("error") ||
+        params.has("error_description");
+      if (returnedFromOAuth) {
+        document.getElementById("join-waitlist")?.scrollIntoView({ behavior: "smooth" });
+        const url = new URL(window.location.href);
+        url.searchParams.delete("code");
+        url.searchParams.delete("waitlist_oauth");
+        url.searchParams.delete("error");
+        url.searchParams.delete("error_description");
+        url.searchParams.delete("error_code");
+        window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+      }
+    };
+
+    void init();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      applyUser(session?.user ?? null);
+    });
+
+    return () => {
+      cancelled = true;
+      subscription.unsubscribe();
+    };
+  }, []);
+
+  const handleGoogleSignIn = async () => {
+    setFormErrors({});
+    setIsGoogleLoading(true);
+    try {
+      const redirectTo = `${window.location.origin}${window.location.pathname}?waitlist_oauth=1`;
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo,
+          queryParams: { prompt: "select_account" },
+          skipBrowserRedirect: true,
+        },
+      });
+      if (error) {
+        setFormErrors({ _: error.message || "Google sign-in failed. Please try again." });
+        setIsGoogleLoading(false);
+        return;
+      }
+      if (data.url) {
+        window.location.assign(data.url);
+        return;
+      }
+      setFormErrors({ _: "Google sign-in failed. Please try again." });
+      setIsGoogleLoading(false);
+    } catch (err) {
+      console.error(err);
+      setFormErrors({ _: "Google sign-in failed. Please try again." });
+      setIsGoogleLoading(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setFormErrors({});
-    if (!PHONE_REGEX.test(formData.phone.replaceAll(/\s/g, ""))) {
-      setFormErrors({ phone: "Enter a valid 10-digit phone number" });
-      return;
-    }
     setIsSubmitting(true);
 
     try {
@@ -46,10 +135,6 @@ export default function JoinWaitlistSection() {
         body: JSON.stringify({
           fullName: formData.fullName,
           email: formData.email,
-          desiredDomain: formData.desiredDomain,
-          country: formData.country,
-          phone_country_code: formData.countryCode,
-          phone: formData.phone.replaceAll(/\D/g, ""),
         }),
       });
 
@@ -132,144 +217,100 @@ export default function JoinWaitlistSection() {
           And that&apos;s intentional.
         </p>
 
-        <form className="join-waitlist-form" onSubmit={handleSubmit} noValidate>
-          <div className="cc-form-card">
-            <div className="cc-form-field">
-              <label htmlFor="join-name" className="cc-form-label">
-                Name
-              </label>
-              <input
-                id="join-name"
-                type="text"
-                value={formData.fullName}
-                onChange={(e) =>
-                  setFormData({ ...formData, fullName: e.target.value })
-                }
-                autoComplete="name"
-                required
-                className={waitlistInputClass}
-                placeholder="Your name"
+        <div className="join-waitlist-form">
+          <button
+            type="button"
+            onClick={handleGoogleSignIn}
+            disabled={isGoogleLoading || isSubmitting}
+            className="cc-btn-ghost w-full max-w-none disabled:cursor-not-allowed disabled:opacity-50"
+            aria-label="Continue with Google"
+          >
+            <svg aria-hidden width="18" height="18" viewBox="0 0 18 18">
+              <path
+                fill="#4285F4"
+                d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"
               />
-              <p className="cc-form-hint">One human. One account.</p>
-            </div>
-            <div className="cc-form-field">
-              <label htmlFor="join-email" className="cc-form-label">
-                Email
-              </label>
-              <input
-                id="join-email"
-                type="email"
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                autoComplete="email"
-                required
-                className={waitlistInputClass}
-                placeholder="you@example.com"
+              <path
+                fill="#34A853"
+                d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z"
               />
-              <p className="cc-form-hint">Early access updates only.</p>
-            </div>
-            <div className="cc-form-field">
-              <label htmlFor="join-country" className="cc-form-label">
-                Country
-              </label>
-              <input
-                id="join-country"
-                type="text"
-                value={formData.country}
-                onChange={(e) =>
-                  setFormData({ ...formData, country: e.target.value })
-                }
-                autoComplete="country-name"
-                className={waitlistInputClass}
-                placeholder="e.g. India, USA"
+              <path
+                fill="#FBBC05"
+                d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.175 0 7.55 0 9s.348 2.825.957 4.039l3.007-2.332z"
               />
-              <p className="cc-form-hint">Where you&apos;re joining from.</p>
-            </div>
-            <div className="cc-form-field">
-              <label htmlFor="join-phone" className="cc-form-label">
-                Phone
-              </label>
-              <div className="cc-form-phone-row">
-                <select
-                  id="join-country-code"
-                  value={formData.countryCode}
-                  onChange={(e) =>
-                    setFormData({ ...formData, countryCode: e.target.value })
-                  }
-                  className={waitlistSelectClass}
-                  aria-label="Country calling code"
-                >
-                  {COUNTRY_CODES.map(({ code, label }) => (
-                    <option key={code} value={code}>
-                      {code}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  id="join-phone"
-                  type="tel"
-                  inputMode="numeric"
-                  value={formData.phone}
-                  onChange={(e) => {
-                    const v = e.target.value.replaceAll(/\D/g, "").slice(0, 10);
-                    setFormData({ ...formData, phone: v });
-                  }}
-                  autoComplete="tel-national"
-                  required
-                  maxLength={10}
-                  className={waitlistInputClass}
-                  placeholder="Phone number"
-                />
-              </div>
-              <p className="cc-form-hint">10-digit mobile number.</p>
-              {formErrors.phone && (
-                <p className="cc-form-error">{formErrors.phone}</p>
-              )}
-            </div>
-            <div className="cc-form-field">
-              <label htmlFor="join-domain" className="cc-form-label">
-                Desired Domain
-              </label>
-              <input
-                id="join-domain"
-                type="text"
-                value={formData.desiredDomain}
-                onChange={(e) =>
-                  setFormData({ ...formData, desiredDomain: e.target.value })
-                }
-                className={waitlistInputClass}
-                placeholder="your.rarelm"
+              <path
+                fill="#EA4335"
+                d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z"
               />
-              <p className="cc-form-hint">Optional — claim when ready.</p>
-              {formErrors.desiredDomain && (
-                <p className="cc-form-error">{formErrors.desiredDomain}</p>
-              )}
-            </div>
-            {formErrors._ && <p className="cc-form-error">{formErrors._}</p>}
+            </svg>
+            {isGoogleLoading ? "Connecting…" : "Continue with Google"}
+          </button>
 
-            <div className="cc-form-submit">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="cc-btn-primary group disabled:cursor-not-allowed disabled:opacity-50"
-                aria-label="Join Rarelm waitlist"
-              >
-                {isSubmitting ? "Submitting…" : "Enter Rarelm"}
-                {!isSubmitting && (
-                  <span
-                    aria-hidden
-                    className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
-                  >
-                    →
-                  </span>
-                )}
-              </button>
-              <p className="cc-form-subline">The bots are furious.</p>
+          <form onSubmit={handleSubmit} noValidate>
+            <div className="cc-form-card">
+              <div className="cc-form-field">
+                <label htmlFor="join-name" className="cc-form-label">
+                  Name
+                </label>
+                <input
+                  id="join-name"
+                  type="text"
+                  value={formData.fullName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, fullName: e.target.value })
+                  }
+                  autoComplete="name"
+                  required
+                  className={waitlistInputClass}
+                  placeholder="Your name"
+                />
+                <p className="cc-form-hint">One human. One account.</p>
+              </div>
+              <div className="cc-form-field">
+                <label htmlFor="join-email" className="cc-form-label">
+                  Email
+                </label>
+                <input
+                  id="join-email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  autoComplete="email"
+                  required
+                  className={waitlistInputClass}
+                  placeholder="you@example.com"
+                />
+                <p className="cc-form-hint">Early access updates only.</p>
+              </div>
+              {formErrors.email && (
+                <p className="cc-form-error">{formErrors.email}</p>
+              )}
+              {formErrors._ && <p className="cc-form-error">{formErrors._}</p>}
+
+              <div className="cc-form-submit">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="cc-btn-primary group disabled:cursor-not-allowed disabled:opacity-50"
+                  aria-label="Join Rarelm waitlist"
+                >
+                  {isSubmitting ? "Submitting…" : "Enter Rarelm"}
+                  {!isSubmitting && (
+                    <span
+                      aria-hidden
+                      className="opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70"
+                    >
+                      →
+                    </span>
+                  )}
+                </button>
+                <p className="cc-form-subline">The bots are furious.</p>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </section>
   );

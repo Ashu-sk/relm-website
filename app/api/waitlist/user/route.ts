@@ -20,8 +20,11 @@ export async function POST(req: Request) {
       body;
 
     const emailStr = email != null ? String(email).trim() : "";
-    const domainStr =
-      desiredDomain != null ? String(desiredDomain).trim() : "";
+    const optionalText = (value: unknown): string | null => {
+      if (value == null) return null;
+      const trimmed = String(value).trim();
+      return trimmed === "" ? null : trimmed;
+    };
 
     if (!emailStr) {
       return NextResponse.json(
@@ -30,24 +33,13 @@ export async function POST(req: Request) {
       );
     }
 
-    const phoneClean = String(phone ?? "")
-      .replaceAll(/\D/g, "")
-      .trim();
+    const phoneClean = optionalText(phone)?.replaceAll(/\D/g, "") ?? "";
     const row = {
       email: emailStr.toLowerCase(),
-      full_name:
-        fullName != null && String(fullName).trim() !== ""
-          ? String(fullName).trim()
-          : null,
-      desired_domain: domainStr !== "" ? domainStr.toLowerCase() : null,
-      country:
-        country != null && String(country).trim() !== ""
-          ? String(country).trim()
-          : null,
-      phone_country_code:
-        phone_country_code != null && String(phone_country_code).trim() !== ""
-          ? String(phone_country_code).trim()
-          : null,
+      full_name: optionalText(fullName),
+      desired_domain: optionalText(desiredDomain)?.toLowerCase() ?? null,
+      country: optionalText(country),
+      phone_country_code: optionalText(phone_country_code),
       phone: phoneClean !== "" ? phoneClean : null,
       status: "pending",
     };
