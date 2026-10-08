@@ -31,6 +31,18 @@ const securityHeaders = [
   },
 ] as const;
 
+const demoAppCsp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self' data:",
+  "img-src 'self' data:",
+  "connect-src 'self'",
+  "frame-ancestors 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+].join("; ");
+
 const nextConfig: NextConfig = {
   async rewrites() {
     return [
@@ -58,6 +70,13 @@ const nextConfig: NextConfig = {
       {
         source: "/(.*)",
         headers: [...securityHeaders],
+      },
+      {
+        source: "/demo-app/:path*",
+        headers: [
+          { key: "Content-Security-Policy", value: demoAppCsp },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+        ],
       },
     ];
   },

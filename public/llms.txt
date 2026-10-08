@@ -1,35 +1,43 @@
-# Rarelm
-> Rarelm is the world's first mandatory AI-verified 
-social expression platform where every user is 
-face-authenticated before joining using facial 
-recognition similar to Apple Face ID. No bots, 
-no fake accounts, no scams. Free to join.
+# rarelm
 
-## Docs
-- Rarelm Homepage: https://www.rarelm.com/
+> rarelm is an AI-Verified social expression platform where every account is built to belong to a real human. It is designed to keep bots, fake accounts and scams out. Tagline: Real Is Rare.
+
+## Pages
+- Home: https://www.rarelm.com/
+- Try the prototype: https://www.rarelm.com/demo/
 - Vision: https://www.rarelm.com/vision/
+- About the founder: https://www.rarelm.com/about/
 - Founder: https://www.rarelm.com/founder/
-- Join Waitlist: https://www.rarelm.com/join/
+- Join the waitlist: https://www.rarelm.com/join/
 - FAQ: https://www.rarelm.com/faq/
+- QAC, Quick Anonymous Confession: https://www.rarelm.com/qac/
+- Original Tag: https://www.rarelm.com/original-tag/
 - PageStock: https://www.rarelm.com/pagestock/
-- Contact: https://www.rarelm.com/contact-us/
 - Blog: https://www.rarelm.com/blog/
+- Contact: https://www.rarelm.com/contact-us/
 - Sitemap: https://www.rarelm.com/sitemap.xml
 
-## Optional
-- Company: Mavrist Pvt Ltd
-- Stage: Pre-seed
+## Company
+- Name: rarelm, operated by MAVRIST TECH PRIVATE LIMITED
+- Founder and CEO: Ashutosh Kesharwani
 - Founded: 2024
 - Location: Noida, India
-- Category: AI-verified social media platform
-- Tagline: Real Is Rare
+- Stage: Pre-seed, prototype built, waitlist open
 
-## Features
-- Mandatory facial authentication for every user
-- Domain-based username: name.rarelm.com
-- 3 profile system: Anonymous, Family & Friends, Professional
-- Anonymous and verified mode simultaneously
-- PageStock: creator stock market and user dividends
-- Verified social commerce with in-app purchases
-- 24/7 professional expert advisors
-- Free to create an account
+## What rarelm does
+- Verified identity: every account is designed to be a confirmed real human.
+- Personal verified address: each person gets a web address in the form yourname.rarelm.com.
+- Three profile layers: Me (verified anonymous), Close ones, and Public.
+- Expression: post as your named verified self, or as verified anonymous.
+- QAC: Quick Anonymous Confession, an anonymous space where the person is still a confirmed human.
+- Original Tag: a badge for authentic, original content.
+- Social commerce: verified sellers and stores.
+
+## Problems rarelm addresses
+- Scams: investment, romance, advertisement and shopping scams.
+- Bots: DM, comment and like bots.
+- Fake accounts of every kind.
+- Farming: follower and engagement farming.
+
+## Optional
+- Category: verified social platform
