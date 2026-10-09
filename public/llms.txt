@@ -4,17 +4,16 @@
 
 ## Pages
 - Home: https://www.rarelm.com/
-- Try the prototype: https://www.rarelm.com/demo/
-- Vision: https://www.rarelm.com/vision/
-- About the founder: https://www.rarelm.com/about/
-- Founder: https://www.rarelm.com/founder/
-- Join the waitlist: https://www.rarelm.com/join/
-- FAQ: https://www.rarelm.com/faq/
-- QAC, Quick Anonymous Confession: https://www.rarelm.com/qac/
-- Original Tag: https://www.rarelm.com/original-tag/
-- PageStock: https://www.rarelm.com/pagestock/
-- Blog: https://www.rarelm.com/blog/
-- Contact: https://www.rarelm.com/contact-us/
+- Try the prototype: https://www.rarelm.com/demo
+- Vision: https://www.rarelm.com/vision
+- Founder: https://www.rarelm.com/founder
+- Join the waitlist: https://www.rarelm.com/join
+- FAQ: https://www.rarelm.com/faq
+- QAC, Quick Anonymous Confession: https://www.rarelm.com/qac
+- Original Tag: https://www.rarelm.com/original-tag
+- PageStock: https://www.rarelm.com/pagestock
+- Blog: https://www.rarelm.com/blog
+- Contact: https://www.rarelm.com/contact-us
 - Sitemap: https://www.rarelm.com/sitemap.xml
 
 ## Company
